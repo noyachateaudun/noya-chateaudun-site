@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BLOG_ARTICLES, getReadingTime, formatDate } from "@/data/blog";
 import Reveal from "@/components/Reveal";
+import BlogIllustration from "@/components/BlogIllustration";
 
 export const metadata: Metadata = {
   title: "Blog — Cuisine levantine, recettes et culture culinaire",
@@ -47,14 +48,13 @@ export default function BlogPage() {
                 href={`/blog/${article.slug}`}
                 className="group block bg-white rounded-xl border border-[#E5DFD5] overflow-hidden hover:shadow-lg transition-shadow duration-300 h-full flex flex-col"
               >
-                {/* Color banner placeholder */}
-                <div className="h-48 bg-gradient-to-br from-burgundy/10 via-burgundy/5 to-cream relative overflow-hidden">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-burgundy/40 bg-white/60 px-4 py-1.5 rounded-full">
-                      {article.category}
-                    </span>
-                  </div>
-                </div>
+                {/* Illustration */}
+                <BlogIllustration
+                  slug={article.slug}
+                  title={article.title}
+                  category={article.category}
+                  size="card"
+                />
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
@@ -65,10 +65,6 @@ export default function BlogPage() {
                     <span className="w-1 h-1 rounded-full bg-dark/20" />
                     <span>{getReadingTime(article.content)} min de lecture</span>
                   </div>
-
-                  <h2 className="font-serif text-lg text-dark leading-snug mb-3 group-hover:text-burgundy transition-colors">
-                    {article.title}
-                  </h2>
 
                   <p className="text-sm text-dark/50 leading-relaxed flex-grow">
                     {article.excerpt}

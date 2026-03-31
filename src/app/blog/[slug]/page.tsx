@@ -9,6 +9,7 @@ import {
 } from "@/data/blog";
 import { RESTAURANT } from "@/data/restaurant";
 import Reveal from "@/components/Reveal";
+import BlogIllustration from "@/components/BlogIllustration";
 import ShareButton from "./ShareButton";
 
 export function generateStaticParams() {
@@ -298,9 +299,19 @@ export default async function BlogArticlePage({
         }}
       />
 
-      <article className="py-16 md:py-24">
+      <article className="pb-16 md:pb-24">
+        {/* Hero illustration */}
+        <div className="group mb-10">
+          <BlogIllustration
+            slug={article.slug}
+            title={article.title}
+            category={article.category}
+            size="hero"
+          />
+        </div>
+
         {/* Breadcrumbs */}
-        <div className="max-w-3xl mx-auto px-5 mb-8">
+        <div className="max-w-3xl mx-auto px-5 mb-6">
           <nav
             aria-label="Fil d'Ariane"
             className="flex items-center gap-2 text-[12px] text-dark/40"
@@ -319,15 +330,9 @@ export default async function BlogArticlePage({
           </nav>
         </div>
 
-        {/* Header */}
+        {/* Meta info */}
         <header className="max-w-3xl mx-auto px-5 mb-12">
           <Reveal>
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.2em] text-burgundy/60 mb-4">
-              {article.category}
-            </span>
-            <h1 className="font-serif text-[clamp(24px,4.5vw,40px)] text-dark leading-tight mb-6">
-              {article.title}
-            </h1>
             <div className="flex items-center gap-4 text-sm text-dark/40">
               <time dateTime={article.publishedAt}>
                 {formatDate(article.publishedAt)}
