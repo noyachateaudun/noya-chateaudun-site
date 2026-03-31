@@ -28,7 +28,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     imageAlt: "Mezzé levantin coloré avec houmous, falafel, pita et légumes frais",
     content: `## La cuisine levantine, une identité culinaire millénaire
 
-La cuisine levantine désigne l'ensemble des traditions gastronomiques nées sur les rivages orientaux de la Méditerranée. On parle du Liban, de la Syrie, de la Jordanie, de la Palestine et des territoires voisins — une mosaïque de cultures dont les frontières politiques n'ont jamais empêché les saveurs de circuler. Le Levant, c'est littéralement « là où le soleil se lève », et c'est aussi là que sont nées certaines des recettes les plus anciennes du monde.
+La cuisine levantine désigne l'ensemble des traditions gastronomiques nées sur les rivages orientaux de la Méditerranée. On parle du Liban, de la Syrie, de la Jordanie, d'Israël et des territoires voisins — une mosaïque de cultures dont les frontières politiques n'ont jamais empêché les saveurs de circuler. Le Levant, c'est littéralement « là où le soleil se lève », et c'est aussi là que sont nées certaines des recettes les plus anciennes du monde.
 
 Quand on parle de **cuisine du Levant**, on évoque un art de vivre autant qu'un art culinaire : celui du partage, du temps long, des repas qui s'étirent autour de dizaines de petits plats posés au centre de la table.
 
