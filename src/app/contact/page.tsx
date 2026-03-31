@@ -131,7 +131,7 @@ export default function ContactPage() {
                 rel="noopener noreferrer"
                 className="font-serif text-lg text-dark hover:text-burgundy transition-colors"
               >
-                @eatnoya
+                @noya.chateaudun
               </a>
             </div>
 

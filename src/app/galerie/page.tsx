@@ -111,7 +111,7 @@ export default function GaleriePage() {
                 <circle cx="12" cy="12" r="5" />
                 <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
               </svg>
-              @eatnoya
+              @noya.chateaudun
             </a>
           </div>
         </Reveal>

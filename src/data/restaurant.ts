@@ -47,7 +47,7 @@ export const RESTAURANT = {
     deliveroo: "https://deliveroo.fr/en/menu/paris/9eme-opera/noya-chateaudun-8-rue-de-chateaudun",
     uberEats: "https://www.ubereats.com/fr/store/noya-chateaudun-8-rue-de-chateaudun/LMW5LFJjVq2sA5pNPoEzWg",
     emporter: "https://app.eatself.com/4278/accueil",
-    instagram: "https://www.instagram.com/eatnoya/",
+    instagram: "https://www.instagram.com/noya.chateaudun/",
     maps: "https://maps.google.com/?q=8+Rue+de+Châteaudun+75009+Paris",
   },
   sas: {
