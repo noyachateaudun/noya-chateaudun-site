@@ -84,6 +84,9 @@ export const metadata: Metadata = {
     ],
   },
   manifest: "/site.webmanifest",
+  verification: {
+    google: 'LD99WO56NPn7faud3BBkFTzMDR6rn2p8Y8cYrJ1vFUI',
+  },
   robots: {
     index: true,
     follow: true,
