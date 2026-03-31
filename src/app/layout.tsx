@@ -75,12 +75,14 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/favicon.png", type: "image/png", sizes: "96x96" },
     ],
     apple: [
-      { url: "/favicon.png", sizes: "180x180" },
+      { url: "/apple-touch-icon.png", sizes: "180x180" },
     ],
   },
+  manifest: "/site.webmanifest",
   robots: {
     index: true,
     follow: true,

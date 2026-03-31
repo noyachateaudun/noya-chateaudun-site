@@ -1,0 +1,21 @@
+{
+  "name": "Noya Châteaudun",
+  "short_name": "Noya",
+  "description": "Restaurant levantin & méditerranéen — Paris 9e",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F5F0E8",
+  "theme_color": "#722F37",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
