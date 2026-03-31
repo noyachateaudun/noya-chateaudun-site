@@ -46,6 +46,7 @@ export default function Footer() {
               { href: "/a-propos", label: "Notre Histoire" },
               { href: "/traiteur", label: "Traiteur" },
               { href: "/contact", label: "Nous Trouver" },
+              { href: "/blog", label: "Blog" },
             ].map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="text-sm hover:text-cream transition-colors">
