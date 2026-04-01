@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --announcement-bar-h: 40px;
+}
+
 html {
   scroll-behavior: smooth;
 }

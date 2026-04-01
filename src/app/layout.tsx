@@ -120,7 +120,7 @@ export default function RootLayout({
       <body className="font-body antialiased bg-warm-white text-dark pb-[56px] md:pb-0">
         <AnnouncementBar />
         <Header />
-        <main className="pt-[54px]">{children}</main>
+        <main>{children}</main>
         <Footer />
         <FloatingButtons />
         <Script

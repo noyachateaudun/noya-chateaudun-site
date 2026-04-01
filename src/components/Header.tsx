@@ -29,11 +29,12 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-[#E5DFD5] ${
+      className={`sticky z-50 transition-all duration-500 border-b border-[#E5DFD5] ${
         scrolled
           ? "bg-[#FAFAF5]/95 backdrop-blur-xl saturate-[1.2] shadow-sm"
           : "bg-[#FAFAF5] shadow-sm"
       }`}
+      style={{ top: "var(--announcement-bar-h, 0px)" }}
     >
       <nav className="max-w-6xl mx-auto flex items-center justify-between px-5 py-3">
         {/* Logo */}

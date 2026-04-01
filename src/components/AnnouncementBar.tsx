@@ -41,6 +41,14 @@ export default function AnnouncementBar() {
     return () => clearInterval(interval);
   }, []);
 
+  // Communicate bar height to CSS custom property for Header positioning
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--announcement-bar-h",
+      visible ? "40px" : "0px"
+    );
+  }, [visible]);
+
   if (!visible) return null;
 
   const ann = ANNOUNCEMENTS[current];
@@ -57,8 +65,8 @@ export default function AnnouncementBar() {
   );
 
   return (
-    <div className="bg-[#722F37] text-cream relative z-[60]">
-      <div className="max-w-6xl mx-auto flex items-center justify-center px-10 h-10">
+    <div className="sticky top-0 z-[60] bg-[#722F37] text-cream">
+      <div className="max-w-6xl mx-auto flex items-center justify-center px-12 h-10">
         {ann.external ? (
           <a
             href={ann.href}
@@ -78,16 +86,16 @@ export default function AnnouncementBar() {
         )}
         <button
           onClick={() => setVisible(false)}
-          className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 text-cream/70 hover:text-cream transition-colors p-1"
-          aria-label="Fermer"
+          className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-cream/90 hover:text-white transition-colors rounded-full hover:bg-white/10"
+          aria-label="Fermer la barre d'annonce"
         >
           <svg
-            width="14"
-            height="14"
+            width="16"
+            height="16"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="2.5"
             strokeLinecap="round"
             strokeLinejoin="round"
           >
