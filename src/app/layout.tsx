@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Noya Restaurant Paris 9e",
   },
   description:
-    "Cuisine levantine authentique au cœur de Paris 9e. Houmous, pitas, shakshuka & plats levantins faits maison. Déjeuner, dîner & traiteur. Réservez !",
+    "Restaurant levantin au 8 rue de Châteaudun, Paris 9e. Houmous fait maison, pitas, shakshuka & plats du Levant. Note 9.6/10. Du mardi au samedi, midi & soir. Réservez !",
   keywords: [
     "restaurant levantin Paris",
     "cuisine levantine Paris 9",
