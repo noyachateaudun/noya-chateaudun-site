@@ -113,18 +113,18 @@ export function getCateringSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "FoodService",
-    name: "Noya Châteaudun — Service Traiteur",
+    name: "Noya Châteaudun — Service Traiteur Levantin",
     description:
-      "Service traiteur levantin et méditerranéen pour événements privés et corporate à Paris.",
+      "Service traiteur levantin et méditerranéen pour événements privés et corporate à Paris et Île-de-France. Buffets mezze, cocktails, mariages.",
     provider: {
       "@type": "Restaurant",
       name: RESTAURANT.name,
       url: RESTAURANT.url,
     },
-    areaServed: {
-      "@type": "City",
-      name: "Paris",
-    },
-    serviceType: "Traiteur",
+    areaServed: [
+      { "@type": "City", name: "Paris" },
+      { "@type": "AdministrativeArea", name: "Île-de-France" },
+    ],
+    serviceType: ["Catering", "Buffet", "Event catering"],
   };
 }
