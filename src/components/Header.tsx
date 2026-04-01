@@ -66,15 +66,25 @@ export default function Header() {
           ))}
         </ul>
 
-        {/* Desktop CTA */}
-        <a
-          href={RESTAURANT.links.reservation}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden md:inline-block text-[11px] font-bold uppercase tracking-[0.2em] px-6 py-2.5 bg-burgundy text-cream hover:bg-burgundy-light hover:shadow-lg hover:shadow-burgundy/20 hover:scale-[1.02] transition-all duration-300"
-        >
-          Réserver
-        </a>
+        {/* Desktop CTAs */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href={RESTAURANT.links.emporter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-bold uppercase tracking-[0.2em] px-5 py-2.5 border border-[#4A5A3C]/30 text-[#4A5A3C] hover:bg-[#4A5A3C] hover:text-cream transition-all duration-300"
+          >
+            Commander
+          </a>
+          <a
+            href={RESTAURANT.links.reservation}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] font-bold uppercase tracking-[0.2em] px-6 py-2.5 bg-burgundy text-cream hover:bg-burgundy-light hover:shadow-lg hover:shadow-burgundy/20 hover:scale-[1.02] transition-all duration-300"
+          >
+            Réserver
+          </a>
+        </div>
 
         {/* Mobile burger */}
         <button

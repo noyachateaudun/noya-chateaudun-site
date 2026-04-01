@@ -558,6 +558,55 @@ Chez [Noya](/diner), nous avons composé une carte des vins qui fait la part bel
 
 Découvrez-la lors d'un [dîner chez Noya](/diner), au 8 rue de Châteaudun, Paris 9e. Notre équipe se fera un plaisir de vous guider dans vos choix. [Consultez notre carte du soir](/menu) pour voir les plats qui accompagneront votre dégustation.`,
   },
+  {
+    slug: "click-collect-commander-emporter-noya",
+    title: "Click & Collect chez Noya : commandez votre repas levantin à emporter",
+    metaTitle: "Click & Collect Noya : commandez à emporter votre repas levantin",
+    metaDescription: "Commandez en click & collect chez Noya Paris 9e. Houmous, falafels, pitas & shakshuka prêts en 20 minutes. Retrait au 8 rue de Châteaudun.",
+    excerpt: "Envie de Noya chez vous ? Notre service click & collect vous permet de commander en ligne et récupérer vos plats en 20 minutes.",
+    category: "Pratique",
+    keyword: "restaurant levantin à emporter Paris",
+    keywords: ["restaurant levantin à emporter Paris", "click collect Paris 9", "noya emporter", "commande en ligne restaurant levantin"],
+    publishedAt: "2026-04-01",
+    updatedAt: "2026-04-01",
+    imageAlt: "Sac de commande click & collect Noya avec pitas et houmous",
+    content: `## Noya à emporter : la saveur levantine chez vous
+
+Pas toujours le temps de s'asseoir au restaurant ? On vous comprend. C'est pour ça que Noya propose un service de **click & collect** simple et rapide : vous commandez en ligne, et vous récupérez votre commande au restaurant en 20 minutes.
+
+Toute notre carte est disponible à emporter : houmous crémeux, falafels croustillants, pitas garnies, shaukshukas fumantes, salades fraîches — les mêmes plats que ceux servis en salle, préparés minute avec des ingrédients frais.
+
+## Comment ça marche ?
+
+1. **Rendez-vous sur notre page de commande** : [Commander en ligne](https://app.eatself.com/4278/accueil)
+2. **Choisissez vos plats** dans notre carte complète
+3. **Payez en ligne** en toute sécurité
+4. **Passez récupérer** votre commande au restaurant, prête en 20 minutes
+
+C'est aussi simple que ça. Pas d'attente, pas de surprise — votre commande est prête quand vous arrivez.
+
+## Les plats qui voyagent le mieux
+
+Tous nos plats se transportent bien, mais certains sont particulièrement adaptés à l'emporter :
+
+- **La Pita Of** : notre best-seller, poulet mariné, aubergine, salade, tehina — un repas complet dans une pita
+- **L'Assiette Falafel** : falafels croustillants, houmous, légumes, tehina — copieux et satisfaisant
+- **Le Houmous Bilameh** : notre houmous signature avec poulet grillé — une valeur sûre
+- **Les Salatim** : nos entrées à partager, parfaites pour un apéro improvisé à la maison
+
+[Voir toute notre carte](/menu) pour encore plus de choix.
+
+## Horaires de retrait
+
+- **Déjeuner** : du mardi au samedi, 11h30 – 14h30
+- **Dîner** : du mardi au samedi, 19h00 – 22h30
+
+**Adresse de retrait** : 8 rue de Châteaudun, 75009 Paris (métro Notre-Dame-de-Lorette, Cadet ou Le Peletier).
+
+## Vous préférez être livré ?
+
+Si vous préférez rester chez vous, retrouvez-nous aussi sur [Deliveroo](https://deliveroo.fr/fr/menu/paris/9eme-opera/noya-chateaudun-8-rue-de-chateaudun) et [Uber Eats](https://www.ubereats.com/fr/store/noya-chateaudun-8-rue-de-chateaudun/LMW5LFJjVq2sA5pNPoEzWg). Livraison en ~30 minutes dans le 9e et les arrondissements voisins. [Toutes les options de commande](/commander).`,
+  },
 ];
 
 export function getArticleBySlug(slug: string): BlogArticle | undefined {

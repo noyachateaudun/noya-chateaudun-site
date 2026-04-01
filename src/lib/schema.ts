@@ -31,10 +31,10 @@ export function getRestaurantSchema() {
     priceRange: RESTAURANT.priceRange,
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue: RESTAURANT.rating.value,
-      bestRating: RESTAURANT.rating.bestRating,
-      ratingCount: RESTAURANT.rating.count,
-      reviewCount: RESTAURANT.rating.count,
+      ratingValue: "5",
+      bestRating: "5",
+      ratingCount: "110",
+      reviewCount: "110",
     },
     openingHoursSpecification: [
       {
@@ -52,6 +52,27 @@ export function getRestaurantSchema() {
     ],
     menu: `${RESTAURANT.url}/menu`,
     acceptsReservations: "True",
+    potentialAction: [
+      {
+        "@type": "ReserveAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: RESTAURANT.links.reservation,
+          actionPlatform: "https://schema.org/DesktopWebPlatform",
+        },
+        result: {
+          "@type": "FoodEstablishmentReservation",
+          name: "Réservation chez Noya",
+        },
+      },
+      {
+        "@type": "OrderAction",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: RESTAURANT.links.emporter,
+        },
+      },
+    ],
     hasMenu: {
       "@type": "Menu",
       url: `${RESTAURANT.url}/menu`,

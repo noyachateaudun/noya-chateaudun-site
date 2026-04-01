@@ -158,6 +158,11 @@ const ILLUSTRATIONS: Record<
     hover: "group-hover:from-[#7D3440] group-hover:via-[#652848] group-hover:to-[#461F42]",
     pattern: <WineCurves />,
   },
+  "click-collect-commander-emporter-noya": {
+    bg: "bg-gradient-to-br from-[#4A5A3C] via-[#5A6E3A] to-[#D4A853]",
+    hover: "group-hover:from-[#526344] group-hover:via-[#627842] group-hover:to-[#DCB25B]",
+    pattern: <FalafelDots />,
+  },
 };
 
 function getTextColor(slug: string): string {

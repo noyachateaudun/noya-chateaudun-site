@@ -222,6 +222,13 @@ export default function TraiteurPage() {
         </div>
       </section>
 
+      {/* Trust banner */}
+      <div className="text-center py-4 bg-cream/50 border-b border-[#E5DFD5]">
+        <p className="text-sm text-dark/50">
+          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 9.6/10 sur TheFork &middot; La qualité restaurant pour vos événements
+        </p>
+      </div>
+
       {/* Photos */}
       <section className="py-12 px-5 bg-warm-white">
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

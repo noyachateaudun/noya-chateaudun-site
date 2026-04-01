@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Playfair_Display, DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import { getRestaurantSchema } from "@/lib/schema";
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Noya Restaurant Paris 9e",
   },
   description:
-    "Restaurant levantin au 8 rue de Châteaudun, Paris 9e. Houmous fait maison, pitas, shakshuka & plats du Levant. Note 9.6/10. Du mardi au samedi, midi & soir. Réservez !",
+    "Noya — Restaurant levantin au 8 rue de Châteaudun, Paris 9e. 5/5 Google (110+ avis). Houmous, pitas & shakshuka faits maison. Réservez, commandez en click & collect ou faites-vous livrer !",
   keywords: [
     "restaurant levantin Paris",
     "cuisine levantine Paris 9",
@@ -116,7 +117,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantSchema) }}
         />
       </head>
-      <body className="font-body antialiased bg-warm-white text-dark">
+      <body className="font-body antialiased bg-warm-white text-dark pb-[56px] md:pb-0">
+        <AnnouncementBar />
         <Header />
         <main className="pt-[54px]">{children}</main>
         <Footer />

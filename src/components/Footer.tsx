@@ -57,13 +57,18 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Commander */}
+        {/* Commander & Réserver */}
         <div>
-          <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-light mb-4">Commander</h3>
+          <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-light mb-4">Commander & Réserver</h3>
           <ul className="space-y-2">
             <li>
               <a href={RESTAURANT.links.reservation} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
-                Réserver (TheFork)
+                Réserver une table
+              </a>
+            </li>
+            <li>
+              <a href={RESTAURANT.links.emporter} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
+                Click & Collect
               </a>
             </li>
             <li>
@@ -77,11 +82,14 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={RESTAURANT.links.emporter} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
-                Click & Collect
-              </a>
+              <Link href="/traiteur" className="text-sm hover:text-cream transition-colors">
+                Traiteur
+              </Link>
             </li>
           </ul>
+          <p className="mt-4 text-xs text-cream/40">
+            <span className="text-gold/60">&#x2605;</span> 5/5 Google &middot; 9.6/10 TheFork
+          </p>
         </div>
 
         {/* Horaires */}

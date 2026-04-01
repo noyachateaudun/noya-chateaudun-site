@@ -171,6 +171,13 @@ export default function MenuPage() {
         </div>
       </section>
 
+      {/* Trust banner */}
+      <div className="text-center py-4 bg-cream/50 border-b border-[#E5DFD5]">
+        <p className="text-sm text-dark/50">
+          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 9.6/10 sur TheFork &middot; Plus de 220 clients conquis
+        </p>
+      </div>
+
       {/* Tabs + both menus (SSR for SEO) */}
       <div className="max-w-3xl mx-auto px-5">
         <MenuTabs midiContent={midiContent} soirContent={soirContent} />
