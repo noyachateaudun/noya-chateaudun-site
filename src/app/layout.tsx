@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Playfair_Display, DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -120,6 +121,16 @@ export default function RootLayout({
         <main className="pt-[54px]">{children}</main>
         <Footer />
         <FloatingButtons />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0NJYLX2PMB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0NJYLX2PMB');`}
+        </Script>
       </body>
     </html>
   );
