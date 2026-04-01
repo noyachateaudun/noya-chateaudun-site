@@ -24,7 +24,7 @@ export default function Reveal({
           obs.disconnect();
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.12, rootMargin: "100px" }
     );
     obs.observe(el);
     return () => obs.disconnect();
