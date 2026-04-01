@@ -314,7 +314,7 @@ export default async function BlogArticlePage({
         <div className="max-w-3xl mx-auto px-5 mb-6">
           <nav
             aria-label="Fil d'Ariane"
-            className="flex items-center gap-2 text-[12px] text-dark/40"
+            className="flex items-center gap-2 text-[12px] text-dark/55"
           >
             <Link href="/" className="hover:text-dark transition-colors">
               Accueil
@@ -333,7 +333,7 @@ export default async function BlogArticlePage({
         {/* Meta info */}
         <header className="max-w-3xl mx-auto px-5 mb-12">
           <Reveal>
-            <div className="flex items-center gap-4 text-sm text-dark/40">
+            <div className="flex items-center gap-4 text-sm text-dark/55">
               <time dateTime={article.publishedAt}>
                 {formatDate(article.publishedAt)}
               </time>
@@ -354,7 +354,7 @@ export default async function BlogArticlePage({
         <div className="max-w-3xl mx-auto px-5 mt-16">
           {/* Share */}
           <div className="flex items-center gap-3 pb-8 border-b border-[#E5DFD5]">
-            <span className="text-sm text-dark/40">Partager :</span>
+            <span className="text-sm text-dark/55">Partager :</span>
             <ShareButton slug={article.slug} title={article.title} />
           </div>
 
@@ -394,7 +394,7 @@ export default async function BlogArticlePage({
                 href={`/blog/${prev.slug}`}
                 className="group p-5 rounded-xl border border-[#E5DFD5] hover:shadow-md transition-shadow"
               >
-                <span className="text-[11px] uppercase tracking-[0.15em] text-dark/30 mb-2 block">
+                <span className="text-[11px] uppercase tracking-[0.15em] text-dark/50 mb-2 block">
                   ← Article précédent
                 </span>
                 <span className="font-serif text-sm text-dark group-hover:text-burgundy transition-colors leading-snug line-clamp-2">
@@ -409,7 +409,7 @@ export default async function BlogArticlePage({
                 href={`/blog/${next.slug}`}
                 className="group p-5 rounded-xl border border-[#E5DFD5] hover:shadow-md transition-shadow text-right"
               >
-                <span className="text-[11px] uppercase tracking-[0.15em] text-dark/30 mb-2 block">
+                <span className="text-[11px] uppercase tracking-[0.15em] text-dark/50 mb-2 block">
                   Article suivant →
                 </span>
                 <span className="font-serif text-sm text-dark group-hover:text-burgundy transition-colors leading-snug line-clamp-2">

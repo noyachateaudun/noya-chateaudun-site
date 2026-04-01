@@ -78,7 +78,7 @@ export default function AnnouncementBar() {
         )}
         <button
           onClick={() => setVisible(false)}
-          className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 text-cream/50 hover:text-cream transition-colors p-1"
+          className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 text-cream/70 hover:text-cream transition-colors p-1"
           aria-label="Fermer"
         >
           <svg

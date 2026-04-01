@@ -40,13 +40,15 @@ export default function FaqAccordion() {
               </svg>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-300 ${
-                isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+              className={`grid transition-[grid-template-rows,opacity] duration-300 ${
+                isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
               }`}
             >
-              <p className="px-6 pb-5 text-sm text-dark/60 leading-relaxed">
-                {item.answer}
-              </p>
+              <div className="overflow-hidden">
+                <p className="px-6 pb-5 text-sm text-dark/60 leading-relaxed">
+                  {item.answer}
+                </p>
+              </div>
             </div>
           </div>
         );

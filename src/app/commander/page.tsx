@@ -81,7 +81,7 @@ export default function CommanderPage() {
                   <line x1="10" y1="14" x2="21" y2="3" />
                 </svg>
               </a>
-              <div className="text-sm text-dark/40 space-y-1">
+              <div className="text-sm text-dark/55 space-y-1">
                 <p><strong className="text-dark/60">Horaires de retrait :</strong> du mardi au samedi, 11h30–14h30 et 19h–22h30</p>
                 <p><strong className="text-dark/60">Adresse :</strong> {RESTAURANT.address.street}, {RESTAURANT.address.postalCode} {RESTAURANT.address.city}</p>
               </div>
@@ -144,7 +144,7 @@ export default function CommanderPage() {
             </Reveal>
           </div>
           <Reveal>
-            <p className="text-center text-sm text-dark/40 mt-6">
+            <p className="text-center text-sm text-dark/55 mt-6">
               Livraison en ~30 minutes dans le 9e et arrondissements voisins
             </p>
           </Reveal>

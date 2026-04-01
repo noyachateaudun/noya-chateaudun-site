@@ -67,7 +67,7 @@ export default function TraiteurForm() {
             <div>
               <label
                 htmlFor="nom"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
               >
                 Nom & Prénom *
               </label>
@@ -82,7 +82,7 @@ export default function TraiteurForm() {
             <div>
               <label
                 htmlFor="email"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
               >
                 Email *
               </label>
@@ -100,7 +100,7 @@ export default function TraiteurForm() {
             <div>
               <label
                 htmlFor="tel"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
               >
                 Téléphone
               </label>
@@ -115,7 +115,7 @@ export default function TraiteurForm() {
             <div>
               <label
                 htmlFor="type"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
               >
                 Type d&apos;événement
               </label>
@@ -143,7 +143,7 @@ export default function TraiteurForm() {
             <div>
               <label
                 htmlFor="date"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
               >
                 Date souhaitée
               </label>
@@ -157,7 +157,7 @@ export default function TraiteurForm() {
             <div>
               <label
                 htmlFor="guests"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
               >
                 Nombre de personnes
               </label>
@@ -178,7 +178,7 @@ export default function TraiteurForm() {
           <div>
             <label
               htmlFor="formule"
-              className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+              className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
             >
               Formule intéressée
             </label>
@@ -199,7 +199,7 @@ export default function TraiteurForm() {
           <div>
             <label
               htmlFor="message"
-              className="block text-[11px] font-bold uppercase tracking-wider text-dark/40 mb-1.5"
+              className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
             >
               Message / Précisions
             </label>
@@ -218,7 +218,7 @@ export default function TraiteurForm() {
             >
               Envoyer ma demande
             </button>
-            <p className="text-xs text-dark/40 italic mt-3">
+            <p className="text-xs text-dark/55 italic mt-3">
               Un e-mail pré-rempli s&apos;ouvrira dans votre messagerie.
             </p>
           </div>

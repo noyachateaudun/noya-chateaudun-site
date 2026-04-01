@@ -58,7 +58,7 @@ export default function BlogPage() {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <div className="flex items-center gap-3 text-[12px] text-dark/40 mb-3">
+                  <div className="flex items-center gap-3 text-[12px] text-dark/55 mb-3">
                     <time dateTime={article.publishedAt}>
                       {formatDate(article.publishedAt)}
                     </time>

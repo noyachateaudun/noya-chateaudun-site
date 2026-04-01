@@ -23,7 +23,7 @@ export default function Footer() {
             href={RESTAURANT.links.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-3 text-sm text-cream/50 hover:text-gold transition-colors"
+            className="inline-flex items-center gap-2 mt-3 text-sm text-cream/70 hover:text-gold transition-colors"
             aria-label="Suivez Noya sur Instagram"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -121,7 +121,7 @@ export default function Footer() {
           <br />
           <a
             href={`mailto:${RESTAURANT.email}`}
-            className="inline-block mt-1 text-sm text-cream/50 hover:text-gold transition-colors"
+            className="inline-block mt-1 text-sm text-cream/70 hover:text-gold transition-colors"
           >
             {RESTAURANT.email}
           </a>
@@ -130,10 +130,10 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="max-w-6xl mx-auto px-5 mt-12 pt-6 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p className="text-xs text-cream/30">
+        <p className="text-xs text-cream/50">
           &copy; {new Date().getFullYear()} {RESTAURANT.name}. Tous droits réservés.
         </p>
-        <Link href="/mentions-legales" className="text-xs text-cream/30 hover:text-cream/60 transition-colors">
+        <Link href="/mentions-legales" className="text-xs text-cream/50 hover:text-cream/60 transition-colors">
           Mentions légales
         </Link>
       </div>

@@ -296,7 +296,7 @@ export default function TraiteurPage() {
                       </li>
                     ))}
                   </ul>
-                  <p className="text-xs text-dark/40 mb-4">
+                  <p className="text-xs text-dark/55 mb-4">
                     Minimum&nbsp;: {formule.minimum}
                   </p>
                   <a
@@ -372,7 +372,7 @@ export default function TraiteurPage() {
                     <p className="text-sm font-medium text-dark">
                       {t.author}
                     </p>
-                    <p className="text-xs text-dark/40">{t.context}</p>
+                    <p className="text-xs text-dark/55">{t.context}</p>
                   </div>
                 </div>
               </Reveal>
@@ -412,7 +412,7 @@ export default function TraiteurPage() {
       {/* Sous-pages / Prestations */}
       <section className="py-12 px-5 bg-cream border-t border-[#E5DFD5]">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-dark/30 mb-4">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-dark/50 mb-4">
             Nos prestations
           </p>
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4">

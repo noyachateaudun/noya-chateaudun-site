@@ -27,7 +27,7 @@ const config: Config = {
         sage: "#5B8A72",
         terracotta: "#C47D5A",
         dark: "#2C2421",
-        taupe: "#8B7D74",
+        taupe: "#6B5E56",
         "warm-white": "#FBF7F1",
         sand: "#EDE0D0",
         caramel: "#A0896E",

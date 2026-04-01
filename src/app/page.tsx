@@ -395,7 +395,7 @@ export default function HomePage() {
         <h2 className="font-serif text-3xl md:text-4xl font-normal mb-3">
           Réservez votre table
         </h2>
-        <p className="font-accent text-lg text-cream/60 italic mb-8 max-w-md mx-auto">
+        <p className="font-accent text-lg text-cream/80 italic mb-8 max-w-md mx-auto">
           Nous avons hâte de vous accueillir chez Noya, au cœur du 9e arrondissement.
         </p>
         <a

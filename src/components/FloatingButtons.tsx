@@ -1,5 +1,3 @@
-"use client";
-
 import { RESTAURANT } from "@/data/restaurant";
 
 export default function FloatingButtons() {

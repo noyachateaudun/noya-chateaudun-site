@@ -1,5 +1,3 @@
-"use client";
-
 function ZelligeMosaic() {
   return (
     <svg className="absolute inset-0 w-full h-full opacity-[0.12]" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">

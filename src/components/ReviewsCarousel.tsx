@@ -20,7 +20,7 @@ export default function ReviewsCarousel() {
       {/* Arrows */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full bg-white border border-[#E5DFD5] shadow-sm flex items-center justify-center text-dark/40 hover:text-dark transition-colors hidden md:flex"
+        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-10 h-10 rounded-full bg-white border border-[#E5DFD5] shadow-sm flex items-center justify-center text-dark/55 hover:text-dark transition-colors hidden md:flex"
         aria-label="Avis précédents"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -29,7 +29,7 @@ export default function ReviewsCarousel() {
       </button>
       <button
         onClick={() => scroll("right")}
-        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full bg-white border border-[#E5DFD5] shadow-sm flex items-center justify-center text-dark/40 hover:text-dark transition-colors hidden md:flex"
+        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-10 h-10 rounded-full bg-white border border-[#E5DFD5] shadow-sm flex items-center justify-center text-dark/55 hover:text-dark transition-colors hidden md:flex"
         aria-label="Avis suivants"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -60,7 +60,7 @@ export default function ReviewsCarousel() {
             </p>
             <div className="flex items-center justify-between text-xs">
               <span className="font-medium text-dark">{review.author}</span>
-              <span className="text-dark/40">{review.platform}</span>
+              <span className="text-dark/55">{review.platform}</span>
             </div>
           </div>
         ))}

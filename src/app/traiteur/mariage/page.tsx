@@ -47,7 +47,7 @@ export default function TraiteurMariagePage() {
 
       {/* Breadcrumbs */}
       <div className="max-w-3xl mx-auto px-5 py-4">
-        <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-[12px] text-dark/40">
+        <nav aria-label="Fil d'Ariane" className="flex items-center gap-2 text-[12px] text-dark/55">
           <Link href="/" className="hover:text-dark transition-colors">Accueil</Link>
           <span>/</span>
           <Link href="/traiteur" className="hover:text-dark transition-colors">Traiteur</Link>
@@ -142,7 +142,7 @@ export default function TraiteurMariagePage() {
 
           {/* Other pages */}
           <div className="mt-10 pt-8 border-t border-[#E5DFD5] flex flex-wrap items-center justify-center gap-4 text-sm">
-            <span className="text-dark/30">Voir aussi&nbsp;:</span>
+            <span className="text-dark/50">Voir aussi&nbsp;:</span>
             <Link href="/traiteur/entreprise" className="text-burgundy underline underline-offset-4 hover:text-burgundy/70 transition-colors">
               Traiteur entreprise
             </Link>
