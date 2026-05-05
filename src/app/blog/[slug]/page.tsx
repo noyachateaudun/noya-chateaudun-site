@@ -58,7 +58,8 @@ function renderMarkdown(content: string) {
 
   function processInline(text: string): React.ReactNode[] {
     const parts: React.ReactNode[] = [];
-    const regex = /\*\*(.+?)\*\*|\[(.+?)\]\((.+?)\)/g;
+    // Order matters: bold (**...**) before italic (*...*) before links
+    const regex = /\*\*(.+?)\*\*|\*([^*\n]+?)\*|\[(.+?)\]\((.+?)\)/g;
     let last = 0;
     let match: RegExpExecArray | null;
 
@@ -72,18 +73,24 @@ function renderMarkdown(content: string) {
             {match[1]}
           </strong>
         );
-      } else if (match[2] && match[3]) {
-        const isExternal = match[3].startsWith("http");
+      } else if (match[2]) {
+        parts.push(
+          <em key={match.index} className="italic">
+            {match[2]}
+          </em>
+        );
+      } else if (match[3] && match[4]) {
+        const isExternal = match[4].startsWith("http");
         parts.push(
           <Link
             key={match.index}
-            href={match[3]}
+            href={match[4]}
             className="text-burgundy underline underline-offset-2 hover:text-burgundy/70 transition-colors"
             {...(isExternal
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}
           >
-            {match[2]}
+            {match[3]}
           </Link>
         );
       }
@@ -204,6 +211,15 @@ function renderMarkdown(content: string) {
       continue;
     }
 
+    // Horizontal rule (---)
+    if (/^-{3,}$/.test(line.trim())) {
+      elements.push(
+        <hr key={i} className="my-10 border-t border-[#E5DFD5]" />
+      );
+      i++;
+      continue;
+    }
+
     // Paragraph
     elements.push(
       <p key={i} className="text-dark/70 leading-relaxed mb-4">
@@ -284,6 +300,22 @@ export default async function BlogArticlePage({
     timeRequired: `PT${readingTime}M`,
   };
 
+  const faqSchema =
+    article.faq && article.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faq.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a,
+            },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
@@ -298,6 +330,14 @@ export default async function BlogArticlePage({
           __html: JSON.stringify(blogPostingSchema),
         }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
+      )}
 
       <article className="pb-16 md:pb-24">
         {/* Hero illustration */}
@@ -349,6 +389,47 @@ export default async function BlogArticlePage({
             <div className="prose-noya">{renderMarkdown(article.content)}</div>
           </Reveal>
         </div>
+
+        {/* FAQ (rendered when article.faq is provided) */}
+        {article.faq && article.faq.length > 0 && (
+          <div className="max-w-3xl mx-auto px-5 mt-16">
+            <Reveal>
+              <h2 className="font-serif text-[clamp(22px,3.5vw,30px)] text-dark mb-6 leading-snug">
+                Questions fréquentes
+              </h2>
+              <div className="space-y-3">
+                {article.faq.map((item, idx) => (
+                  <details
+                    key={idx}
+                    className="group border border-[#E5DFD5] rounded-lg bg-white"
+                  >
+                    <summary className="cursor-pointer list-none flex items-center justify-between px-6 py-4 hover:bg-cream/50 transition-colors">
+                      <span className="font-serif text-[15px] text-dark pr-4">
+                        {item.q}
+                      </span>
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-burgundy/50 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </summary>
+                    <p className="px-6 pb-5 text-sm text-dark/60 leading-relaxed">
+                      {item.a}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        )}
 
         {/* Share + CTA */}
         <div className="max-w-3xl mx-auto px-5 mt-16">

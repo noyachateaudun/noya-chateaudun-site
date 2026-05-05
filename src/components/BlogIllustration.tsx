@@ -102,6 +102,31 @@ function FalafelDots() {
   );
 }
 
+function LevantineStars() {
+  return (
+    <svg className="absolute inset-0 w-full h-full opacity-[0.14]" viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="levantine-stars" x="0" y="0" width="32" height="32" patternUnits="userSpaceOnUse">
+          {/* 8-pointed star = two overlapping squares (Mamluk/Ottoman tilework) */}
+          <rect x="10" y="10" width="12" height="12" fill="none" stroke="white" strokeWidth="0.6" />
+          <rect x="10" y="10" width="12" height="12" fill="none" stroke="white" strokeWidth="0.6" transform="rotate(45 16 16)" />
+          {/* Central dot */}
+          <circle cx="16" cy="16" r="1.2" fill="white" opacity="0.55" />
+          {/* Corner connectors (subtle grid) */}
+          <line x1="0" y1="16" x2="32" y2="16" stroke="white" strokeWidth="0.25" opacity="0.35" />
+          <line x1="16" y1="0" x2="16" y2="32" stroke="white" strokeWidth="0.25" opacity="0.35" />
+          {/* Corner accents */}
+          <circle cx="0" cy="0" r="0.7" fill="white" opacity="0.5" />
+          <circle cx="32" cy="0" r="0.7" fill="white" opacity="0.5" />
+          <circle cx="0" cy="32" r="0.7" fill="white" opacity="0.5" />
+          <circle cx="32" cy="32" r="0.7" fill="white" opacity="0.5" />
+        </pattern>
+      </defs>
+      <rect width="200" height="112" fill="url(#levantine-stars)" />
+    </svg>
+  );
+}
+
 function WineCurves() {
   return (
     <svg className="absolute inset-0 w-full h-full opacity-[0.12]" viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice">
@@ -160,6 +185,11 @@ const ILLUSTRATIONS: Record<
     bg: "bg-gradient-to-br from-[#4A5A3C] via-[#5A6E3A] to-[#D4A853]",
     hover: "group-hover:from-[#526344] group-hover:via-[#627842] group-hover:to-[#DCB25B]",
     pattern: <FalafelDots />,
+  },
+  "cuisine-levantine-libanaise-israelienne-differences": {
+    bg: "bg-gradient-to-br from-[#D4B896] via-[#C47D5A] to-[#7B8C5F]",
+    hover: "group-hover:from-[#DCC0A0] group-hover:via-[#CC8662] group-hover:to-[#83946A]",
+    pattern: <LevantineStars />,
   },
 };
 

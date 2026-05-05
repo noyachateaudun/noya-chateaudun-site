@@ -11,6 +11,7 @@ export interface BlogArticle {
   updatedAt: string;
   imageAlt: string;
   content: string;
+  faq?: { q: string; a: string }[];
 }
 
 export const BLOG_ARTICLES: BlogArticle[] = [
@@ -606,6 +607,136 @@ Tous nos plats se transportent bien, mais certains sont particulièrement adapt�
 ## Vous préférez être livré ?
 
 Si vous préférez rester chez vous, retrouvez-nous aussi sur [Deliveroo](https://deliveroo.fr/fr/menu/paris/9eme-opera/noya-chateaudun-8-rue-de-chateaudun) et [Uber Eats](https://www.ubereats.com/fr/store/noya-chateaudun-8-rue-de-chateaudun/LMW5LFJjVq2sA5pNPoEzWg). Livraison en ~30 minutes dans le 9e et les arrondissements voisins. [Toutes les options de commande](/commander).`,
+  },
+  {
+    slug: "cuisine-levantine-libanaise-israelienne-differences",
+    title: "Cuisine levantine, libanaise, israélienne : démêler les frontières",
+    metaTitle: "Cuisine levantine, libanaise, israélienne : le guide",
+    metaDescription:
+      "Mezze, houmous, shakshuka : démêlons les frontières entre cuisines levantine, libanaise et israélienne. Le guide d'un restaurant levantin à Paris 9e.",
+    excerpt:
+      "Libanaise ? Israélienne ? Méditerranéenne ? On démêle les frontières entre ces cuisines voisines, et on explique pourquoi le mot 'levantin' les rassemble toutes.",
+    category: "Culture culinaire",
+    keyword: "cuisine levantine",
+    keywords: [
+      "cuisine levantine",
+      "différence cuisine libanaise israélienne",
+      "restaurant levantin Paris",
+      "mezze Paris",
+      "cuisine méditerranéenne",
+    ],
+    publishedAt: "2026-05-05",
+    updatedAt: "2026-05-05",
+    imageAlt:
+      "Plateau de mezze levantin — houmous, baba ghanoush, falafels, tabboulé, pita",
+    content: `À chaque fois qu'on nous demande *"Vous êtes plutôt libanais ou israélien ?"*, on a envie de répondre : les deux. Et un peu plus que ça, en fait. La cuisine que l'on sert chez Noya s'appelle la cuisine **levantine** — un mot que beaucoup connaissent sans tout à fait savoir ce qu'il recouvre. Alors prenons quelques minutes pour démêler ça : ce qui sépare le Liban d'Israël, ce que la "cuisine levantine" englobe vraiment, et pourquoi elle est l'une des plus passionnantes à explorer aujourd'hui.
+
+## Le Levant : un mot, une région, mille tables
+
+Le mot *Levant* vient du français — il désigne l'Orient, là où le soleil **se lève**. Géographiquement, on parle d'une bande de terre qui longe la Méditerranée orientale : Liban, Syrie, Palestine, Israël, Jordanie, parfois Chypre et le sud de la Turquie. C'est un carrefour. Phéniciens, Grecs, Romains, Arabes, Ottomans, Français : tout le monde y est passé, et chacun a laissé quelque chose dans la marmite.
+
+Résultat : la cuisine levantine n'est pas une cuisine "nationale" au sens classique. C'est un [héritage commun](/blog/cuisine-levantine-origines-plats-traditions), partagé entre des peuples voisins qui se passent les recettes depuis des millénaires — même quand l'Histoire les sépare politiquement.
+
+## Cuisine libanaise : la grande ambassadrice du mezze
+
+Si la cuisine levantine a une figure de proue dans le monde, c'est elle. Le Liban, pays minuscule mais traversé par une diaspora gigantesque, a porté le mezze, le [houmous](/blog/recette-houmous-maison-authentique), le tabboulé et le baba ghanoush sur toutes les tables de la planète.
+
+Ce qui la caractérise :
+
+- **L'art du mezze** — une multitude de petits plats à partager, plutôt qu'une assiette individuelle.
+- **Une cuisine d'équilibre** — huile d'olive, citron, ail, herbes fraîches (persil plat, menthe, coriandre).
+- **Beaucoup de végétal** — légumes grillés, légumineuses, fromages frais, salades crues.
+- **Des viandes longuement marinées**, grillées au charbon (chiche taouk, kafta, chawarma).
+
+Le repas libanais est une cérémonie discrète : on pose la table entière, on partage, on grignote pendant des heures.
+
+## Cuisine israélienne : la fusion contemporaine
+
+La cuisine israélienne est plus jeune en tant que cuisine "nationale" — mais elle hérite de plusieurs traditions à la fois, et c'est sans doute ce qui la rend si vibrante aujourd'hui. Trois grandes influences se croisent :
+
+- **La cuisine arabe et palestinienne locale** : houmous, falafels, sabich, pita.
+- **La cuisine sépharade** (juive du bassin méditerranéen) : couscous, tajines, pâtisseries au miel.
+- **La cuisine ashkénaze** (juive d'Europe centrale et de l'Est) : babka, gefilte fish, choulent.
+
+À cela s'ajoute, depuis vingt ans, une scène culinaire moderne — Tel-Aviv, Jaffa, Jérusalem — qui réinvente les classiques. La [shakshuka](/blog/shakshuka-histoire-recette) que l'on connaît aujourd'hui en est l'illustration parfaite : importée d'Afrique du Nord, retravaillée en Israël, servie désormais dans tous les brunchs du monde.
+
+## Alors : levantine, libanaise, ou israélienne ?
+
+Voici la vérité : il y a énormément de chevauchement. Le houmous est libanais. Et palestinien. Et israélien. Et syrien. Le tabboulé est libanais avant tout, mais on le mange dans toute la région. La shakshuka est tunisienne d'origine, mais devenue emblématique en Israël.
+
+Plutôt que de figer chaque plat dans une frontière, **la cuisine levantine** propose une autre approche : reconnaître l'unité culinaire de la région, célébrer ce qui rapproche plutôt que ce qui sépare. C'est dans cet esprit que travaillent les restaurants levantins modernes — dont Noya — qui assument une cuisine **libanaise et israélienne à la fois**, sans avoir à choisir.
+
+## Cuisine levantine vs méditerranéenne : où trace-t-on la ligne ?
+
+La "cuisine méditerranéenne" est un terme parapluie qui englobe toute la Méditerranée — France du Sud, Italie, Espagne, Grèce, Maghreb, Levant. La cuisine levantine en est l'une des **quatre grandes composantes**, aux côtés des cuisines grecque, juive et arabe.
+
+En clair : toute cuisine levantine est méditerranéenne, mais toute cuisine méditerranéenne n'est pas levantine. La levantine se distingue par :
+
+- **L'omniprésence de la tahina** (pâte de sésame), absente du sud de l'Italie ou de l'Espagne.
+- **Le za'atar** — mélange de thym, sumac et sésame, signature olfactive du Levant.
+- **Le pain plat** (pita, taboun, laffa) plutôt que la baguette ou la focaccia.
+- **Une approche du repas en mezze**, là où l'Italie ou la Grèce structurent davantage entrée-plat.
+
+## Les ingrédients qui signent une cuisine levantine
+
+Si vous goûtez à une table et que vous y trouvez l'essentiel de cette liste, vous êtes face à une cuisine levantine authentique :
+
+- **Pois chiches** (houmous, [falafels](/blog/falafel-origines-recette-paris), balila)
+- **Tahina** (pâte de sésame, base du houmous, des sauces)
+- **Aubergines fumées** (baba ghanoush, m'tabal)
+- **Sumac** (épice rouge, acidulée, qui remplace souvent le citron)
+- **Za'atar** (thym, sumac, sésame, sel)
+- **Huile d'olive** vierge, généreuse, presque rituelle
+- **Eau de rose et eau de fleur d'oranger** dans les desserts
+- **Fromages frais** (labné, halloumi, feta)
+- **Herbes en grande quantité** (persil plat, menthe, coriandre)
+- **Pickles** (concombre, navet rose, chou)
+
+## Comment reconnaître une vraie table levantine moderne
+
+Quelques marqueurs à observer en arrivant :
+
+- **Le houmous est-il fait sur place ?** Une bonne maison le prépare le jour même, et son onctuosité ne ment pas.
+- **Le pita est-il chaud ?** Un pita levantin se mange dans la minute qui suit la sortie du four — sinon, il perd tout.
+- **Y a-t-il une logique de partage ?** Les vraies tables levantines posent la cuisine au milieu, pas dans des assiettes individuelles séparées.
+- **Les herbes sont-elles fraîches et abondantes ?** La cuisine levantine sans persil ni menthe en quantité, c'est une cuisine dépouillée de son âme.
+- **Le service est-il chaleureux ?** Ce n'est pas un détail. La générosité fait partie de la cuisine.
+
+## Où goûter la cuisine levantine à Paris
+
+Paris vit depuis quelques années un vrai moment levantin. Plusieurs adresses portent haut cette cuisine, chacune avec sa personnalité. Chez **Noya**, au 8 rue de Châteaudun dans le 9e arrondissement, on assume une cuisine levantine qui pioche autant dans la tradition libanaise que dans la fusion israélienne moderne. Houmous fait main chaque matin, pitas chauds en continu, shakshuka servie à toute heure, et l'esprit du mezze à chaque table — entre Opéra et Grands Boulevards, à deux pas des bureaux et des théâtres.
+
+Que vous veniez **déjeuner entre collègues**, **dîner aux chandelles**, ou commander en [click & collect](/blog/click-collect-commander-emporter-noya) un plateau pour le bureau, on vous accueille avec l'idée simple qui guide la cuisine levantine depuis trois mille ans : la vraie hospitalité passe par l'assiette.
+
+*Pour préparer votre venue, on a aussi listé [les 10 plats incontournables d'un restaurant levantin](/blog/meilleurs-plats-restaurant-levantin) à goûter au moins une fois.*
+
+📍 **Noya** — 8 rue de Châteaudun, 75009 Paris
+
+[Réserver une table](https://widget.thefork.com/f74d6eb4-b27b-40b9-b3b9-acda8854080f) · [Commander en click & collect](https://app.eatself.com/4278/accueil) · [Demander un devis traiteur](/traiteur)
+
+---
+
+*Si vous lisez ces lignes, vous savez maintenant pourquoi nous tenons autant à ce mot, "levantin". Il porte une histoire, une région, une manière de recevoir. Et on a bien l'intention de continuer à la défendre, plat après plat.*
+
+— **L'équipe Noya**`,
+    faq: [
+      {
+        q: "La cuisine levantine est-elle végétarienne ?",
+        a: "Non, mais elle est l'une des plus accueillantes pour les végétariens. Houmous, baba ghanoush, falafels, tabboulé, salade fattouche, halloumi grillé : un repas levantin entièrement végétarien est non seulement possible — c'est même la norme dans bien des familles libanaises.",
+      },
+      {
+        q: "Quelle est la différence entre houmous et baba ghanoush ?",
+        a: "Le houmous est à base de pois chiches et tahina. Le baba ghanoush (ou m'tabal) est à base d'aubergines fumées au feu et tahina. Deux dips, deux textures, deux univers — souvent servis ensemble.",
+      },
+      {
+        q: "La shakshuka est-elle libanaise ou israélienne ?",
+        a: "Ni l'un ni l'autre, à l'origine. La shakshuka est tunisienne (et libyenne) avant tout. Mais elle a été popularisée mondialement par Israël, où elle est devenue un classique du brunch. Elle figure désormais sur la plupart des cartes levantines.",
+      },
+      {
+        q: "Peut-on manger levantin halal ou casher à Paris ?",
+        a: "La cuisine levantine, par sa nature (peu de porc, beaucoup de poisson et d'agneau, séparation naturelle viande/laitage dans certains plats), s'adapte naturellement à ces deux régimes. Selon les établissements, vérifiez la certification spécifique.",
+      },
+    ],
   },
 ];
 
