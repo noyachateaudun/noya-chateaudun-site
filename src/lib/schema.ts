@@ -57,7 +57,7 @@ export function getRestaurantSchema() {
         "@type": "ReserveAction",
         target: {
           "@type": "EntryPoint",
-          urlTemplate: "https://bookings.zenchef.com/results?rid=386074",
+          urlTemplate: RESTAURANT.links.reservation,
           actionPlatform: "https://schema.org/DesktopWebPlatform",
         },
         result: {
