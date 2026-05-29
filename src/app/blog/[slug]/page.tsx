@@ -10,6 +10,7 @@ import {
 import { RESTAURANT } from "@/data/restaurant";
 import Reveal from "@/components/Reveal";
 import BlogIllustration from "@/components/BlogIllustration";
+import ReserveButton from "@/components/ReserveButton";
 import ShareButton from "./ShareButton";
 
 export function generateStaticParams() {
@@ -450,14 +451,11 @@ export default async function BlogArticlePage({
                 Déjeuner, dîner et traiteur.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <a
-                  href={RESTAURANT.links.reservation}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <ReserveButton
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
                 >
                   Réserver une table
-                </a>
+                </ReserveButton>
                 <Link
                   href="/menu"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-burgundy/20 text-burgundy rounded-lg text-sm font-medium hover:bg-burgundy/5 transition-colors"

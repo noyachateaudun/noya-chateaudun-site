@@ -1,6 +1,6 @@
 import Link from "next/link";
 import NoyaLogo from "./NoyaLogo";
-import { RESTAURANT } from "@/data/restaurant";
+import ReserveButton from "./ReserveButton";
 
 export default function Hero() {
   return (
@@ -110,14 +110,11 @@ export default function Hero() {
           >
             Découvrir la carte
           </Link>
-          <a
-            href={RESTAURANT.links.reservation}
-            target="_blank"
-            rel="noopener noreferrer"
+          <ReserveButton
             className="px-8 py-3.5 bg-burgundy text-cream text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-burgundy-light hover:shadow-lg hover:shadow-burgundy/25 hover:scale-[1.02] transition-all duration-400"
           >
             Réserver une table
-          </a>
+          </ReserveButton>
         </div>
       </div>
 

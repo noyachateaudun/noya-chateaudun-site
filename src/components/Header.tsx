@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { RESTAURANT } from "@/data/restaurant";
 import NoyaLogo from "./NoyaLogo";
+import ReserveButton from "./ReserveButton";
 
 const NAV_ITEMS = [
   { href: "/", label: "Accueil" },
@@ -77,14 +78,11 @@ export default function Header() {
           >
             Commander
           </a>
-          <a
-            href={RESTAURANT.links.reservation}
-            target="_blank"
-            rel="noopener noreferrer"
+          <ReserveButton
             className="text-[11px] font-bold uppercase tracking-[0.2em] px-6 py-2.5 bg-burgundy text-cream hover:bg-burgundy-light hover:shadow-lg hover:shadow-burgundy/20 hover:scale-[1.02] transition-all duration-300"
           >
             Réserver
-          </a>
+          </ReserveButton>
         </div>
 
         {/* Mobile burger */}
@@ -127,14 +125,11 @@ export default function Header() {
             ))}
           </ul>
           <div className="mt-5 flex gap-3">
-            <a
-              href={RESTAURANT.links.reservation}
-              target="_blank"
-              rel="noopener noreferrer"
+            <ReserveButton
               className="flex-1 text-center text-[11px] font-bold uppercase tracking-[0.2em] px-4 py-3 bg-burgundy text-cream hover:bg-burgundy-light transition-colors"
             >
               Réserver
-            </a>
+            </ReserveButton>
             <a
               href={`tel:${RESTAURANT.telephone}`}
               className="flex-1 text-center text-[11px] font-bold uppercase tracking-[0.2em] px-4 py-3 border border-burgundy text-burgundy hover:bg-burgundy hover:text-cream transition-all"

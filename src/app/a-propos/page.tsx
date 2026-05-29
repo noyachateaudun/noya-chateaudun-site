@@ -112,7 +112,7 @@ export default function AProposPage() {
             <div className="flex justify-center gap-10 flex-wrap">
               {[
                 { value: "100%", label: "Fait maison" },
-                { value: "9.6/10", label: "TheFork" },
+                { value: "110+", label: "Avis clients" },
                 { value: "5/5", label: "Google" },
                 { value: "♥", label: "Avec amour" },
               ].map((stat) => (

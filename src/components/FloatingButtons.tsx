@@ -1,13 +1,12 @@
 import { RESTAURANT } from "@/data/restaurant";
+import ReserveButton from "./ReserveButton";
 
 export default function FloatingButtons() {
   return (
     <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden">
       <div className="flex bg-[#722F37] shadow-[0_-4px_16px_rgba(0,0,0,0.15)]">
-        <a
-          href={RESTAURANT.links.reservation}
-          target="_blank"
-          rel="noopener noreferrer"
+        <ReserveButton
+          ariaLabel="Réserver une table"
           className="flex-1 flex flex-col items-center justify-center gap-0.5 py-3 text-cream hover:bg-white/10 transition-colors border-r border-cream/10"
         >
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -19,7 +18,7 @@ export default function FloatingButtons() {
           <span className="text-[10px] font-bold uppercase tracking-wider">
             Réserver
           </span>
-        </a>
+        </ReserveButton>
         <a
           href={RESTAURANT.links.emporter}
           target="_blank"

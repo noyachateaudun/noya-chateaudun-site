@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RESTAURANT } from "@/data/restaurant";
 import NoyaLogo from "./NoyaLogo";
+import ReserveButton from "./ReserveButton";
 
 export default function Footer() {
   return (
@@ -62,9 +63,9 @@ export default function Footer() {
           <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-light mb-4">Commander & Réserver</h3>
           <ul className="space-y-2">
             <li>
-              <a href={RESTAURANT.links.reservation} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
+              <ReserveButton className="text-sm hover:text-cream transition-colors text-left">
                 Réserver une table
-              </a>
+              </ReserveButton>
             </li>
             <li>
               <a href={RESTAURANT.links.emporter} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
@@ -88,7 +89,7 @@ export default function Footer() {
             </li>
           </ul>
           <p className="mt-4 text-xs text-cream/40">
-            <span className="text-gold/60">&#x2605;</span> 5/5 Google &middot; 9.6/10 TheFork
+            <span className="text-gold/60">&#x2605;</span> 5/5 Google &middot; 110+ avis
           </p>
         </div>
 

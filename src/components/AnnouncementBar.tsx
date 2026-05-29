@@ -13,16 +13,15 @@ export default function AnnouncementBar() {
     <div className="sticky top-0 z-[60] bg-[#722F37] text-cream overflow-hidden h-10">
       {/* CSS-only rotating messages */}
       <div className="announcement-track flex h-full">
-        {/* Message 1 */}
-        <a
-          href={RESTAURANT.links.reservation}
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* Message 1 — opens Zenchef widget */}
+        <button
+          type="button"
+          onClick={() => window.ZenchefWidget?.open()}
           className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"
         >
           <span className="mr-1.5">⭐</span>
           5/5 sur Google · 110+ avis · Réservez votre table →
-        </a>
+        </button>
         {/* Message 2 */}
         <a
           href={RESTAURANT.links.emporter}

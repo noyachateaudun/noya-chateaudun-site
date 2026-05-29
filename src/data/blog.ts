@@ -712,7 +712,7 @@ Que vous veniez **déjeuner entre collègues**, **dîner aux chandelles**, ou co
 
 📍 **Noya** — 8 rue de Châteaudun, 75009 Paris
 
-[Réserver une table](https://widget.thefork.com/f74d6eb4-b27b-40b9-b3b9-acda8854080f) · [Commander en click & collect](https://app.eatself.com/4278/accueil) · [Demander un devis traiteur](/traiteur)
+[Réserver une table](https://bookings.zenchef.com/results?rid=386074) · [Commander en click & collect](https://app.eatself.com/4278/accueil) · [Demander un devis traiteur](/traiteur)
 
 ---
 

@@ -18,10 +18,10 @@ export const RESTAURANT = {
   priceRange: "€€",
   servesCuisine: ["Levantine", "Mediterranean", "Middle Eastern"],
   rating: {
-    value: "9.6",
-    bestRating: "10",
-    count: "113",
-    platform: "TheFork",
+    value: "5",
+    bestRating: "5",
+    count: "110",
+    platform: "Google",
   },
   googleRating: {
     value: "5",
@@ -43,7 +43,6 @@ export const RESTAURANT = {
     bus: ["26", "32", "43"],
   },
   links: {
-    reservation: "https://widget.thefork.com/f74d6eb4-b27b-40b9-b3b9-acda8854080f",
     deliveroo: "https://deliveroo.fr/en/menu/paris/9eme-opera/noya-chateaudun-8-rue-de-chateaudun",
     uberEats: "https://www.ubereats.com/fr/store/noya-chateaudun-8-rue-de-chateaudun/LMW5LFJjVq2sA5pNPoEzWg",
     emporter: "https://app.eatself.com/4278/accueil",

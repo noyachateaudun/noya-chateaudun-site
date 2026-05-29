@@ -5,6 +5,7 @@ import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import Divider from "@/components/Divider";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
+import ReserveButton from "@/components/ReserveButton";
 
 const SIGNATURE_DISHES = [
   {
@@ -157,14 +158,11 @@ export default function HomePage() {
                 <p className="text-sm text-dark/50 leading-relaxed mb-6 flex-grow">
                   Réservez votre table et vivez l&apos;expérience Noya en salle. Du mardi au samedi, midi et soir.
                 </p>
-                <a
-                  href={RESTAURANT.links.reservation}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <ReserveButton
                   className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
                 >
                   Réserver une table
-                </a>
+                </ReserveButton>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
@@ -231,7 +229,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal>
             <p className="text-center text-lg md:text-xl text-dark/70 mb-10">
-              <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 9.6/10 sur TheFork &middot; 220+ avis
+              <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 110+ avis vérifiés
             </p>
           </Reveal>
           <Reveal>
@@ -247,14 +245,11 @@ export default function HomePage() {
               >
                 Voir tous nos avis Google
               </a>
-              <a
-                href={RESTAURANT.links.reservation}
-                target="_blank"
-                rel="noopener noreferrer"
+              <ReserveButton
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
               >
                 Réserver une table
-              </a>
+              </ReserveButton>
             </div>
           </Reveal>
         </div>
@@ -398,14 +393,11 @@ export default function HomePage() {
         <p className="font-accent text-lg text-cream/80 italic mb-8 max-w-md mx-auto">
           Nous avons hâte de vous accueillir chez Noya, au cœur du 9e arrondissement.
         </p>
-        <a
-          href={RESTAURANT.links.reservation}
-          target="_blank"
-          rel="noopener noreferrer"
+        <ReserveButton
           className="inline-block px-8 py-3.5 border-[1.5px] border-cream text-cream text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-cream hover:text-burgundy transition-all"
         >
           Réserver une table
-        </a>
+        </ReserveButton>
       </section>
     </>
   );

@@ -13,7 +13,7 @@ export const REVIEWS: Review[] = [
   {
     author: "Alisson C.",
     text: "Un joli lieu dans un quartier super animé, un accueil d'une grande gentillesse, des plats faits maisons qui sont un vrai délice.",
-    platform: "TheFork",
+    platform: "Google",
   },
   {
     author: "Avis Google",
@@ -23,7 +23,7 @@ export const REVIEWS: Review[] = [
   {
     author: "Romain B.",
     text: "Très bon accueil. Nous avons beaucoup apprécié nos plats, proposés à un prix abordable.",
-    platform: "TheFork",
+    platform: "Google",
   },
   {
     author: "Michel Z.",

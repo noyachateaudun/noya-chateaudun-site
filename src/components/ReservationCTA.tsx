@@ -1,4 +1,4 @@
-import { RESTAURANT } from "@/data/restaurant";
+import ReserveButton from "./ReserveButton";
 
 export default function ReservationCTA() {
   return (
@@ -9,14 +9,11 @@ export default function ReservationCTA() {
       <p className="font-accent text-lg text-cream/80 italic mb-8 max-w-md mx-auto">
         Nous avons hâte de vous accueillir chez Noya, au cœur du 9e arrondissement.
       </p>
-      <a
-        href={RESTAURANT.links.reservation}
-        target="_blank"
-        rel="noopener noreferrer"
+      <ReserveButton
         className="inline-block px-8 py-3.5 border-[1.5px] border-cream text-cream text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-cream hover:text-burgundy transition-all"
       >
         Réserver une table
-      </a>
+      </ReserveButton>
     </section>
   );
 }
