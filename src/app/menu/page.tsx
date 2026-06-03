@@ -6,15 +6,21 @@ import { getBreadcrumbSchema, getMenuSchema } from "@/lib/schema";
 import MenuTabs from "./MenuTabs";
 
 export const metadata: Metadata = {
-  title: "Carte & Menu — Noya Restaurant Levantin Paris 9",
+  title: "Carte & Menu — Noya · Bistrot levantin moderne · Paris 9ᵉ",
   description:
-    "Découvrez notre carte : entrées à partager, pitas signature, assiettes composées, houmous maison & desserts. Options vegan et sans gluten.",
+    "Notre carte midi et soir. Plats signatures : côtes d'agneau, shakshuka Noya, pain perdu à la rose, houmous Bilameh, formule midi à 16€. Fait maison, frais du jour.",
   openGraph: {
-    title: "Carte & Menu — Noya Restaurant Levantin Paris 9",
+    title: "Carte & Menu — Noya · Bistrot levantin moderne · Paris 9ᵉ",
     description:
-      "Découvrez notre carte : entrées à partager, pitas signature, assiettes composées, houmous maison & desserts.",
+      "Carte midi & soir du bistrot levantin moderne. Côtes d'agneau, shakshuka, pain perdu à la rose. Fait maison.",
     url: "https://www.eatnoya.com/menu",
-    images: [{ url: "/og/menu.jpg", width: 1200, height: 630, alt: "Carte du restaurant Noya, cuisine levantine, Paris 9e" }],
+    images: [{ url: "/og/menu.jpg", width: 1200, height: 630, alt: "Carte du restaurant Noya, bistrot levantin moderne, Paris 9e" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carte & Menu — Noya · Bistrot levantin moderne · Paris 9ᵉ",
+    description:
+      "Carte midi & soir du bistrot levantin moderne. Côtes d'agneau, shakshuka, pain perdu à la rose. Fait maison.",
   },
   alternates: { canonical: "https://www.eatnoya.com/menu" },
 };
@@ -125,6 +131,13 @@ export default function MenuPage() {
           Carte du Soir
         </h2>
 
+        <div className="bg-cream border border-cream-dark rounded-lg p-5 mb-8 text-center">
+          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-burgundy mb-2">Avant un spectacle ?</p>
+          <p className="text-sm text-dark/70 leading-relaxed">
+            On vous sert en moins d&apos;une heure. Prévenez-nous à la réservation. Mogador, Folies Bergère, Olympia, Théâtre de Paris, Casino de Paris à 5–10 minutes à pied.
+          </p>
+        </div>
+
         {MENU_SOIR.sections.map((section) => (
           <MenuSectionComponent key={`soir-${section.title}`} section={section} />
         ))}
@@ -159,7 +172,7 @@ export default function MenuPage() {
           </h1>
           <div className="w-12 h-px bg-gold mx-auto my-6" />
           <p className="font-accent text-[clamp(17px,2.2vw,21px)] text-taupe max-w-lg mx-auto leading-[1.85] font-light">
-            De l&apos;authenticité dans chaque bouchée. Nos recettes sont inspirées des traditions levantines, préparées chaque jour avec des produits frais et beaucoup de passion.
+            Tout est fait maison, chaque jour. Voici notre carte.
           </p>
           <div className="flex gap-2 justify-center mt-6 flex-wrap">
             {["Fait maison", "Produits frais", "Végétarien", "Végan", "Sans gluten"].map((t) => (
@@ -174,7 +187,7 @@ export default function MenuPage() {
       {/* Trust banner */}
       <div className="text-center py-4 bg-cream/50 border-b border-[#E5DFD5]">
         <p className="text-sm text-dark/50">
-          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; Plus de 110 clients conquis
+          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 140 avis &middot; 9,6/10 sur TheFork
         </p>
       </div>
 
@@ -183,7 +196,7 @@ export default function MenuPage() {
         <MenuTabs midiContent={midiContent} soirContent={soirContent} />
       </div>
 
-      <ReservationCTA />
+      <ReservationCTA source="menu" />
     </>
   );
 }

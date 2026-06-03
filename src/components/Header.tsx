@@ -79,6 +79,7 @@ export default function Header() {
             Commander
           </a>
           <ReserveButton
+            source="header"
             className="text-[11px] font-bold uppercase tracking-[0.2em] px-6 py-2.5 bg-burgundy text-cream hover:bg-burgundy-light hover:shadow-lg hover:shadow-burgundy/20 hover:scale-[1.02] transition-all duration-300"
           >
             Réserver
@@ -126,6 +127,7 @@ export default function Header() {
           </ul>
           <div className="mt-5 flex gap-3">
             <ReserveButton
+              source="header"
               className="flex-1 text-center text-[11px] font-bold uppercase tracking-[0.2em] px-4 py-3 bg-burgundy text-cream hover:bg-burgundy-light transition-colors"
             >
               Réserver

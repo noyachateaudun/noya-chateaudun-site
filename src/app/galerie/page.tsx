@@ -77,7 +77,7 @@ export default function GaleriePage() {
           <Reveal delay={0.12}>
             <Divider />
             <p className="font-accent text-[clamp(17px,2.2vw,21px)] text-taupe max-w-lg mx-auto leading-[1.85] font-light">
-              L&apos;ambiance, les saveurs, les sourires. Découvrez l&apos;univers Noya à travers notre galerie de photos prises au cœur du 9e arrondissement de Paris.
+              La salle, les plats, l&apos;équipe. Découvrez l&apos;univers Noya à travers notre galerie de photos prises au cœur du 9e arrondissement de Paris.
             </p>
           </Reveal>
         </div>
@@ -117,7 +117,7 @@ export default function GaleriePage() {
         </Reveal>
       </section>
 
-      <ReservationCTA />
+      <ReservationCTA source="galerie" />
     </>
   );
 }

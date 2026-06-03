@@ -56,7 +56,7 @@ Ce qui distingue immédiatement la **gastronomie méditerranéenne** du Levant, 
 Les **plats levantins** les plus connus ont largement dépassé les frontières du Levant pour conquérir le monde entier :
 
 ### Houmous
-Crème de pois chiches au tehina, citron et ail. Chaque famille, chaque restaurant a sa recette secrète. C'est le plat national officieux de toute la région. [Découvrez notre recette du houmous authentique](/blog/recette-houmous-maison-authentique).
+Crème de pois chiches au tehina, citron et ail. Chaque famille, chaque restaurant a sa recette secrète. C'est le plat national officieux de toute la région. [Découvrez notre recette du houmous maison](/blog/recette-houmous-maison-authentique).
 
 ### Falafel
 Boulettes de pois chiches (ou de fèves selon les régions), frites à la perfection. Croustillantes à l'extérieur, vertes et moelleuses à l'intérieur. [En savoir plus sur le falafel, ses origines et où en manger à Paris](/blog/falafel-origines-recette-paris).
@@ -87,27 +87,27 @@ Si les **plats levantins** connaissent un succès grandissant en France et en Eu
 
 ## La cuisine levantine à Paris, chez Noya
 
-À Paris, [Noya](/menu) propose une carte levantine authentique au 8 rue de Châteaudun, dans le 9e arrondissement. Houmous crémeux, falafels croustillants, pitas garnies, shaukshukas fumantes — chaque plat est préparé avec des ingrédients frais, dans le respect des recettes traditionnelles. Une façon de voyager au Levant sans quitter la capitale. [Découvrez les meilleurs plats à commander dans un restaurant levantin](/blog/meilleurs-plats-restaurant-levantin).`,
+À Paris, [Noya](/menu) propose une carte levantine fait maison au 8 rue de Châteaudun, dans le 9e arrondissement. Houmous crémeux, falafels croustillants, pitas garnies, shaukshukas fumantes — chaque plat est préparé avec des ingrédients frais, dans le respect des recettes traditionnelles. [Découvrez les meilleurs plats à commander dans un restaurant levantin](/blog/meilleurs-plats-restaurant-levantin).`,
   },
   {
     slug: "recette-houmous-maison-authentique",
-    title: "Houmous maison : la recette authentique et les secrets d'un houmous crémeux",
-    metaTitle: "Recette houmous maison authentique : secrets d'un houmous crémeux",
-    metaDescription: "La vraie recette du houmous maison crémeux : pois chiches, tehina, citron. Tous les secrets pour un houmous authentique ultra onctueux.",
+    title: "Houmous maison : la recette et les secrets d'un houmous crémeux",
+    metaTitle: "Recette houmous maison : secrets d'un houmous crémeux",
+    metaDescription: "La vraie recette du houmous maison crémeux : pois chiches, tehina, citron. Tous les secrets pour un houmous fait maison ultra onctueux.",
     excerpt: "Pois chiches, tehina, citron et patience : tous les secrets pour réussir un houmous maison aussi crémeux qu'au Levant.",
     category: "Recettes",
     keyword: "recette houmous maison",
-    keywords: ["recette houmous maison", "houmous crémeux", "houmous authentique", "houmous pois chiches"],
+    keywords: ["recette houmous maison", "houmous crémeux", "houmous fait maison", "houmous pois chiches"],
     publishedAt: "2026-03-31",
     updatedAt: "2026-03-31",
     imageAlt: "Bol de houmous crémeux garni d'huile d'olive, pois chiches et paprika",
     content: `## Le houmous, bien plus qu'une simple purée de pois chiches
 
-Le houmous est probablement le plat levantin le plus connu au monde — et aussi le plus mal compris. En France, on trouve des versions industrielles pâles et granuleuses qui n'ont rien à voir avec un **houmous authentique**. Le vrai houmous, c'est une crème soyeuse, intensément parfumée de tehina et de citron, dans laquelle on plonge un morceau de pita chaude avec un bonheur simple et absolu.
+Le houmous est probablement le plat levantin le plus connu au monde — et aussi le plus mal compris. En France, on trouve des versions industrielles pâles et granuleuses qui n'ont rien à voir avec un **houmous fait maison**. Le vrai houmous, c'est une crème soyeuse, intensément parfumée de tehina et de citron, dans laquelle on plonge un morceau de pita chaude avec un bonheur simple et absolu.
 
 La recette est minimaliste — pois chiches, tehina, citron, ail, sel — mais c'est justement cette simplicité qui rend chaque détail crucial. Un **houmous crémeux** parfait demande de la méthode.
 
-## La recette authentique du houmous
+## La recette du houmous
 
 ### Ingrédients (pour 4-6 personnes)
 
@@ -323,12 +323,12 @@ Du buffet de 15 personnes au cocktail de 200 invités, nous composons avec vous 
   {
     slug: "shakshuka-histoire-recette",
     title: "Shakshuka : l'histoire et la recette du plat réconfortant du Levant",
-    metaTitle: "Shakshuka : histoire, recette authentique et variantes",
-    metaDescription: "Découvrez l'histoire de la shakshuka, la recette authentique et ses variantes. Le plat réconfortant levantin par excellence.",
+    metaTitle: "Shakshuka : histoire, recette maison et variantes",
+    metaDescription: "Découvrez l'histoire de la shakshuka, la recette traditionnelle et ses variantes. Le plat réconfortant levantin par excellence.",
     excerpt: "Œufs pochés dans une sauce tomate épicée : la shakshuka est le plat réconfortant ultime. Son histoire, sa recette et ses variantes.",
     category: "Recettes",
     keyword: "shakshuka recette",
-    keywords: ["shakshuka recette", "shakshuka origine", "shakshuka Paris", "recette shakshuka authentique"],
+    keywords: ["shakshuka recette", "shakshuka origine", "shakshuka Paris", "recette shakshuka maison"],
     publishedAt: "2026-04-14",
     updatedAt: "2026-04-14",
     imageAlt: "Shakshuka dans sa poêle en fonte avec œufs pochés, poivrons et tomates",
@@ -338,7 +338,7 @@ La shakshuka — prononcez « chak-CHOU-ka » — est l'un de ces plats dont tou
 
 Le mot lui-même viendrait de l'arabe « shakka » (mélange) ou du berbère, et désigne simplement des œufs cuits dans une sauce. Le concept est si universel — des œufs pochés dans des légumes mijotés — qu'il a naturellement émergé dans toute la Méditerranée et le Maghreb.
 
-Ce qui est certain, c'est que la shakshuka telle qu'on la connaît aujourd'hui — œufs dans une sauce tomate aux poivrons — s'est popularisée au Levant au XXe siècle, portée par les échanges culinaires entre les communautés d'Afrique du Nord et du Moyen-Orient. Elle est devenue un classique absolu du petit-déjeuner levantin, servie dès le matin avec du pain pour saucer.
+Ce qui est certain, c'est que la shakshuka telle qu'on la connaît aujourd'hui — œufs dans une sauce tomate aux poivrons — s'est popularisée au Levant au XXe siècle, portée par les échanges culinaires entre les communautés d'Afrique du Nord et du Levant. Elle est devenue un classique absolu du petit-déjeuner levantin, servie dès le matin avec du pain pour saucer.
 
 ## La recette traditionnelle de la shakshuka
 
@@ -399,18 +399,18 @@ Venez goûter nos 3 variantes de shakshuka chez [Noya](/menu), au 8 rue de Chât
   {
     slug: "falafel-origines-recette-paris",
     title: "Falafel : origines, recette et où en manger à Paris",
-    metaTitle: "Falafel : origines, recette authentique et meilleurs falafels à Paris",
-    metaDescription: "L'histoire du falafel, la recette authentique (pois chiches crus !) et où trouver les meilleurs falafels à Paris. Guide complet.",
+    metaTitle: "Falafel : origines, recette et meilleurs falafels à Paris",
+    metaDescription: "L'histoire du falafel, la recette (pois chiches crus !) et où trouver les meilleurs falafels à Paris. Guide complet.",
     excerpt: "Croustillant à l'extérieur, vert et moelleux à l'intérieur : tout sur le falafel, de ses origines à la recette et les bonnes adresses à Paris.",
     category: "Recettes",
     keyword: "falafel Paris",
-    keywords: ["falafel Paris", "meilleur falafel Paris", "recette falafel maison", "falafel authentique"],
+    keywords: ["falafel Paris", "meilleur falafel Paris", "recette falafel maison", "falafel fait maison"],
     publishedAt: "2026-04-21",
     updatedAt: "2026-04-21",
     imageAlt: "Falafels croustillants dorés servis dans une pita avec houmous et salade",
     content: `## Le falafel, du Nil aux rues de Paris
 
-Le falafel est sans doute le street food le plus populaire du monde méditerranéen. Ces petites boulettes dorées et croustillantes, d'un vert intense à l'intérieur, sont devenues un symbole de la cuisine de rue mondiale. Mais d'où vient le **falafel authentique** ?
+Le falafel est sans doute le street food le plus populaire du monde méditerranéen. Ces petites boulettes dorées et croustillantes, d'un vert intense à l'intérieur, sont devenues un symbole de la cuisine de rue mondiale. Mais d'où vient le **falafel fait maison** des bonnes tables ?
 
 Les historiens s'accordent sur une origine égyptienne. Le ta'amiya, ancêtre du falafel, était préparé à base de fèves par les Coptes d'Égypte, possiblement comme alternative à la viande pendant le Carême. En remontant le Levant, la recette s'est transformée : les fèves ont été remplacées par les pois chiches, les herbes se sont multipliées, et le falafel tel qu'on le connaît est né.
 
@@ -426,11 +426,11 @@ La distinction est fondamentale :
 
 En France et en Europe, c'est la version levantine qui domine — et c'est celle qu'on retrouve chez Noya.
 
-## La recette authentique du falafel
+## La recette traditionnelle du falafel
 
 ### Le secret absolu : des pois chiches CRUS
 
-C'est l'erreur la plus courante et la plus fatale : utiliser des pois chiches en boîte (donc déjà cuits). Un **falafel authentique** est TOUJOURS fait à partir de pois chiches crus, simplement trempés. C'est ce qui lui donne sa structure, son croustillant et sa capacité à tenir la friture sans se désintégrer.
+C'est l'erreur la plus courante et la plus fatale : utiliser des pois chiches en boîte (donc déjà cuits). Un **falafel fait maison** est TOUJOURS préparé à partir de pois chiches crus, simplement trempés. C'est ce qui lui donne sa structure, son croustillant et sa capacité à tenir la friture sans se désintégrer.
 
 ### Ingrédients (pour ~25 falafels)
 
@@ -473,7 +473,7 @@ L'extérieur doit être croustillant et doré. En cassant le falafel, l'intérie
 
 ## Où trouver de bons falafels à Paris ?
 
-Paris regorge d'adresses pour manger des falafels, mais la qualité varie énormément. Le Marais est historiquement le quartier des falafels parisiens, avec ses institutions de la rue des Rosiers. On en trouve aussi d'excellents dans le 10e et le 11e arrondissements, portés par la vague de restaurants levantins et moyen-orientaux.
+Paris regorge d'adresses pour manger des falafels, mais la qualité varie énormément. Le Marais est historiquement le quartier des falafels parisiens, avec ses institutions de la rue des Rosiers. On en trouve aussi d'excellents dans le 10e et le 11e arrondissements, portés par la vague de restaurants levantins.
 
 Ce qui distingue un excellent falafel : la fraîcheur (frits à la commande, pas réchauffés), la couleur verte à l'intérieur (signe d'herbes abondantes), et le croustillant (signe d'une bonne friture).
 
@@ -547,7 +547,7 @@ Le rosé libanais de Kefraya est fait pour les falafels, le chou-fleur rôti et 
 
 ### Les rouges
 
-Les rouges de Galilée ou de la Bekaa s'accordent magnifiquement avec les plats plus corsés : agneau mariné, shakshuka épicée, kebabs. Un Château Musar avec un plat mijoté levantin, c'est un voyage gustatif complet.
+Les rouges de Galilée ou de la Bekaa s'accordent magnifiquement avec les plats plus corsés : agneau mariné, shakshuka épicée, kebabs. Un Château Musar avec un plat mijoté levantin, c'est un accord complet, structuré, qui tient la longueur.
 
 ### Le principe général
 
@@ -623,7 +623,7 @@ Si vous préférez rester chez vous, retrouvez-nous aussi sur [Deliveroo](https:
       "différence cuisine libanaise israélienne",
       "restaurant levantin Paris",
       "mezze Paris",
-      "cuisine méditerranéenne",
+      "cuisine du Levant",
     ],
     publishedAt: "2026-05-05",
     updatedAt: "2026-05-05",
@@ -670,7 +670,7 @@ Plutôt que de figer chaque plat dans une frontière, **la cuisine levantine** p
 
 La "cuisine méditerranéenne" est un terme parapluie qui englobe toute la Méditerranée — France du Sud, Italie, Espagne, Grèce, Maghreb, Levant. La cuisine levantine en est l'une des **quatre grandes composantes**, aux côtés des cuisines grecque, juive et arabe.
 
-En clair : toute cuisine levantine est méditerranéenne, mais toute cuisine méditerranéenne n'est pas levantine. La levantine se distingue par :
+En clair : toute cuisine levantine appartient au bassin méditerranéen, mais toute cuisine du bassin méditerranéen n'est pas levantine. La levantine se distingue par :
 
 - **L'omniprésence de la tahina** (pâte de sésame), absente du sud de l'Italie ou de l'Espagne.
 - **Le za'atar** — mélange de thym, sumac et sésame, signature olfactive du Levant.
@@ -679,7 +679,7 @@ En clair : toute cuisine levantine est méditerranéenne, mais toute cuisine mé
 
 ## Les ingrédients qui signent une cuisine levantine
 
-Si vous goûtez à une table et que vous y trouvez l'essentiel de cette liste, vous êtes face à une cuisine levantine authentique :
+Si vous goûtez à une table et que vous y trouvez l'essentiel de cette liste, vous êtes face à une cuisine du Levant fidèle à ses racines :
 
 - **Pois chiches** (houmous, [falafels](/blog/falafel-origines-recette-paris), balila)
 - **Tahina** (pâte de sésame, base du houmous, des sauces)
@@ -712,7 +712,7 @@ Que vous veniez **déjeuner entre collègues**, **dîner aux chandelles**, ou co
 
 📍 **Noya** — 8 rue de Châteaudun, 75009 Paris
 
-[Réserver une table](https://bookings.zenchef.com/results?rid=386074&pid=1001) · [Commander en click & collect](https://app.eatself.com/4278/accueil) · [Demander un devis traiteur](/traiteur)
+[Réserver une table](https://bookings.zenchef.com/results?rid=386074&pid=1001&utm_source=website&utm_medium=blog-article&utm_campaign=reservation) · [Commander en click & collect](https://app.eatself.com/4278/accueil) · [Demander un devis traiteur](/traiteur)
 
 ---
 

@@ -447,11 +447,12 @@ export default async function BlogArticlePage({
                 Venez goûter chez Noya
               </h2>
               <p className="text-dark/60 mb-6 max-w-md mx-auto">
-                Cuisine levantine authentique au 8 rue de Châteaudun, Paris 9e.
+                Bistrot levantin moderne au 8 rue de Châteaudun, Paris 9e.
                 Déjeuner, dîner et traiteur.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <ReserveButton
+                  source="blog-article"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
                 >
                   Réserver une table

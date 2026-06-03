@@ -5,15 +5,20 @@ import ReservationCTA from "@/components/ReservationCTA";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contact & Réservation — Noya Restaurant Paris 9e",
+  title: "Nous Trouver — Noya · Bistrot levantin moderne · Paris 9ᵉ",
   description:
-    "Réservez chez Noya au 8 rue de Châteaudun, Paris 9e. Horaires, plan d'accès, téléphone et livraison Deliveroo & Uber Eats.",
+    "Noya, bistrot levantin moderne au 8 rue de Châteaudun, Paris 9ᵉ. À 5 minutes de l'Opéra. Téléphone, horaires, accès, livraison.",
   openGraph: {
-    title: "Contact & Réservation — Noya Restaurant Paris 9e",
+    title: "Nous Trouver — Noya · Bistrot levantin moderne · Paris 9ᵉ",
     description:
-      "Réservez chez Noya au 8 rue de Châteaudun, Paris 9e. Horaires, plan d'accès, téléphone et livraison.",
+      "Noya, bistrot levantin moderne au 8 rue de Châteaudun, Paris 9ᵉ. À 5 minutes de l'Opéra. Téléphone, horaires, accès, livraison.",
     url: "https://www.eatnoya.com/contact",
-    images: [{ url: "/og/contact.jpg", width: 1200, height: 630, alt: "Contact et accès Noya, restaurant levantin Paris 9e" }],
+    images: [{ url: "/og/contact.jpg", width: 1200, height: 630, alt: "Contact et accès Noya, bistrot levantin moderne Paris 9ᵉ" }],
+  },
+  twitter: {
+    title: "Nous Trouver — Noya · Bistrot levantin moderne · Paris 9ᵉ",
+    description:
+      "Noya, bistrot levantin moderne au 8 rue de Châteaudun, Paris 9ᵉ. À 5 minutes de l'Opéra. Téléphone, horaires, accès, livraison.",
   },
   alternates: { canonical: "https://www.eatnoya.com/contact" },
 };
@@ -145,6 +150,18 @@ export default function ContactPage() {
               </p>
             </div>
 
+            {/* À proximité */}
+            <div>
+              <h2 className="font-serif text-lg text-dark mb-2">À proximité</h2>
+              <ul className="text-sm text-taupe leading-relaxed space-y-1">
+                <li>— Opéra Garnier : 5 min à pied</li>
+                <li>— Folies Bergère : 4 min à pied</li>
+                <li>— Casino de Paris : 7 min à pied</li>
+                <li>— Galeries Lafayette : 7 min à pied</li>
+                <li>— Théâtre de Paris : 8 min à pied</li>
+              </ul>
+            </div>
+
             {/* Livraison */}
             <div>
               <h2 className="font-serif text-lg text-dark mb-3">Livraison & Click&Collect</h2>
@@ -205,7 +222,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <ReservationCTA />
+      <ReservationCTA source="contact" />
     </>
   );
 }

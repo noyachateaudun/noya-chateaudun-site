@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   keywords: [
     "traiteur levantin Paris",
     "buffet mezze événement",
-    "traiteur méditerranéen Paris",
+    "traiteur bistrot levantin Paris",
     "traiteur entreprise Paris",
     "buffet levantin mariage",
   ],
@@ -225,7 +225,7 @@ export default function TraiteurPage() {
       {/* Trust banner */}
       <div className="text-center py-4 bg-cream/50 border-b border-[#E5DFD5]">
         <p className="text-sm text-dark/50">
-          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; La qualité restaurant pour vos événements
+          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 9,6/10 sur TheFork — mieux noté du 9ᵉ &middot; La qualité restaurant pour vos événements
         </p>
       </div>
 

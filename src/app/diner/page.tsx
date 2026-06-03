@@ -7,11 +7,11 @@ import { getBreadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Dîner Levantin à Paris — Soirée chez Noya Paris 9e",
   description:
-    "Offrez-vous un dîner aux saveurs du Levant. Carte du soir, vins israéliens & libanais, ambiance chaleureuse au 8 rue de Châteaudun.",
+    "Côte de bœuf à partager, côtes d'agneau, mezze et vins israéliens & libanais. Bistrot levantin moderne au 8 rue de Châteaudun, Paris 9e.",
   openGraph: {
     title: "Dîner Levantin à Paris — Soirée chez Noya Paris 9e",
     description:
-      "Offrez-vous un dîner aux saveurs du Levant. Carte du soir, vins israéliens & libanais, ambiance chaleureuse.",
+      "Côte de bœuf à partager, côtes d'agneau, mezze et vins israéliens & libanais. Bistrot levantin moderne au cœur du 9e.",
     url: "https://www.eatnoya.com/diner",
     images: [{ url: "/og/diner.jpg", width: 1200, height: 630, alt: "Dîner levantin chez Noya, Paris 9e" }],
   },
@@ -61,7 +61,7 @@ export default function DinerPage() {
             Commencez par nos salatim à partager — houmous crémeux, baba ganoush fumé, falafels dorés — puis laissez-vous tenter par nos plats signatures : une côte de bœuf à partager grillée aux épices levantines, des côtes d&apos;agneau marinées ou un filet de daurade saisi à la perfection.
           </p>
           <p className="text-sm text-taupe leading-[2]">
-            Accompagnez votre repas de notre sélection de vins israéliens et libanais, choisis pour sublimer chaque plat. L&apos;ambiance chaleureuse de notre salle, entre murs de pierre et lumière tamisée, vous transportera directement au cœur du Levant.
+            Accompagnez votre repas de notre sélection de vins israéliens et libanais, choisis pour sublimer chaque plat. L&apos;ambiance chaleureuse de notre salle, entre murs de pierre et lumière tamisée, prolonge naturellement le moment.
           </p>
         </div>
       </section>
@@ -139,7 +139,7 @@ export default function DinerPage() {
         </div>
       </section>
 
-      <ReservationCTA />
+      <ReservationCTA source="diner" />
     </>
   );
 }

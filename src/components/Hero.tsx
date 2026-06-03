@@ -5,7 +5,7 @@ import ReserveButton from "./ReserveButton";
 export default function Hero() {
   return (
     <section
-      aria-label="Bienvenue chez Noya Châteaudun"
+      aria-label="Bienvenue chez Noya — bistrot levantin moderne, Paris 9e"
       className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden text-center px-6"
       style={{
         background: "linear-gradient(175deg, #F5EDE3 0%, #F0E2D0 25%, #E8D5BF 50%, #DECCA8 75%, #D4B896 100%)",
@@ -55,14 +55,14 @@ export default function Hero() {
       {/* Content — CSS entrance animations */}
       <div className="relative z-10">
         <h1 className="sr-only">
-          Noya Châteaudun — Restaurant méditerranéen et cuisine levantine, Paris 9e
+          Noya — Bistrot levantin moderne, Paris 9e
         </h1>
 
         <div
           className="text-[11px] font-normal tracking-[0.4em] uppercase mb-7 hero-fade-in"
           style={{ color: "#C4883A", animationDelay: "0.1s" }}
         >
-          Cuisine Méditerranéenne · Paris 9e
+          Bistrot levantin moderne · Paris 9ᵉ
         </div>
 
         <div
@@ -76,14 +76,14 @@ export default function Hero() {
         </div>
 
         <div
-          className="font-accent italic text-[clamp(20px,3.5vw,30px)] tracking-[0.15em] mb-9 hero-fade-in"
+          className="font-accent italic text-[clamp(18px,2.8vw,24px)] tracking-[0.05em] mb-9 hero-fade-in max-w-[640px] mx-auto leading-snug"
           style={{ color: "#A0613A", fontWeight: 300, animationDelay: "0.5s" }}
         >
-          Middle Eastern Food
+          Une cuisine du Levant fait maison, servie comme un bistrot parisien. À deux pas de l&apos;Opéra.
         </div>
 
         <div
-          className="flex items-center justify-center gap-2.5 max-w-[160px] mx-auto mb-8 hero-fade-in"
+          className="flex items-center justify-center gap-2.5 max-w-[160px] mx-auto mb-6 hero-fade-in"
           style={{ animationDelay: "0.6s" }}
         >
           <div className="flex-1 h-px bg-gradient-to-r from-transparent to-gold" />
@@ -92,6 +92,21 @@ export default function Hero() {
           </svg>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent to-gold" />
         </div>
+
+        <p
+          className="text-[12px] md:text-[13px] tracking-[0.05em] mb-3 font-light hero-fade-in max-w-[680px] mx-auto px-2"
+          style={{ color: "#7B1E2B", animationDelay: "0.65s" }}
+        >
+          <span className="text-[#D4A853]">★</span> 5/5 sur Google · 140 avis · 9,6/10 sur TheFork — mieux noté du 9ᵉ ·{" "}
+          <a
+            href="https://www.lefigaro.fr/gastronomie/noya-une-cantine-levantine-pour-les-dejeuners-rapides-a-paris-9e-20250919"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-burgundy/80 transition-colors"
+          >
+            Vu dans Le Figaro
+          </a>
+        </p>
 
         <p
           className="text-[13px] tracking-[0.2em] mb-12 font-light hero-fade-in"
@@ -108,9 +123,10 @@ export default function Hero() {
             href="/menu"
             className="group px-8 py-3.5 border-[1.5px] border-burgundy/35 text-burgundy text-[11px] font-normal tracking-[0.2em] uppercase bg-transparent hover:bg-burgundy hover:text-cream hover:border-burgundy hover:shadow-lg hover:shadow-burgundy/15 hover:scale-[1.02] transition-all duration-400"
           >
-            Découvrir la carte
+            Voir la carte
           </Link>
           <ReserveButton
+            source="home"
             className="px-8 py-3.5 bg-burgundy text-cream text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-burgundy-light hover:shadow-lg hover:shadow-burgundy/25 hover:scale-[1.02] transition-all duration-400"
           >
             Réserver une table

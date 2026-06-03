@@ -6,33 +6,28 @@ export interface Review {
 
 export const REVIEWS: Review[] = [
   {
-    author: "Thierry B.",
-    text: "Un très bon endroit cosy, un accueil et un service parfait, un rapport qualité prix excellent et de très bons plats.",
-    platform: "Google",
-  },
-  {
-    author: "Alisson C.",
-    text: "Un joli lieu dans un quartier super animé, un accueil d'une grande gentillesse, des plats faits maisons qui sont un vrai délice.",
+    author: "Avis Google",
+    text: "On s'est régalées du début à la fin. Mention spéciale pour le pain perdu, vraiment un des meilleurs que j'ai mangés. Les côtes d'agneau étaient excellentes.",
     platform: "Google",
   },
   {
     author: "Avis Google",
-    text: "L'accueil est très chaleureux et attentionné. Les plats ont très bon goût, un vrai régal. Le panna cotta à l'eau de rose est vraiment original.",
+    text: "Un sans-faute pour toute l'équipe. Accueil souriant, shakshouka exceptionnelle, accord mets-vin intéressant avec du Crozes Hermitage.",
     platform: "Google",
   },
   {
-    author: "Romain B.",
-    text: "Très bon accueil. Nous avons beaucoup apprécié nos plats, proposés à un prix abordable.",
+    author: "Avis Google",
+    text: "L'accueil est très chaleureux et attentionné. Les plats ont très bon goût, un vrai régal. La panna cotta à l'eau de rose est vraiment originale.",
     platform: "Google",
   },
   {
-    author: "Michel Z.",
-    text: "Cadre agréable, nourriture très bonne et copieuse. Nous nous sommes régalés !",
+    author: "Avis Google",
+    text: "De magnifiques assiettes pleines de couleurs, des saveurs remplies de soleil, une ambiance pleine de sourires et de gentillesse.",
     platform: "Google",
   },
   {
-    author: "Avis Uber Eats",
-    text: "Première commande, une très belle découverte !",
-    platform: "Uber Eats",
+    author: "Google Review",
+    text: "One of our favourite meals during our two weeks in Paris. If this restaurant was near our home, we would become regulars.",
+    platform: "Google",
   },
 ];

@@ -63,7 +63,7 @@ export default function Footer() {
           <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-light mb-4">Commander & Réserver</h3>
           <ul className="space-y-2">
             <li>
-              <ReserveButton className="text-sm hover:text-cream transition-colors text-left">
+              <ReserveButton source="footer" className="text-sm hover:text-cream transition-colors text-left">
                 Réserver une table
               </ReserveButton>
             </li>
@@ -89,7 +89,7 @@ export default function Footer() {
             </li>
           </ul>
           <p className="mt-4 text-xs text-cream/40">
-            <span className="text-gold/60">&#x2605;</span> 5/5 Google &middot; 110+ avis
+            <span className="text-gold/60">&#x2605;</span> 5/5 Google &middot; 140 avis &middot; 9,6/10 TheFork
           </p>
         </div>
 

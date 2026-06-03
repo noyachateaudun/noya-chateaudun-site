@@ -40,7 +40,7 @@ export default function TraiteurMariagePage() {
             Un traiteur levantin pour votre mariage
           </h1>
           <p className="font-accent text-lg text-cream/70 italic max-w-xl mx-auto">
-            Originalité, saveurs du Levant et convivialité pour le plus beau jour de votre vie
+            Mezze, houmous, pitas et grillades du Levant pour le plus beau jour de votre vie
           </p>
         </div>
       </section>
@@ -62,13 +62,13 @@ export default function TraiteurMariagePage() {
           <Reveal>
             <div className="space-y-6 text-dark/70 leading-relaxed">
               <p>
-                Votre mariage mérite une cuisine à la hauteur de l&apos;événement&nbsp;: <strong className="text-dark">originale, généreuse et mémorable</strong>. Le traiteur levantin Noya vous propose une alternative élégante aux buffets classiques — une cuisine méditerranéenne authentique qui surprend, régale et rassemble.
+                Votre mariage mérite une cuisine à la hauteur de l&apos;événement&nbsp;: <strong className="text-dark">originale, généreuse et mémorable</strong>. Le traiteur levantin Noya vous propose une alternative élégante aux buffets classiques — une cuisine du Levant fait maison qui surprend, régale et rassemble.
               </p>
 
               <h2 className="font-serif text-2xl text-dark pt-4">Pourquoi choisir un traiteur levantin pour votre mariage&nbsp;?</h2>
 
               <p>
-                <strong className="text-dark">L&apos;originalité.</strong> Vos invités se souviendront d&apos;un buffet de houmous crémeux, de falafels dorés, de pitas chaudes et de grillades aux épices du Levant. Ce n&apos;est pas le traiteur classique — c&apos;est un voyage culinaire.
+                <strong className="text-dark">L&apos;originalité.</strong> Vos invités se souviendront d&apos;un buffet de houmous crémeux, de falafels dorés, de pitas chaudes et de grillades aux épices du Levant. Ce n&apos;est pas le traiteur classique — c&apos;est une table levantine fait maison.
               </p>
 
               <p>

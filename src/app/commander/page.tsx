@@ -196,7 +196,7 @@ export default function CommanderPage() {
       {/* Trust banner */}
       <section className="py-8 px-5 bg-cream border-t border-[#E5DFD5] text-center">
         <p className="text-sm text-dark/60">
-          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; M&ecirc;me qualit&eacute; en salle et &agrave; emporter
+          <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 140 avis &middot; 9,6/10 sur TheFork &mdash; mieux not&eacute; du 9&ordm; &middot; M&ecirc;me qualit&eacute; en salle et &agrave; emporter
         </p>
       </section>
     </>

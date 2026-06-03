@@ -6,6 +6,7 @@ export default function FloatingButtons() {
     <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden">
       <div className="flex bg-[#722F37] shadow-[0_-4px_16px_rgba(0,0,0,0.15)]">
         <ReserveButton
+          source="mobile-bar"
           ariaLabel="Réserver une table"
           className="flex-1 flex flex-col items-center justify-center gap-0.5 py-3 text-cream hover:bg-white/10 transition-colors border-r border-cream/10"
         >

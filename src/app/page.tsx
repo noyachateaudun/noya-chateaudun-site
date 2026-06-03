@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { RESTAURANT } from "@/data/restaurant";
@@ -7,34 +8,83 @@ import Divider from "@/components/Divider";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import ReserveButton from "@/components/ReserveButton";
 
+export const metadata: Metadata = {
+  title: "Noya — Bistrot levantin moderne · Paris 9ᵉ",
+  description:
+    "Bistrot levantin moderne au 8 rue de Châteaudun. Côtes d'agneau, shakshuka, pain perdu à la rose, fait maison. 5/5 Google sur 140 avis · 9,6/10 TheFork. Réservez à deux pas de l'Opéra.",
+  keywords: [
+    "bistrot levantin Paris 9",
+    "restaurant levantin moderne",
+    "côtes d'agneau Paris",
+    "shakshuka Paris",
+    "restaurant Châteaudun",
+    "restaurant près de l'Opéra Paris",
+  ],
+  alternates: {
+    canonical: "https://www.eatnoya.com",
+  },
+  openGraph: {
+    title: "Noya — Bistrot levantin moderne · Paris 9ᵉ",
+    description:
+      "Une cuisine du Levant fait maison, servie comme un bistrot parisien. Inès & Kalam vous accueillent à Paris 9ᵉ.",
+    url: "https://www.eatnoya.com",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Noya — Bistrot levantin moderne · Paris 9ᵉ",
+    description:
+      "Une cuisine du Levant fait maison, servie comme un bistrot parisien. Inès & Kalam vous accueillent à Paris 9ᵉ.",
+  },
+};
+
 const SIGNATURE_DISHES = [
   {
-    name: "Pita Of",
-    desc: "Poulet mariné, aubergine, salade Noya, oignons pickles, tehina & cornichons.",
-    price: "13,00\u20ac",
+    name: "Pita Pizel",
+    tag: "Midi",
+    desc: "Poulet pané croustillant mariné à la patate douce, aubergines, cornichons, oignons pickles, chou, sauce tartare.",
+    price: "13,00€",
     image: "/images/galerie/pita of.jpg",
-    alt: "Pita Of signature du restaurant Noya, poulet mariné et aubergine",
-  },
-  {
-    name: "Assiette Falafel",
-    desc: "Falafels maison, houmous, salade Noya, aubergine, chou, pommes de terre & tehina.",
-    price: "16,00\u20ac",
-    image: "/images/galerie/assiete falafel.jpg",
-    alt: "Assiette falafel avec houmous et tehina, cuisine levantine Noya",
-  },
-  {
-    name: "The Shakshuka",
-    desc: "Poivrons, tomates, oignons, \u00e9pices & \u0153uf. La recette qui r\u00e9chauffe l\u2019\u00e2me.",
-    price: "16,00\u20ac",
-    image: "/images/galerie/the shakshuka.jpg",
-    alt: "Shakshuka aux poivrons et tomates, plat levantin fait maison chez Noya",
+    alt: "Pita Pizel signature midi du restaurant Noya",
   },
   {
     name: "Houmous Bilameh",
-    desc: "Notre houmous signature, sublim\u00e9 par du parguit marin\u00e9 & grill\u00e9.",
-    price: "16,50\u20ac",
+    tag: "Midi",
+    desc: "Houmous maison sublimé par notre tendre bœuf effiloché. Notre signature midi.",
+    price: "16,50€",
     image: "/images/galerie/houmous bilameh.jpg",
-    alt: "Houmous Bilameh au poulet grillé, spécialité levantine Noya Paris 9e",
+    alt: "Houmous Bilameh signature midi, bistrot levantin Noya",
+  },
+  {
+    name: "Côtes d'Agneau",
+    tag: "Soir",
+    desc: "Marinées aux épices du Levant, grillées à cœur. Sauce citron et herbes fraîches. 1 accompagnement inclus.",
+    price: "28,00€",
+    image: "/images/galerie/placeholder.jpg",
+    alt: "Côtes d'agneau aux épices du Levant, plat signature soir Noya",
+  },
+  {
+    name: "Côte de Bœuf à Partager",
+    tag: "Soir",
+    desc: "Pièce noble à la braise, épices levantines, chimichurri. 2 accompagnements inclus. Pour deux.",
+    price: "76,00€ /2",
+    image: "/images/galerie/placeholder.jpg",
+    alt: "Côte de bœuf à partager grillée à la braise",
+  },
+  {
+    name: "Shakshuka Noya",
+    tag: "Soir",
+    desc: "Œufs pochés, sauce tomate-poivrons, viande mijotée aux épices. La recette de référence.",
+    price: "18,00€",
+    image: "/images/galerie/the shakshuka.jpg",
+    alt: "Shakshuka Noya, œufs pochés sauce tomate-poivrons",
+  },
+  {
+    name: "Pain Perdu à la Rose",
+    tag: "Soir",
+    desc: "Challah dorée au beurre, crème à la rose, pistaches. Le dessert qui fait revenir les habitués.",
+    price: "8,00€",
+    image: "/images/galerie/placeholder.jpg",
+    alt: "Pain perdu à la rose, challah crème rose pistaches",
   },
 ];
 
@@ -54,21 +104,21 @@ export default function HomePage() {
         <div className="max-w-2xl mx-auto relative z-10">
           <Reveal>
             <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
-              Notre Cuisine
+              Notre cuisine
             </p>
             <h2 id="cuisine-title" className="font-serif text-[clamp(28px,5vw,46px)] text-dark font-normal">
-              La convivialité levantine
+              Le Levant moderne, à la française
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <Divider />
             <p className="font-accent text-[clamp(17px,2.2vw,21px)] text-taupe leading-[1.85] mb-4">
-              Née d&apos;une passion pour la cuisine méditerranéenne et les saveurs du Levant, Noya est un lieu où chaque plat raconte une histoire. Des falafels croustillants aux houmous onctueux, en passant par nos pitas généreusement garnies — tout est préparé chaque jour, à la main, avec des produits frais.
+              Chez Noya, on cuisine le Levant comme un bistrot parisien. Houmous chauds aux pois chiches, côtes d&apos;agneau aux épices, shakshuka au feu doux, pain perdu à la rose — chaque plat est préparé chaque jour, à la main, avec des produits frais.
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="font-accent text-[clamp(17px,2.2vw,21px)] text-taupe leading-[1.85]">
-              Au cœur du 9e arrondissement de Paris, entre Opéra et les Grands Boulevards, notre restaurant vous invite à un voyage culinaire au cœur du Levant et de la Méditerranée. Que vous veniez pour un déjeuner entre collègues ou un dîner aux chandelles, notre équipe vous accueille avec la chaleur qui fait l&apos;identité de Noya.
+              Le midi, formule à 16€ pour les bureaux du quartier. Le soir, on prend son temps : entrées à partager, plats signatures, desserts faits maison. Terrasse l&apos;été. À 5 minutes à pied de l&apos;Opéra et des théâtres du 9ᵉ.
             </p>
           </Reveal>
         </div>
@@ -98,6 +148,7 @@ export default function HomePage() {
               <Reveal key={dish.name} delay={i * 0.08} className="h-full">
                 <article className="h-full flex flex-col bg-warm-white border border-cream-dark overflow-hidden group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(44,36,33,0.06)] transition-all duration-500">
                   <div className="relative aspect-[3/4] bg-sand overflow-hidden">
+                    {/* TODO: image manquante pour Côtes d'Agneau / Côte de Bœuf / Pain Perdu — créer /public/images/galerie/placeholder.jpg ou remplacer par les vrais clichés */}
                     <Image
                       src={dish.image}
                       alt={dish.alt}
@@ -107,10 +158,13 @@ export default function HomePage() {
                     />
                   </div>
                   <div className="p-5 flex flex-col flex-grow">
-                    <div className="flex items-baseline justify-between gap-2 mb-2">
-                      <h3 className="font-serif text-lg text-dark min-h-[2.5rem] flex items-start">{dish.name}</h3>
+                    <div className="flex items-center justify-between gap-2 mb-1">
+                      <span className="text-[10px] uppercase tracking-[0.15em] text-burgundy/60 font-semibold">
+                        {dish.tag}
+                      </span>
                       <span className="font-accent text-lg text-burgundy font-semibold whitespace-nowrap">{dish.price}</span>
                     </div>
+                    <h3 className="font-serif text-lg text-dark min-h-[2.5rem] flex items-start mb-2">{dish.name}</h3>
                     <p className="text-sm text-taupe leading-relaxed flex-grow">{dish.desc}</p>
                   </div>
                 </article>
@@ -130,8 +184,76 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* L'équipe */}
+      <section aria-labelledby="equipe-title" className="py-24 px-5 bg-warm-white relative overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-50"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
+          }}
+        />
+        <div className="max-w-5xl mx-auto relative z-10">
+          <Reveal>
+            <div className="text-center mb-14">
+              <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
+                Ceux qui vous accueillent
+              </p>
+              <h2 id="equipe-title" className="font-serif text-[clamp(28px,5vw,40px)] text-dark font-normal">
+                L&apos;équipe
+              </h2>
+            </div>
+          </Reveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <Reveal>
+              <article className="bg-cream border border-[#E5DFD5] rounded-xl overflow-hidden h-full flex flex-col">
+                {/* TODO: portrait Inès en salle — ajouter /public/images/equipe/ines.jpg */}
+                <div className="relative aspect-[4/5] bg-sand flex items-center justify-center">
+                  <span className="text-taupe/50 text-sm italic">Portrait Inès</span>
+                </div>
+                <div className="p-6">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-burgundy/60 font-semibold mb-2">
+                    En salle
+                  </p>
+                  <h3 className="font-serif text-2xl text-dark mb-3">Inès</h3>
+                  <p className="text-sm text-taupe leading-relaxed">
+                    Inès dirige la salle. C&apos;est elle que les avis Google citent comme «&nbsp;la restauratrice adorable&nbsp;». Elle présente la carte, conseille les plats, vous demande comment s&apos;est passé le repas.
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <article className="bg-cream border border-[#E5DFD5] rounded-xl overflow-hidden h-full flex flex-col">
+                {/* TODO: portrait Kalam en cuisine — ajouter /public/images/equipe/kalam.jpg */}
+                <div className="relative aspect-[4/5] bg-sand flex items-center justify-center">
+                  <span className="text-taupe/50 text-sm italic">Portrait Kalam</span>
+                </div>
+                <div className="p-6">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-burgundy/60 font-semibold mb-2">
+                    En cuisine
+                  </p>
+                  <h3 className="font-serif text-2xl text-dark mb-3">Kalam</h3>
+                  <p className="text-sm text-taupe leading-relaxed">
+                    Notre chef, spécialiste de la cuisine du Levant. Avant Noya, il dirigeait la cuisine de Soum Soum. Toutes les recettes sortent de ses mains.
+                  </p>
+                </div>
+              </article>
+            </Reveal>
+          </div>
+          <Reveal delay={0.2}>
+            <blockquote className="bg-cream border border-[#E5DFD5] rounded-xl p-8 md:p-10 text-center max-w-3xl mx-auto">
+              <p className="font-accent italic text-[clamp(17px,2.2vw,21px)] text-dark leading-[1.7] mb-4">
+                «&nbsp;Délicieux et copieux, dans une ambiance chaleureuse et agréable. Nous avons été accueillis par une mère et sa fille, très souriantes et extrêmement gentilles. Merci&nbsp;! On reviendra.&nbsp;»
+              </p>
+              <footer className="text-xs uppercase tracking-[0.2em] text-burgundy/70 font-semibold">
+                — Avis Google ★★★★★
+              </footer>
+            </blockquote>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Comment déguster Noya */}
-      <section className="py-24 px-5 bg-warm-white relative overflow-hidden">
+      <section className="py-24 px-5 bg-cream relative overflow-hidden">
         <div className="max-w-5xl mx-auto">
           <Reveal>
             <div className="text-center mb-14">
@@ -145,7 +267,7 @@ export default function HomePage() {
           </Reveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Reveal>
-              <div className="bg-cream rounded-xl p-8 text-center h-full flex flex-col border border-[#E5DFD5]">
+              <div className="bg-warm-white rounded-xl p-8 text-center h-full flex flex-col border border-[#E5DFD5]">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-burgundy/5 text-burgundy mb-4 mx-auto">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -159,6 +281,7 @@ export default function HomePage() {
                   Réservez votre table et vivez l&apos;expérience Noya en salle. Du mardi au samedi, midi et soir.
                 </p>
                 <ReserveButton
+                  source="home"
                   className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
                 >
                   Réserver une table
@@ -166,7 +289,7 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="bg-cream rounded-xl p-8 text-center h-full flex flex-col border border-[#E5DFD5]">
+              <div className="bg-warm-white rounded-xl p-8 text-center h-full flex flex-col border border-[#E5DFD5]">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#4A5A3C]/5 text-[#4A5A3C] mb-4 mx-auto">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
@@ -189,7 +312,7 @@ export default function HomePage() {
               </div>
             </Reveal>
             <Reveal delay={0.2}>
-              <div className="bg-cream rounded-xl p-8 text-center h-full flex flex-col border border-[#E5DFD5]">
+              <div className="bg-warm-white rounded-xl p-8 text-center h-full flex flex-col border border-[#E5DFD5]">
                 <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gold/10 text-gold mb-4 mx-auto">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="1" y="3" width="15" height="13" rx="2" />
@@ -215,7 +338,7 @@ export default function HomePage() {
       </section>
 
       {/* Avis clients */}
-      <section aria-labelledby="avis-title" className="py-24 px-5 bg-cream relative">
+      <section aria-labelledby="avis-title" className="py-24 px-5 bg-warm-white relative">
         <div className="max-w-5xl mx-auto">
           <Reveal>
             <div className="text-center mb-4">
@@ -228,8 +351,8 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal>
-            <p className="text-center text-lg md:text-xl text-dark/70 mb-10">
-              <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 110+ avis vérifiés
+            <p className="text-center text-base md:text-lg text-dark/70 mb-10">
+              <span className="text-[#D4A853]">&#x2605;</span> 5/5 sur Google &middot; 140 avis &middot; 9,6/10 sur TheFork — mieux noté du 9ᵉ
             </p>
           </Reveal>
           <Reveal>
@@ -246,6 +369,7 @@ export default function HomePage() {
                 Voir tous nos avis Google
               </a>
               <ReserveButton
+                source="home"
                 className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
               >
                 Réserver une table
@@ -256,7 +380,7 @@ export default function HomePage() {
       </section>
 
       {/* Horaires + Infos pratiques */}
-      <section aria-labelledby="infos-title" className="py-24 px-5 bg-warm-white relative overflow-hidden">
+      <section aria-labelledby="infos-title" className="py-24 px-5 bg-cream relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-50"
           style={{
@@ -308,7 +432,7 @@ export default function HomePage() {
               },
             ].map((card, i) => (
               <Reveal key={card.title} delay={i * 0.1}>
-                <div className="h-full bg-cream p-8 border border-[#E5DFD5] rounded-xl hover:-translate-y-0.5 hover:shadow-md transition-all duration-400 flex flex-col items-center">
+                <div className="h-full bg-warm-white p-8 border border-[#E5DFD5] rounded-xl hover:-translate-y-0.5 hover:shadow-md transition-all duration-400 flex flex-col items-center">
                   <h3 className="font-serif text-xl text-dark mb-4">{card.title}</h3>
                   <div className="flex-grow flex flex-col justify-start">{card.content}</div>
                 </div>
@@ -319,7 +443,7 @@ export default function HomePage() {
       </section>
 
       {/* Traiteur & Événements */}
-      <section className="py-24 px-5 bg-cream text-center relative overflow-hidden">
+      <section className="py-24 px-5 bg-warm-white text-center relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-50"
           style={{
@@ -355,7 +479,7 @@ export default function HomePage() {
       </section>
 
       {/* Instagram CTA */}
-      <section className="py-20 px-5 bg-warm-white text-center relative overflow-hidden">
+      <section className="py-20 px-5 bg-cream text-center relative overflow-hidden">
         <div
           className="absolute inset-0 pointer-events-none opacity-50"
           style={{
@@ -394,6 +518,7 @@ export default function HomePage() {
           Nous avons hâte de vous accueillir chez Noya, au cœur du 9e arrondissement.
         </p>
         <ReserveButton
+          source="home"
           className="inline-block px-8 py-3.5 border-[1.5px] border-cream text-cream text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-cream hover:text-burgundy transition-all"
         >
           Réserver une table

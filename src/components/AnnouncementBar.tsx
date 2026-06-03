@@ -15,13 +15,13 @@ export default function AnnouncementBar() {
       <div className="announcement-track flex h-full">
         {/* Message 1 — lien réservation Zenchef (intercepté par le SDK → modale) */}
         <a
-          href={RESTAURANT.links.reservation}
+          href="https://bookings.zenchef.com/results?rid=386074&pid=1001&utm_source=website&utm_medium=sticky&utm_campaign=reservation"
           target="_blank"
           rel="noopener noreferrer"
           className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"
         >
-          <span className="mr-1.5">⭐</span>
-          5/5 sur Google · 110+ avis · Réservez votre table →
+          <span className="mr-1.5">★</span>
+          5/5 sur Google · 140 avis · Réserver une table →
         </a>
         {/* Message 2 */}
         <a
@@ -30,15 +30,13 @@ export default function AnnouncementBar() {
           rel="noopener noreferrer"
           className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"
         >
-          <span className="mr-1.5">🥡</span>
-          Click &amp; Collect disponible · Commandez en ligne →
+          Click &amp; Collect · Commandez en ligne →
         </a>
         {/* Message 3 */}
         <Link
           href="/traiteur"
           className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"
         >
-          <span className="mr-1.5">🎉</span>
           Traiteur levantin · Devis gratuit en 24h →
         </Link>
       </div>

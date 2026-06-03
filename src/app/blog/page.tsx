@@ -7,11 +7,11 @@ import BlogIllustration from "@/components/BlogIllustration";
 export const metadata: Metadata = {
   title: "Blog — Cuisine levantine, recettes et culture culinaire",
   description:
-    "Articles sur la cuisine levantine, recettes authentiques (houmous, falafel, shakshuka), vins méditerranéens et conseils traiteur. Le blog de Noya.",
+    "Articles sur la cuisine du Levant, recettes (houmous, falafel, shakshuka), vins israéliens & libanais et conseils traiteur. Le blog de Noya.",
   openGraph: {
     title: "Blog — Cuisine levantine, recettes et culture culinaire | Noya",
     description:
-      "Articles sur la cuisine levantine, recettes authentiques et culture culinaire méditerranéenne.",
+      "Articles sur la cuisine du Levant, recettes et culture culinaire levantine.",
     url: "https://www.eatnoya.com/blog",
     type: "website",
   },
@@ -33,8 +33,8 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-dark/60 max-w-xl mx-auto leading-relaxed">
-            Cuisine levantine, recettes authentiques, accords mets-vins et
-            conseils pour vos événements.
+            Cuisine du Levant, recettes, accords mets-vins et conseils pour vos
+            événements.
           </p>
         </Reveal>
       </div>

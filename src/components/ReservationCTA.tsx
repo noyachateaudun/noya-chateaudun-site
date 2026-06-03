@@ -1,6 +1,6 @@
 import ReserveButton from "./ReserveButton";
 
-export default function ReservationCTA() {
+export default function ReservationCTA({ source }: { source?: string }) {
   return (
     <section className="bg-gradient-to-br from-burgundy to-burgundy-dark text-cream py-16 px-5 text-center">
       <h2 className="font-serif text-3xl md:text-4xl font-normal mb-3">
@@ -10,6 +10,7 @@ export default function ReservationCTA() {
         Nous avons hâte de vous accueillir chez Noya, au cœur du 9e arrondissement.
       </p>
       <ReserveButton
+        source={source}
         className="inline-block px-8 py-3.5 border-[1.5px] border-cream text-cream text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-cream hover:text-burgundy transition-all"
       >
         Réserver une table

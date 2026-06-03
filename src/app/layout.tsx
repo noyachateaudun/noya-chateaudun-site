@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Noya Restaurant Paris 9e",
   },
   description:
-    "Noya — Restaurant levantin au 8 rue de Châteaudun, Paris 9e. 5/5 Google (110+ avis). Houmous, pitas & shakshuka faits maison. Réservez, commandez en click & collect ou faites-vous livrer !",
+    "Noya — Restaurant levantin au 8 rue de Châteaudun, Paris 9e. 5/5 Google (140 avis). Houmous, pitas & shakshuka faits maison. Réservez, commandez en click & collect ou faites-vous livrer !",
   keywords: [
     "restaurant levantin Paris",
     "cuisine levantine Paris 9",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Noya Châteaudun",
     title: "Noya — Restaurant Levantin & Méditerranéen | Paris 9e",
     description:
-      "Cuisine levantine authentique au cœur de Paris 9e. Houmous, pitas, shakshuka & plats levantins faits maison.",
+      "Bistrot levantin moderne au cœur de Paris 9e. Houmous, pitas, shakshuka faits maison.",
     images: [
       {
         url: "/og/accueil.jpg",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Noya — Restaurant Levantin & Méditerranéen | Paris 9e",
     description:
-      "Cuisine levantine authentique au cœur de Paris 9e. Houmous, pitas, shakshuka & plats levantins faits maison.",
+      "Bistrot levantin moderne au cœur de Paris 9e. Houmous, pitas, shakshuka faits maison.",
     images: ["/og/accueil.jpg"],
   },
   alternates: {
