@@ -124,3 +124,36 @@ Aucune décision bloquante remontée par les agents. Les seules zones nécessita
 - `noya-site.jsx` (code mort, hors build Next.js) non touché.
 - Pas de `EDITS_A_VALIDER.md` créé : aucun agent n'a remonté de décision rédactionnelle ambiguë.
 - Refactor mineur appliqué en post-validation : retrait d'un import `ReactNode` inutilisé dans `ReservationCTA.tsx` (lint ESLint bloquait le build initial — corrigé, build OK).
+
+---
+
+## Cleanup pre-merge
+
+### Modifications
+- `src/app/page.tsx` : rendu conditionnel des cards de plats signatures (variante text-only `p-8` avec tag, h3 serif `text-2xl`, prix burgundy `text-2xl` si pas d'image). 3 `image`/`alt` supprimés des entrées data (Côtes d'Agneau, Côte de Bœuf à Partager, Pain Perdu à la Rose). Section L'équipe : zones image placeholder (2 divs `aspect-[4/5] bg-sand` Inès/Kalam) supprimées, padding du bloc texte porté à `p-8 md:p-10`, textes éditoriaux conservés.
+- `src/app/a-propos/page.tsx` : zones image placeholder supprimées sur les 3 blocs (Inès `aspect-[4/5]`, Kalam `aspect-[4/5]`, Le lieu `aspect-[16/9]`). Layout converti de grid 2-cols en single-col centré `max-w-2xl mx-auto text-center` (text-justify conservé sur les paragraphes de corps). Marqueurs `[À COMPLÉTER]` visibles retirés du rendu : paragraphe personnel Inès et lien carte des vins — conservés sous forme de commentaires JSX invisibles pour réintroduction future.
+
+### Suppressions visibles
+- Zones image supprimées sur : home (3 plats signatures + 2 blocs équipe), `/a-propos` (3 blocs Inès / Kalam / lieu).
+- Marqueurs `[À COMPLÉTER]` supprimés du rendu utilisateur sur `/a-propos` (paragraphe perso Inès, lien carte des vins).
+
+### Conservations invisibles pour ajout futur
+- Commentaire JSX dans `/a-propos` bloc Inès : emplacement futur du paragraphe personnel.
+- Commentaire JSX dans `/a-propos` bloc Vins : emplacement futur du lien carte des vins.
+- Commentaires JSX dans les 2 blocs équipe (home + `/a-propos`) et bloc Lieu (`/a-propos`) : emplacements futurs des photos.
+
+### Pour ajouter les photos plus tard (sans toucher au reste du code)
+- Plats signatures : poser les fichiers dans `/public/images/galerie/` (nom au choix, ex. `cotes-agneau.jpg`) puis ajouter le champ `image` (et `alt`) dans la data du plat correspondant (Côtes d'Agneau, Côte de Bœuf, Pain Perdu) dans `src/app/page.tsx` — la card bascule automatiquement en variante image.
+- Équipe : poser `/public/images/equipe/ines.jpg` et `/public/images/equipe/kalam.jpg`, puis réintroduire la zone image au niveau du commentaire JSX TODO (home `src/app/page.tsx` + `/a-propos`).
+- Lieu : poser une photo salle/terrasse dans `/public/images/`, puis réintroduire dans `/a-propos` au niveau du commentaire TODO.
+
+### Quality gates
+- Build Next.js : OK (29 pages générées, exit 0).
+- Aucun `[À COMPLÉTER]` rendu côté utilisateur : grep `À COMPLÉTER` dans `src/` retourne 0 occurrence.
+- Aucune référence à `placeholder.jpg` ou `equipe/ines`/`equipe/kalam` dans du code rendu : les 4 occurrences restantes sont des commentaires JSX `{/* TODO: ... */}` invisibles à l'utilisateur (2 dans `src/app/page.tsx`, 2 dans `src/app/a-propos/page.tsx`).
+
+### Audit pendant cleanup
+- `public/images/galerie/pita of.jpg`, `houmous bilameh.jpg`, `the shakshuka.jpg` : présents (rendu image conservé).
+- `public/images/galerie/placeholder.jpg` : absent (référence supprimée des 3 plats).
+- `public/images/equipe/` : dossier absent (rendu image supprimé des 2 blocs équipe).
+- 12 fichiers `IMG_*.jpg` et `assiete falafel.jpg` présents dans `public/images/galerie/` mais non référencés dans le code : non touchés (hors scope cleanup pre-merge).

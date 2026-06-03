@@ -68,84 +68,61 @@ export default function AProposPage() {
 
       {/* Bloc Inès */}
       <section className="py-16 px-5 bg-cream">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
-          {/* TODO: portrait Inès en salle, à intégrer */}
-          <div className="w-full aspect-[4/5] bg-warm-white border border-cream-dark flex items-center justify-center order-1">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-taupe/60">
-              Portrait Inès — à intégrer
-            </span>
-          </div>
-          <div className="order-2">
-            <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
-              En salle
+        <div className="max-w-2xl mx-auto text-center">
+          {/* TODO: réintégrer ici le portrait Inès quand /images/equipe/ines.jpg sera disponible */}
+          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
+            En salle
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-burgundy font-normal mb-6">
+            Inès
+          </h2>
+          <div className="text-sm text-taupe leading-[2] space-y-4 text-justify">
+            <p>
+              Inès dirige la salle. C&apos;est elle que les clients croisent en arrivant, qui présente la carte, conseille les plats, et reste deux minutes à la fin du repas pour demander si tout s&apos;est bien passé. Dans les avis Google, c&apos;est elle « la restauratrice adorable », celle qu&apos;on cite, celle qu&apos;on remercie.
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-burgundy font-normal mb-6">
-              Inès
-            </h2>
-            <div className="text-sm text-taupe leading-[2] space-y-4">
-              <p>
-                Inès dirige la salle. C&apos;est elle que les clients croisent en arrivant, qui présente la carte, conseille les plats, et reste deux minutes à la fin du repas pour demander si tout s&apos;est bien passé. Dans les avis Google, c&apos;est elle « la restauratrice adorable », celle qu&apos;on cite, celle qu&apos;on remercie.
-              </p>
-              <p className="font-accent italic text-dark/40">
-                [À COMPLÉTER — paragraphe personnel à écrire avec Inès, 2-3 phrases sur son parcours et sa philosophie de l&apos;accueil.]
-              </p>
-            </div>
+            {/* TODO: ajouter ici le paragraphe personnel d'Inès (parcours + philosophie d'accueil) après validation avec elle */}
           </div>
         </div>
       </section>
 
       {/* Bloc Kalam */}
       <section className="py-16 px-5 bg-warm-white">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center">
-          <div className="order-2 md:order-1">
-            <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
-              En cuisine
+        <div className="max-w-2xl mx-auto text-center">
+          {/* TODO: réintégrer ici le portrait Kalam quand /images/equipe/kalam.jpg sera disponible */}
+          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
+            En cuisine
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-burgundy font-normal mb-6">
+            Kalam
+          </h2>
+          <div className="text-sm text-taupe leading-[2] space-y-4 text-justify">
+            <p>
+              Kalam est notre chef. Spécialiste de la cuisine du Levant, il a notamment dirigé la cuisine de Soum Soum avant de nous rejoindre. Toutes les recettes de la carte sortent de ses mains.
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-burgundy font-normal mb-6">
-              Kalam
-            </h2>
-            <div className="text-sm text-taupe leading-[2] space-y-4">
-              <p>
-                Kalam est notre chef. Spécialiste de la cuisine du Levant, il a notamment dirigé la cuisine de Soum Soum avant de nous rejoindre. Toutes les recettes de la carte sortent de ses mains.
-              </p>
-              <p>
-                Sa cuisine est celle du Levant moderne : les fondamentaux respectés — pitas faites maison, houmous chauds, falafels du jour, épices ajustées plat par plat — et la créativité d&apos;un bistrot qui regarde devant. Les côtes d&apos;agneau qui repartent en commentaires, le pain perdu à la rose que les clients citent dans leurs avis, la shakshuka qui rend les habitués accros : ce sont les siens.
-              </p>
-            </div>
-          </div>
-          {/* TODO: portrait Kalam en cuisine */}
-          <div className="w-full aspect-[4/5] bg-cream border border-cream-dark flex items-center justify-center order-1 md:order-2">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-taupe/60">
-              Portrait Kalam — à intégrer
-            </span>
+            <p>
+              Sa cuisine est celle du Levant moderne : les fondamentaux respectés — pitas faites maison, houmous chauds, falafels du jour, épices ajustées plat par plat — et la créativité d&apos;un bistrot qui regarde devant. Les côtes d&apos;agneau qui repartent en commentaires, le pain perdu à la rose que les clients citent dans leurs avis, la shakshuka qui rend les habitués accros : ce sont les siens.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Bloc Le Lieu */}
       <section className="py-16 px-5 bg-cream">
-        <div className="max-w-5xl mx-auto">
-          {/* TODO: photo salle ou terrasse */}
-          <div className="w-full aspect-[16/9] bg-warm-white border border-cream-dark flex items-center justify-center mb-10">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-taupe/60">
-              Photo salle ou terrasse — à intégrer
-            </span>
-          </div>
-          <div className="max-w-2xl mx-auto text-center">
-            <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
-              La maison
+        <div className="max-w-2xl mx-auto text-center">
+          {/* TODO: réintégrer ici la photo salle/terrasse quand disponible */}
+          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3">
+            La maison
+          </p>
+          <h2 className="font-serif text-3xl md:text-4xl text-burgundy font-normal mb-6">
+            Au 8 rue de Châteaudun
+          </h2>
+          <div className="text-sm text-taupe leading-[2] space-y-4 text-justify">
+            <p>
+              La salle est petite — 28 couverts en intérieur, 24 en terrasse l&apos;été. Zellige aux murs, lumière naturelle, touches végétales. On a voulu un endroit où l&apos;on se sent à sa place autant pour un déjeuner pressé que pour une soirée qu&apos;on prend le temps de raconter.
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-burgundy font-normal mb-6">
-              Au 8 rue de Châteaudun
-            </h2>
-            <div className="text-sm text-taupe leading-[2] space-y-4 text-justify">
-              <p>
-                La salle est petite — 28 couverts en intérieur, 24 en terrasse l&apos;été. Zellige aux murs, lumière naturelle, touches végétales. On a voulu un endroit où l&apos;on se sent à sa place autant pour un déjeuner pressé que pour une soirée qu&apos;on prend le temps de raconter.
-              </p>
-              <p>
-                Le quartier est un atout. À 5 minutes à pied : l&apos;Opéra Garnier, les Folies Bergère, le Théâtre de Paris, le Casino de Paris. Métros Notre-Dame-de-Lorette, Cadet, Le Peletier. Idéal avant ou après un spectacle.
-              </p>
-            </div>
+            <p>
+              Le quartier est un atout. À 5 minutes à pied : l&apos;Opéra Garnier, les Folies Bergère, le Théâtre de Paris, le Casino de Paris. Métros Notre-Dame-de-Lorette, Cadet, Le Peletier. Idéal avant ou après un spectacle.
+            </p>
           </div>
         </div>
       </section>
@@ -210,12 +187,10 @@ export default function AProposPage() {
           <h2 className="font-serif text-3xl md:text-4xl text-burgundy font-normal mb-6">
             Une carte des vins levantine, bientôt
           </h2>
-          <p className="text-sm text-taupe leading-[2] mb-6">
+          <p className="text-sm text-taupe leading-[2]">
             On construit une carte des vins à l&apos;image de notre cuisine : des cuvées du Liban (Château Musar, Massaya, IXSIR…) et d&apos;Israël (Domaine du Castel, Tulip, Golan Heights…) en regard de quelques classiques français. Une histoire que personne ne raconte vraiment dans le quartier, et qu&apos;on a hâte de partager.
           </p>
-          <p className="font-accent italic text-dark/40 text-sm">
-            [À COMPLÉTER — ajouter un lien vers la page carte des vins quand prête.]
-          </p>
+          {/* TODO: ajouter ici le lien vers la page carte des vins quand elle sera publiée */}
         </div>
       </section>
 

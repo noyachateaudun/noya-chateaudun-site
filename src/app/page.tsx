@@ -37,7 +37,16 @@ export const metadata: Metadata = {
   },
 };
 
-const SIGNATURE_DISHES = [
+type SignatureDish = {
+  name: string;
+  tag: string;
+  desc: string;
+  price: string;
+  image?: string;
+  alt?: string;
+};
+
+const SIGNATURE_DISHES: SignatureDish[] = [
   {
     name: "Pita Pizel",
     tag: "Midi",
@@ -59,16 +68,14 @@ const SIGNATURE_DISHES = [
     tag: "Soir",
     desc: "Marinées aux épices du Levant, grillées à cœur. Sauce citron et herbes fraîches. 1 accompagnement inclus.",
     price: "28,00€",
-    image: "/images/galerie/placeholder.jpg",
-    alt: "Côtes d'agneau aux épices du Levant, plat signature soir Noya",
+    // TODO: réintégrer image quand cliché disponible (alt: "Côtes d'agneau aux épices du Levant, plat signature soir Noya")
   },
   {
     name: "Côte de Bœuf à Partager",
     tag: "Soir",
     desc: "Pièce noble à la braise, épices levantines, chimichurri. 2 accompagnements inclus. Pour deux.",
     price: "76,00€ /2",
-    image: "/images/galerie/placeholder.jpg",
-    alt: "Côte de bœuf à partager grillée à la braise",
+    // TODO: réintégrer image quand cliché disponible (alt: "Côte de bœuf à partager grillée à la braise")
   },
   {
     name: "Shakshuka Noya",
@@ -83,8 +90,7 @@ const SIGNATURE_DISHES = [
     tag: "Soir",
     desc: "Challah dorée au beurre, crème à la rose, pistaches. Le dessert qui fait revenir les habitués.",
     price: "8,00€",
-    image: "/images/galerie/placeholder.jpg",
-    alt: "Pain perdu à la rose, challah crème rose pistaches",
+    // TODO: réintégrer image quand cliché disponible (alt: "Pain perdu à la rose, challah crème rose pistaches")
   },
 ];
 
@@ -147,26 +153,40 @@ export default function HomePage() {
             {SIGNATURE_DISHES.map((dish, i) => (
               <Reveal key={dish.name} delay={i * 0.08} className="h-full">
                 <article className="h-full flex flex-col bg-warm-white border border-cream-dark overflow-hidden group hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(44,36,33,0.06)] transition-all duration-500">
-                  <div className="relative aspect-[3/4] bg-sand overflow-hidden">
-                    {/* TODO: image manquante pour Côtes d'Agneau / Côte de Bœuf / Pain Perdu — créer /public/images/galerie/placeholder.jpg ou remplacer par les vrais clichés */}
-                    <Image
-                      src={dish.image}
-                      alt={dish.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-5 flex flex-col flex-grow">
-                    <div className="flex items-center justify-between gap-2 mb-1">
-                      <span className="text-[10px] uppercase tracking-[0.15em] text-burgundy/60 font-semibold">
+                  {dish.image ? (
+                    <div className="relative aspect-[3/4] bg-sand overflow-hidden">
+                      <Image
+                        src={dish.image}
+                        alt={dish.alt ?? dish.name}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  ) : null}
+                  {dish.image ? (
+                    <div className="p-5 flex flex-col flex-grow">
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <span className="text-[10px] uppercase tracking-[0.15em] text-burgundy/60 font-semibold">
+                          {dish.tag}
+                        </span>
+                        <span className="font-accent text-lg text-burgundy font-semibold whitespace-nowrap">{dish.price}</span>
+                      </div>
+                      <h3 className="font-serif text-lg text-dark min-h-[2.5rem] flex items-start mb-2">{dish.name}</h3>
+                      <p className="text-sm text-taupe leading-relaxed flex-grow">{dish.desc}</p>
+                    </div>
+                  ) : (
+                    <div className="p-8 flex flex-col flex-grow">
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-burgundy/60 font-bold mb-4 self-start">
                         {dish.tag}
                       </span>
-                      <span className="font-accent text-lg text-burgundy font-semibold whitespace-nowrap">{dish.price}</span>
+                      <div className="flex items-baseline justify-between gap-3 mb-3">
+                        <h3 className="font-serif text-2xl text-dark leading-tight">{dish.name}</h3>
+                        <span className="font-accent text-2xl text-burgundy font-semibold whitespace-nowrap">{dish.price}</span>
+                      </div>
+                      <p className="text-sm text-taupe leading-relaxed flex-grow mt-2">{dish.desc}</p>
                     </div>
-                    <h3 className="font-serif text-lg text-dark min-h-[2.5rem] flex items-start mb-2">{dish.name}</h3>
-                    <p className="text-sm text-taupe leading-relaxed flex-grow">{dish.desc}</p>
-                  </div>
+                  )}
                 </article>
               </Reveal>
             ))}
@@ -206,11 +226,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <Reveal>
               <article className="bg-cream border border-[#E5DFD5] rounded-xl overflow-hidden h-full flex flex-col">
-                {/* TODO: portrait Inès en salle — ajouter /public/images/equipe/ines.jpg */}
-                <div className="relative aspect-[4/5] bg-sand flex items-center justify-center">
-                  <span className="text-taupe/50 text-sm italic">Portrait Inès</span>
-                </div>
-                <div className="p-6">
+                <div className="p-8 md:p-10 flex flex-col h-full">
+                  {/* TODO: réintégrer ici le portrait quand /images/equipe/ines.jpg sera disponible */}
                   <p className="text-[10px] uppercase tracking-[0.25em] text-burgundy/60 font-semibold mb-2">
                     En salle
                   </p>
@@ -223,11 +240,8 @@ export default function HomePage() {
             </Reveal>
             <Reveal delay={0.1}>
               <article className="bg-cream border border-[#E5DFD5] rounded-xl overflow-hidden h-full flex flex-col">
-                {/* TODO: portrait Kalam en cuisine — ajouter /public/images/equipe/kalam.jpg */}
-                <div className="relative aspect-[4/5] bg-sand flex items-center justify-center">
-                  <span className="text-taupe/50 text-sm italic">Portrait Kalam</span>
-                </div>
-                <div className="p-6">
+                <div className="p-8 md:p-10 flex flex-col h-full">
+                  {/* TODO: réintégrer ici le portrait quand /images/equipe/kalam.jpg sera disponible */}
                   <p className="text-[10px] uppercase tracking-[0.25em] text-burgundy/60 font-semibold mb-2">
                     En cuisine
                   </p>
