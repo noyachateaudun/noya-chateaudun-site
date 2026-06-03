@@ -74,14 +74,14 @@ const SIGNATURE_DISHES: SignatureDish[] = [
     name: "Côte de Bœuf à Partager",
     tag: "Soir",
     desc: "Pièce noble à la braise, épices levantines, chimichurri. 2 accompagnements inclus. Pour deux.",
-    price: "76,00€ /2",
+    price: "78,00€ /2",
     // TODO: réintégrer image quand cliché disponible (alt: "Côte de bœuf à partager grillée à la braise")
   },
   {
     name: "Shakshuka Noya",
     tag: "Soir",
     desc: "Œufs pochés, sauce tomate-poivrons, viande mijotée aux épices. La recette de référence.",
-    price: "18,00€",
+    price: "19,00€",
     image: "/images/galerie/the shakshuka.jpg",
     alt: "Shakshuka Noya, œufs pochés sauce tomate-poivrons",
   },
@@ -89,7 +89,7 @@ const SIGNATURE_DISHES: SignatureDish[] = [
     name: "Pain Perdu à la Rose",
     tag: "Soir",
     desc: "Challah dorée au beurre, crème à la rose, pistaches. Le dessert qui fait revenir les habitués.",
-    price: "8,00€",
+    price: "9,00€",
     // TODO: réintégrer image quand cliché disponible (alt: "Pain perdu à la rose, challah crème rose pistaches")
   },
 ];

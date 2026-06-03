@@ -45,7 +45,7 @@ Ce qui distingue immédiatement la **gastronomie méditerranéenne** du Levant, 
 
 - **L'huile d'olive** : omniprésente, elle est la matière grasse principale. On l'utilise pour cuire, assaisonner, et même en pâtisserie.
 - **Les pois chiches** : la base du houmous et des falafels. Riches en protéines, ils sont le pilier de l'alimentation levantine.
-- **Le tehina (crème de sésame)** : indissociable du houmous, mais aussi utilisée en sauce, en dessert, dans les salades.
+- **Le tahina (crème de sésame)** : indissociable du houmous, mais aussi utilisée en sauce, en dessert, dans les salades.
 - **Le zaatar** : mélange d'origan, de thym, de sésame et de sumac. On le retrouve sur les manouché (galettes du petit-déjeuner) et dans les marinades.
 - **Le sumac** : cette poudre rouge aux notes acidulées remplace souvent le citron dans les assaisonnements. Son goût fruité est immédiatement reconnaissable.
 - **Le citron** : frais, confit ou en jus, il apporte la fraîcheur caractéristique des plats levantins.
@@ -56,7 +56,7 @@ Ce qui distingue immédiatement la **gastronomie méditerranéenne** du Levant, 
 Les **plats levantins** les plus connus ont largement dépassé les frontières du Levant pour conquérir le monde entier :
 
 ### Houmous
-Crème de pois chiches au tehina, citron et ail. Chaque famille, chaque restaurant a sa recette secrète. C'est le plat national officieux de toute la région. [Découvrez notre recette du houmous maison](/blog/recette-houmous-maison-authentique).
+Crème de pois chiches au tahina, citron et ail. Chaque famille, chaque restaurant a sa recette secrète. C'est le plat national officieux de toute la région. [Découvrez notre recette du houmous maison](/blog/recette-houmous-maison-authentique).
 
 ### Falafel
 Boulettes de pois chiches (ou de fèves selon les régions), frites à la perfection. Croustillantes à l'extérieur, vertes et moelleuses à l'intérieur. [En savoir plus sur le falafel, ses origines et où en manger à Paris](/blog/falafel-origines-recette-paris).
@@ -65,7 +65,7 @@ Boulettes de pois chiches (ou de fèves selon les régions), frites à la perfec
 Œufs pochés dans une sauce tomate épicée aux poivrons et oignons. Un plat réconfortant par excellence. [Découvrez l'histoire de la shakshuka et sa recette](/blog/shakshuka-histoire-recette).
 
 ### Baba ghanoush
-Purée d'aubergine grillée au tehina, avec des notes fumées irrésistibles. Moins connu que le houmous mais tout aussi addictif.
+Purée d'aubergine grillée au tahina, avec des notes fumées irrésistibles. Moins connu que le houmous mais tout aussi addictif.
 
 ### Taboulé levantin
 Rien à voir avec le taboulé de semoule français : le vrai taboulé est une salade de persil, tomate, oignon et menthe, avec juste un soupçon de boulgour. C'est le persil la star, pas le grain.
@@ -93,8 +93,8 @@ Si les **plats levantins** connaissent un succès grandissant en France et en Eu
     slug: "recette-houmous-maison-authentique",
     title: "Houmous maison : la recette et les secrets d'un houmous crémeux",
     metaTitle: "Recette houmous maison : secrets d'un houmous crémeux",
-    metaDescription: "La vraie recette du houmous maison crémeux : pois chiches, tehina, citron. Tous les secrets pour un houmous fait maison ultra onctueux.",
-    excerpt: "Pois chiches, tehina, citron et patience : tous les secrets pour réussir un houmous maison aussi crémeux qu'au Levant.",
+    metaDescription: "La vraie recette du houmous maison crémeux : pois chiches, tahina, citron. Tous les secrets pour un houmous fait maison ultra onctueux.",
+    excerpt: "Pois chiches, tahina, citron et patience : tous les secrets pour réussir un houmous maison aussi crémeux qu'au Levant.",
     category: "Recettes",
     keyword: "recette houmous maison",
     keywords: ["recette houmous maison", "houmous crémeux", "houmous fait maison", "houmous pois chiches"],
@@ -103,9 +103,9 @@ Si les **plats levantins** connaissent un succès grandissant en France et en Eu
     imageAlt: "Bol de houmous crémeux garni d'huile d'olive, pois chiches et paprika",
     content: `## Le houmous, bien plus qu'une simple purée de pois chiches
 
-Le houmous est probablement le plat levantin le plus connu au monde — et aussi le plus mal compris. En France, on trouve des versions industrielles pâles et granuleuses qui n'ont rien à voir avec un **houmous fait maison**. Le vrai houmous, c'est une crème soyeuse, intensément parfumée de tehina et de citron, dans laquelle on plonge un morceau de pita chaude avec un bonheur simple et absolu.
+Le houmous est probablement le plat levantin le plus connu au monde — et aussi le plus mal compris. En France, on trouve des versions industrielles pâles et granuleuses qui n'ont rien à voir avec un **houmous fait maison**. Le vrai houmous, c'est une crème soyeuse, intensément parfumée de tahina et de citron, dans laquelle on plonge un morceau de pita chaude avec un bonheur simple et absolu.
 
-La recette est minimaliste — pois chiches, tehina, citron, ail, sel — mais c'est justement cette simplicité qui rend chaque détail crucial. Un **houmous crémeux** parfait demande de la méthode.
+La recette est minimaliste — pois chiches, tahina, citron, ail, sel — mais c'est justement cette simplicité qui rend chaque détail crucial. Un **houmous crémeux** parfait demande de la méthode.
 
 ## La recette du houmous
 
@@ -113,7 +113,7 @@ La recette est minimaliste — pois chiches, tehina, citron, ail, sel — mais c
 
 - 250 g de pois chiches secs (ou 500 g cuits)
 - 1 cuillère à café de bicarbonate de soude
-- 150 g de tehina (crème de sésame) de qualité
+- 150 g de tahina (crème de sésame) de qualité
 - Le jus de 2 citrons (environ 80 ml)
 - 1 petite gousse d'ail écrasée
 - Sel fin
@@ -128,7 +128,7 @@ La recette est minimaliste — pois chiches, tehina, citron, ail, sel — mais c
 
 **L'assemblage — et c'est là que tout se joue :**
 
-1. Mixez la tehina avec le jus de citron et l'ail pendant 2 bonnes minutes. Le mélange va d'abord épaissir puis devenir une crème blanche et aérée. C'est la base aromatique de votre houmous.
+1. Mixez la tahina avec le jus de citron et l'ail pendant 2 bonnes minutes. Le mélange va d'abord épaissir puis devenir une crème blanche et aérée. C'est la base aromatique de votre houmous.
 2. Ajoutez les pois chiches égouttés (encore chauds si possible) et mixez en ajoutant progressivement de l'eau de cuisson glacée, cuillère par cuillère.
 3. Mixez longtemps — 4 à 5 minutes minimum au blender puissant. C'est la durée de mixage qui fait la texture.
 4. Goûtez, ajustez le sel et le citron. Le houmous doit être légèrement plus assaisonné que ce que vous souhaitez, car les saveurs s'atténuent en refroidissant.
@@ -137,13 +137,13 @@ La recette est minimaliste — pois chiches, tehina, citron, ail, sel — mais c
 
 **1. Épluchez les pois chiches.** Oui, c'est fastidieux. Mais retirer la fine peau qui entoure chaque pois chiche fait une différence spectaculaire sur la texture. Pour accélérer, frottez-les entre vos mains dans l'eau : les peaux flottent en surface.
 
-**2. Mixez la tehina et le citron en premier.** C'est la technique des maîtres houmousiers : le tehina émulsionné avec le citron crée une base onctueuse qui enrobe les pois chiches au lieu de les alourdir.
+**2. Mixez la tahina et le citron en premier.** C'est la technique des maîtres houmousiers : le tahina émulsionné avec le citron crée une base onctueuse qui enrobe les pois chiches au lieu de les alourdir.
 
 **3. Utilisez de l'eau de cuisson glacée.** Mettez une partie de l'eau de cuisson au réfrigérateur ou ajoutez des glaçons. Le contraste de température aide à obtenir une texture plus lisse et plus aérée.
 
 **4. Ne lésinez pas sur le mixage.** Un bon houmous se mixe pendant 4-5 minutes au minimum. Au blender puissant, c'est l'idéal. Au robot, comptez plutôt 6-7 minutes.
 
-**5. Investissez dans un bon tehina.** Le tehina représente un tiers du houmous — sa qualité est déterminante. Choisissez un tehina 100% sésame, à la texture fluide et au goût légèrement amer et noisété.
+**5. Investissez dans un bon tahina.** Le tahina représente un tiers du houmous — sa qualité est déterminante. Choisissez un tahina 100% sésame, à la texture fluide et au goût légèrement amer et noisété.
 
 ## Les variantes gourmandes
 
@@ -163,7 +163,7 @@ Le houmous classique est parfait tel quel, mais les variantes sont infinies :
 
 ## Pas envie de le faire vous-même ?
 
-On vous comprend — un bon houmous demande du temps et de la patience. Venez goûter notre houmous fait maison chez [Noya](/menu), préparé chaque matin avec des pois chiches frais et un tehina premium. Classique, aux champignons truffés, ou en version du jour — il y a toujours une bonne raison de revenir. [Découvrez toute notre carte levantine](/menu).`,
+On vous comprend — un bon houmous demande du temps et de la patience. Venez goûter notre houmous fait maison chez [Noya](/menu), préparé chaque matin avec des pois chiches frais et un tahina premium. Classique, aux champignons truffés, ou en version du jour — il y a toujours une bonne raison de revenir. [Découvrez toute notre carte levantine](/menu).`,
   },
   {
     slug: "meilleurs-plats-restaurant-levantin",
@@ -185,7 +185,7 @@ Voici les 10 **plats levantins** incontournables à commander, que vous soyez n�
 
 ## 1. Le Houmous — la base absolue
 
-Impossible de passer à côté. Le houmous, c'est la porte d'entrée de la cuisine levantine : une crème de pois chiches au tehina, citron et ail, servie avec un filet d'huile d'olive et de la pita chaude. Dans un bon restaurant, le houmous est préparé chaque matin et sa texture est soyeuse, presque aérienne. [Apprenez à le préparer chez vous avec notre recette](/blog/recette-houmous-maison-authentique).
+Impossible de passer à côté. Le houmous, c'est la porte d'entrée de la cuisine levantine : une crème de pois chiches au tahina, citron et ail, servie avec un filet d'huile d'olive et de la pita chaude. Dans un bon restaurant, le houmous est préparé chaque matin et sa texture est soyeuse, presque aérienne. [Apprenez à le préparer chez vous avec notre recette](/blog/recette-houmous-maison-authentique).
 
 Chez [Noya](/menu), le houmous est disponible en version classique et en variantes créatives — dont un houmous aux champignons truffés qui mérite le détour.
 
@@ -199,11 +199,11 @@ Des œufs pochés dans une sauce tomate mijotée avec des poivrons, des oignons 
 
 ## 4. La Pita garnie — le sandwich parfait
 
-Oubliez tout ce que vous savez sur les sandwichs. La pita garnie levantine, c'est un pain rond et gonflé, ouvert en poche, dans lequel on empile poulet mariné, aubergine grillée, salade, pickles, tehina et sauce piquante. C'est un repas complet, équilibré, explosif en saveurs. La Pita Of de Noya, avec son poulet mariné et ses oignons pickles, est un classique.
+Oubliez tout ce que vous savez sur les sandwichs. La pita garnie levantine, c'est un pain rond et gonflé, ouvert en poche, dans lequel on empile poulet mariné, aubergine grillée, salade, pickles, tahina et sauce piquante. C'est un repas complet, équilibré, explosif en saveurs. La Pita Of de Noya, avec son poulet mariné et ses oignons pickles, est un classique.
 
 ## 5. Le Baba ghanoush — la douceur fumée
 
-Cousin du houmous mais à base d'aubergine grillée au feu. La chair fondante est mélangée avec du tehina, du citron et de l'ail. Le résultat est une crème aux notes fumées irrésistibles. Plus léger que le houmous, le baba ghanoush est le mezzé des connaisseurs.
+Cousin du houmous mais à base d'aubergine grillée au feu. La chair fondante est mélangée avec du tahina, du citron et de l'ail. Le résultat est une crème aux notes fumées irrésistibles. Plus léger que le houmous, le baba ghanoush est le mezzé des connaisseurs.
 
 ## 6. Le Taboulé levantin — le vrai, le seul
 
@@ -211,7 +211,7 @@ Rien à voir avec le taboulé de semoule qu'on trouve en supermarché. Le vrai t
 
 ## 7. Le Chou-fleur rôti — la révélation végétale
 
-Le chou-fleur rôti entier est devenu un classique des **spécialités levantines** modernes. Rôti au four jusqu'à être doré et caramélisé, nappé de tehina et parsemé de grenade et d'herbes fraîches. Un plat spectaculaire qui convertit même les réfractaires aux légumes.
+Le chou-fleur rôti entier est devenu un classique des **spécialités levantines** modernes. Rôti au four jusqu'à être doré et caramélisé, nappé de tahina et parsemé de grenade et d'herbes fraîches. Un plat spectaculaire qui convertit même les réfractaires aux légumes.
 
 ## 8. Le Labneh — la fraîcheur incarnée
 
@@ -269,9 +269,9 @@ Chaque mezzé froid est servi avec des pains pita fraîchement cuits, coupés en
 
 Les plats chauds apportent de la gourmandise et de la spectacle :
 
-- **Falafels** fraîchement frits, servis avec du tehina
+- **Falafels** fraîchement frits, servis avec du tahina
 - **Börek** (feuilletés au fromage et aux épinards)
-- **Chou-fleur rôti** au tehina et grenade
+- **Chou-fleur rôti** au tahina et grenade
 - **Halloumi grillé** avec du miel et du zaatar
 
 ### Les plats principaux — pour les gros appétits
@@ -479,7 +479,7 @@ Ce qui distingue un excellent falafel : la fraîcheur (frits à la commande, pas
 
 ## Nos falafels chez Noya
 
-Chez [Noya](/menu), nos falafels sont préparés chaque matin avec des pois chiches frais trempés 24 heures et une abondance de persil et coriandre. Frits à la commande, jamais réchauffés. Servis en assiette avec houmous, salade, aubergine et tehina, ou en pita garnie pour un déjeuner complet. Au 8 rue de Châteaudun, Paris 9e. [Voir notre carte complète](/menu).`,
+Chez [Noya](/menu), nos falafels sont préparés chaque matin avec des pois chiches frais trempés 24 heures et une abondance de persil et coriandre. Frits à la commande, jamais réchauffés. Servis en assiette avec houmous, salade, aubergine et tahina, ou en pita garnie pour un déjeuner complet. Au 8 rue de Châteaudun, Paris 9e. [Voir notre carte complète](/menu).`,
   },
   {
     slug: "vins-israeliens-libanais-mediterranee",
@@ -539,7 +539,7 @@ L'accord entre le **vin méditerranéen** et la cuisine levantine est naturel �
 
 ### Les blancs
 
-Un Sauvignon Blanc du Golan ou un blanc de Ksara accompagnent parfaitement les mezzé froids : houmous, labneh, taboulé. Leur acidité tranche la richesse du tehina et rafraîchit le palais entre chaque bouchée.
+Un Sauvignon Blanc du Golan ou un blanc de Ksara accompagnent parfaitement les mezzé froids : houmous, labneh, taboulé. Leur acidité tranche la richesse du tahina et rafraîchit le palais entre chaque bouchée.
 
 ### Les rosés
 
@@ -590,8 +590,8 @@ C'est aussi simple que ça. Pas d'attente, pas de surprise — votre commande es
 
 Tous nos plats se transportent bien, mais certains sont particulièrement adaptés à l'emporter :
 
-- **La Pita Of** : notre best-seller, poulet mariné, aubergine, salade, tehina — un repas complet dans une pita
-- **L'Assiette Falafel** : falafels croustillants, houmous, légumes, tehina — copieux et satisfaisant
+- **La Pita Of** : notre best-seller, poulet mariné, aubergine, salade, tahina — un repas complet dans une pita
+- **L'Assiette Falafel** : falafels croustillants, houmous, légumes, tahina — copieux et satisfaisant
 - **Le Houmous Bilameh** : notre houmous signature avec poulet grillé — une valeur sûre
 - **Les Salatim** : nos entrées à partager, parfaites pour un apéro improvisé à la maison
 

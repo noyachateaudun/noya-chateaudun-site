@@ -157,3 +157,51 @@ Aucune décision bloquante remontée par les agents. Les seules zones nécessita
 - `public/images/galerie/placeholder.jpg` : absent (référence supprimée des 3 plats).
 - `public/images/equipe/` : dossier absent (rendu image supprimé des 2 blocs équipe).
 - 12 fichiers `IMG_*.jpg` et `assiete falafel.jpg` présents dans `public/images/galerie/` mais non référencés dans le code : non touchés (hors scope cleanup pre-merge).
+
+
+---
+
+## Update Carte du Soir — juin 2026 (commit b1f7d032bcdcbcec354b0d495578137db35f81f1)
+
+### Source
+Nouveau menu papier validé. Diffusion via PDF.
+
+### Modifications sur /menu (Carte du Soir uniquement)
+- **Salatim** : +1€ sur Pétria et Falafel (8→9€). Formule passe de 23 à 24€. Tabouleh : "fruits de saison" → "quinoa". Baba Ganoush : ajout grenade.
+- **Entrées** : Carpaccio inchangé (17€), Arayes inchangé (15€). Hausses : Fish Labaneh (15→16€), Ceviche de Daurade (15→16€), Avocado Sumac (13→14€). Renommage : Shishlik x3 → Brochettes de Bœuf x3 (+1€, 16→17€).
+- **Plats Signatures** : Côte de Bœuf 76→78€. Côtes d'Agneau inchangé (28€).
+- **Plats** : Durum 21→22€, Shakshuka Noya 18→19€, Filet Daurade 26→28€, Shnitzel Burger 21→22€, Jardin de Noya 18→20€. Renommages : Chicken Shnitzel → Shnitzel de Poulet, Schnitzel Burger → Shnitzel Burger (harmonisation sans 'c'). Descriptions ajustées (cf. nouveau menu papier).
+- **Accompagnements** : Frites au Zaatar et Salade 5→6€. **Ajout Pita Chaude 1,5€**.
+- **Desserts** : tous passent de 8 à 9€. Descriptions simplifiées.
+
+### Modifications sur la home
+- Côte de Bœuf à Partager : 76→78€
+- Shakshuka Noya : 18→19€
+- Pain Perdu à la Rose : 8→9€
+
+### Harmonisations orthographiques
+- `tehina` → `tahina` partout (alignement avec le menu papier). Fichiers touchés : `src/data/menu.ts`, `src/data/blog.ts`, `src/app/commander/page.tsx`, `src/app/galerie/page.tsx`, `src/app/a-propos/page.tsx`.
+- `Shnitzel` (sans 'c') pour les deux plats concernés.
+
+### Décisions de cohérence vs menu papier
+1. **Côtes d'Agneau** : menu papier dit "Moyen-Orient", site garde "Levant" (règle de positionnement décidée à la refonte de mai 2026).
+2. **Shnitzel vs Schnitzel** : menu papier hésite entre les deux orthographes (Shnitzel de Poulet sans 'c' / Schnitzel Burger avec 'c'). Site harmonise sur "Shnitzel" (sans 'c') pour les deux.
+
+### Actions recommandées pour la prochaine impression du menu papier
+- Aligner les Côtes d'Agneau sur "épices du Levant".
+- Harmoniser l'orthographe Shnitzel/Schnitzel.
+
+### Quality gates
+- Build Next.js : OK (29/29 pages, 0 erreur TS).
+- Aucun ancien prix 76€ ou 18€ Shakshuka résiduel.
+- Aucun ancien nom résiduel (Shishlik / Chicken Shnitzel / Schnitzel Burger).
+- `tehina` → `tahina` : 0 occurrence résiduelle dans src/.
+- Aucun "Moyen-Orient" dans src/.
+- Pita Chaude présent dans menu.ts (1,5€).
+
+### Pour merger
+```bash
+git checkout main
+git merge update-carte-soir-juin-2026
+git push origin main
+```

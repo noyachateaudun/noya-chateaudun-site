@@ -157,7 +157,7 @@ export default function AProposPage() {
             <div className="bg-cream p-6 border border-cream-dark">
               <h3 className="font-serif text-lg text-burgundy mb-3">Le Houmous Bilameh</h3>
               <p className="text-sm text-taupe leading-relaxed">
-                Houmous chaud aux pois chiches, tendre bœuf effiloché, tehina. Le hit signature, midi et soir.
+                Houmous chaud aux pois chiches, tendre bœuf effiloché, tahina. Le hit signature, midi et soir.
               </p>
             </div>
             <div className="bg-cream p-6 border border-cream-dark">

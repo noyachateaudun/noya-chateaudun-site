@@ -18,8 +18,8 @@ export const metadata: Metadata = {
 };
 
 const BESTSELLERS = [
-  { name: "Pita Of", desc: "Poulet mariné, aubergine, salade Noya, oignons pickles, tehina & cornichons.", price: "13,00€" },
-  { name: "Assiette Falafel", desc: "Falafels maison, houmous, salade Noya, aubergine, chou, pommes de terre & tehina.", price: "16,00€" },
+  { name: "Pita Of", desc: "Poulet mariné, aubergine, salade Noya, oignons pickles, tahina & cornichons.", price: "13,00€" },
+  { name: "Assiette Falafel", desc: "Falafels maison, houmous, salade Noya, aubergine, chou, pommes de terre & tahina.", price: "16,00€" },
   { name: "The Shakshuka", desc: "Poivrons, tomates, oignons, épices & œuf.", price: "16,00€" },
   { name: "Houmous Bilameh", desc: "Notre houmous signature, sublimé par du parguit mariné & grillé.", price: "16,50€" },
 ];

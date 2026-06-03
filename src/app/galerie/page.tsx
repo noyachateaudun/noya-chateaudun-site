@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 const PHOTOS = [
   { id: 1, src: "/images/galerie/IMG_9116.jpg", cat: "plats", label: "Pita Of signature", alt: "Pita Of signature, poulet mariné et aubergine, restaurant Noya Paris" },
-  { id: 2, src: "/images/galerie/IMG_9117.jpg", cat: "plats", label: "Assiette Falafel", alt: "Assiette falafel avec houmous et tehina, cuisine levantine Noya" },
+  { id: 2, src: "/images/galerie/IMG_9117.jpg", cat: "plats", label: "Assiette Falafel", alt: "Assiette falafel avec houmous et tahina, cuisine levantine Noya" },
   { id: 3, src: "/images/galerie/IMG_9118.jpg", cat: "plats", label: "Houmous Bilameh", alt: "Houmous Bilameh au poulet grillé, spécialité levantine Noya Paris 9e" },
   { id: 4, src: "/images/galerie/IMG_9119.jpg", cat: "plats", label: "The Shakshuka", alt: "Shakshuka aux poivrons et tomates, plat levantin fait maison chez Noya" },
   { id: 5, src: "/images/galerie/IMG_9120.jpg", cat: "plats", label: "Assortiment de plats", alt: "Assortiment de plats levantins, houmous, pita et salades fraîches, Noya Paris 9e" },
