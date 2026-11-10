@@ -272,7 +272,7 @@ export default function AProposPage() {
           On vous attend, du mardi au samedi, midi et soir.
         </p>
         <a
-          href="https://bookings.zenchef.com/results?rid=386074&pid=1001&utm_source=website&utm_medium=apropos&utm_campaign=reservation"
+          href="https://widget.thefork.com/f74d6eb4-b27b-40b9-b3b9-acda8854080f?utm_source=website&utm_medium=apropos&utm_campaign=reservation"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block px-8 py-3.5 border-[1.5px] border-cream text-cream text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-cream hover:text-burgundy transition-all"

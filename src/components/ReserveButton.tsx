@@ -13,8 +13,9 @@ export default function ReserveButton({
   source?: string;
 }) {
   const baseUrl = RESTAURANT.links.reservation;
+  const sep = baseUrl.includes("?") ? "&" : "?";
   const href = source
-    ? `${baseUrl}&utm_source=website&utm_medium=${source}&utm_campaign=reservation`
+    ? `${baseUrl}${sep}utm_source=website&utm_medium=${source}&utm_campaign=reservation`
     : baseUrl;
   return (
     <a

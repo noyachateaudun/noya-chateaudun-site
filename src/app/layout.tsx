@@ -129,18 +129,6 @@ export default function RootLayout({
         <Footer />
         <FloatingButtons />
 
-        {/* Zenchef reservation widget — config + SDK */}
-        <div
-          className="zc-widget-config"
-          data-restaurant="386074"
-          data-primary-color="b22d2d"
-        />
-        <Script
-          id="zenchef-sdk"
-          src="https://sdk.zenchef.com/v1/sdk.min.js"
-          strategy="afterInteractive"
-        />
-
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0NJYLX2PMB"
           strategy="afterInteractive"

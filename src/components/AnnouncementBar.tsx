@@ -15,7 +15,7 @@ export default function AnnouncementBar() {
       <div className="announcement-track flex h-full">
         {/* Message 1 — lien réservation Zenchef (intercepté par le SDK → modale) */}
         <a
-          href="https://bookings.zenchef.com/results?rid=386074&pid=1001&utm_source=website&utm_medium=sticky&utm_campaign=reservation"
+          href="https://widget.thefork.com/f74d6eb4-b27b-40b9-b3b9-acda8854080f?utm_source=website&utm_medium=sticky&utm_campaign=reservation"
           target="_blank"
           rel="noopener noreferrer"
           className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"

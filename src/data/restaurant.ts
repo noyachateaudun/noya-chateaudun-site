@@ -43,7 +43,7 @@ export const RESTAURANT = {
     bus: ["26", "32", "43"],
   },
   links: {
-    reservation: "https://bookings.zenchef.com/results?rid=386074&pid=1001",
+    reservation: "https://widget.thefork.com/f74d6eb4-b27b-40b9-b3b9-acda8854080f",
     deliveroo: "https://deliveroo.fr/en/menu/paris/9eme-opera/noya-chateaudun-8-rue-de-chateaudun",
     uberEats: "https://www.ubereats.com/fr/store/noya-chateaudun-8-rue-de-chateaudun/LMW5LFJjVq2sA5pNPoEzWg",
     emporter: "https://app.eatself.com/4278/accueil",
