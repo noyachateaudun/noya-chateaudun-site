@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
 import { RESTAURANT } from "@/data/restaurant";
-import Breadcrumbs from "@/components/Breadcrumbs";
+import ReserveButton from "@/components/ReserveButton";
 import ReservationCTA from "@/components/ReservationCTA";
 import { getBreadcrumbSchema } from "@/lib/schema";
 
@@ -23,6 +25,35 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.eatnoya.com/contact" },
 };
 
+const NEARBY = [
+  { name: "Folies Bergère", time: "4 min à pied" },
+  { name: "Opéra Garnier", time: "5 min à pied" },
+  { name: "Casino de Paris", time: "7 min à pied" },
+  { name: "Galeries Lafayette", time: "7 min à pied" },
+  { name: "Théâtre de Paris", time: "8 min à pied" },
+];
+
+const DELIVERY = [
+  { label: "Click & Collect", href: RESTAURANT.links.emporter },
+  { label: "Deliveroo", href: RESTAURANT.links.deliveroo },
+  { label: "Uber Eats", href: RESTAURANT.links.uberEats },
+];
+
+const wrap = "max-w-[1320px] mx-auto px-5 md:px-14";
+const kicker = "text-[12px] font-bold uppercase tracking-[0.28em]";
+const label = `${kicker} !tracking-[0.22em] text-brick mb-3`;
+const pill =
+  "inline-flex items-center justify-center min-h-[52px] px-[30px] rounded-full text-[13px] font-bold uppercase tracking-[0.14em] transition-colors";
+
+function Leader() {
+  return (
+    <span
+      aria-hidden="true"
+      className="flex-1 min-w-[24px] border-b border-dotted border-[#B9A894] -translate-y-1.5"
+    />
+  );
+}
+
 export default function ContactPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Accueil", url: "https://www.eatnoya.com" },
@@ -36,167 +67,159 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Hero */}
-      <section className="pt-16 pb-12 px-5 text-center bg-gradient-to-b from-cream to-warm-white">
-        <div className="max-w-3xl mx-auto">
-          <Breadcrumbs items={[{ label: "Contact" }]} />
-          <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3 mt-8">
-            Bienvenue
-          </p>
-          <h1 className="font-serif text-[clamp(38px,7vw,60px)] text-burgundy font-normal">
-            Nous Trouver
-          </h1>
+      {/* ============ EN-TÊTE ============ */}
+      <section className={`${wrap} pt-6 md:pt-10 pb-20 md:pb-24`}>
+        <nav aria-label="Fil d'Ariane" className="mb-10 text-[13px] text-muted">
+          <ol className="flex flex-wrap items-center gap-2">
+            <li>
+              <Link href="/" className="hover:text-brick">Accueil</Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <span aria-current="page" className="text-ink">Contact</span>
+            </li>
+          </ol>
+        </nav>
+        <div className="flex flex-wrap items-center gap-x-[clamp(32px,6vw,88px)] gap-y-12">
+          <div className="flex-[1_1_460px] min-w-0">
+            <p className={`${kicker} text-brick mb-6`}>Bienvenue</p>
+            <h1 className="font-serif font-medium text-[clamp(44px,5.6vw,84px)] leading-[0.98] tracking-[-0.01em]">
+              Nous <em className="italic text-brick">trouver</em>
+            </h1>
+            <p className="mt-7 max-w-[31em] text-[18px] leading-[1.65] text-muted">
+              {RESTAURANT.address.street}, {RESTAURANT.address.postalCode} {RESTAURANT.address.city}. À 5 minutes à pied de l’Opéra.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <ReserveButton source="contact" className={`${pill} bg-brick text-paper hover:bg-burgundy-dark`}>
+                Réserver une table
+              </ReserveButton>
+              <a
+                href={RESTAURANT.links.maps}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${pill} border border-ink text-ink hover:bg-ink hover:text-paper`}
+              >
+                Itinéraire
+              </a>
+            </div>
+            <p className="mt-8 text-[15px] text-muted">
+              Une question ? Appelez-nous au{" "}
+              <a href={`tel:${RESTAURANT.telephone}`} className="font-bold text-ink underline underline-offset-4 hover:text-brick">
+                {RESTAURANT.telephoneDisplay}
+              </a>
+            </p>
+          </div>
+          <figure className="flex-[1_1_380px] min-w-0 max-w-[520px] relative">
+            <div className="relative w-full aspect-[4/5] overflow-hidden rounded-t-full rounded-b-[20px]">
+              <Image
+                src="/images/galerie/IMG_9117.jpg"
+                alt="La devanture de Noya rue de Châteaudun, auvent terracotta"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 520px"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="absolute left-5 bottom-5 px-4 py-2.5 rounded-full bg-paper/95 text-[13px] font-medium">
+              {RESTAURANT.address.street}
+            </figcaption>
+          </figure>
         </div>
       </section>
 
-      {/* Contact grid */}
-      <section className="py-16 px-5 bg-warm-white">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Info column */}
-          <div className="space-y-8">
-            {/* Adresse */}
-            <div className="flex items-start gap-4">
-              <div className="text-burgundy mt-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div>
-                <h2 className="font-serif text-lg text-dark mb-1">Adresse</h2>
-                <p className="text-sm text-taupe leading-relaxed">
-                  {RESTAURANT.address.street}
-                  <br />
-                  {RESTAURANT.address.postalCode} {RESTAURANT.address.city}
-                </p>
-                <a
-                  href={RESTAURANT.links.maps}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 mt-2 text-[11px] text-burgundy uppercase tracking-wider hover:underline"
-                >
-                  Itinéraire →
-                </a>
-              </div>
-            </div>
+      <div aria-hidden="true" className="zellige-band" />
 
-            {/* Horaires */}
-            <div className="flex items-start gap-4">
-              <div className="text-burgundy mt-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </div>
-              <div>
-                <h2 className="font-serif text-lg text-dark mb-1">Horaires</h2>
-                <p className="text-sm text-taupe leading-relaxed">
-                  <strong className="text-dark">Déjeuner :</strong> {RESTAURANT.hours.lunch.days}, {RESTAURANT.hours.lunch.time}
-                  <br />
-                  <strong className="text-dark">Dîner :</strong> {RESTAURANT.hours.dinner.days}, {RESTAURANT.hours.dinner.time}
-                  <br />
-                  <span className="text-taupe/60">Fermé {RESTAURANT.hours.closed}</span>
-                </p>
-              </div>
-            </div>
-
-            {/* Téléphone + email */}
-            <div className="flex items-start gap-4">
-              <div className="text-burgundy mt-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-              </div>
-              <div>
-                <h2 className="font-serif text-lg text-dark mb-1">Contact</h2>
-                <p className="text-sm text-taupe leading-relaxed">
-                  <a href={`tel:${RESTAURANT.telephone}`} className="text-burgundy hover:underline">
-                    {RESTAURANT.telephoneDisplay}
-                  </a>
-                  <br />
-                  <a href={`mailto:${RESTAURANT.email}`} className="text-taupe hover:text-burgundy transition-colors">
-                    {RESTAURANT.email}
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            {/* Instagram */}
-            <div className="flex items-center gap-4">
-              <div className="text-burgundy">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                  <rect x="2" y="2" width="20" height="20" rx="5" />
-                  <circle cx="12" cy="12" r="5" />
-                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
-                </svg>
-              </div>
-              <a
-                href={RESTAURANT.links.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-serif text-lg text-dark hover:text-burgundy transition-colors"
-              >
-                @noya.chateaudun
-              </a>
-            </div>
-
-            {/* Accès transports */}
-            <div>
-              <h2 className="font-serif text-lg text-dark mb-2">Accès</h2>
-              <p className="text-sm text-taupe leading-relaxed">
-                <strong className="text-dark">Métro :</strong> {RESTAURANT.access.metro.join(" · ")}
-                <br />
-                <strong className="text-dark">Bus :</strong> lignes {RESTAURANT.access.bus.join(", ")}
-              </p>
-            </div>
-
-            {/* À proximité */}
-            <div>
-              <h2 className="font-serif text-lg text-dark mb-2">À proximité</h2>
-              <ul className="text-sm text-taupe leading-relaxed space-y-1">
-                <li>— Opéra Garnier : 5 min à pied</li>
-                <li>— Folies Bergère : 4 min à pied</li>
-                <li>— Casino de Paris : 7 min à pied</li>
-                <li>— Galeries Lafayette : 7 min à pied</li>
-                <li>— Théâtre de Paris : 8 min à pied</li>
-              </ul>
-            </div>
-
-            {/* Livraison */}
-            <div>
-              <h2 className="font-serif text-lg text-dark mb-3">Livraison & Click&Collect</h2>
-              <div className="flex gap-3 flex-wrap">
-                <a
-                  href={RESTAURANT.links.deliveroo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider border border-cream-dark text-taupe hover:border-burgundy hover:text-burgundy transition-colors"
-                >
-                  Deliveroo
-                </a>
-                <a
-                  href={RESTAURANT.links.uberEats}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider border border-cream-dark text-taupe hover:border-burgundy hover:text-burgundy transition-colors"
-                >
-                  Uber Eats
-                </a>
-                <a
-                  href={RESTAURANT.links.emporter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 text-[11px] font-bold uppercase tracking-wider border border-cream-dark text-taupe hover:border-burgundy hover:text-burgundy transition-colors"
-                >
-                  Click & Collect
-                </a>
-              </div>
-            </div>
+      {/* ============ INFOS PRATIQUES ============ */}
+      <section className={`${wrap} py-24 md:py-[104px]`}>
+        <h2 className="font-serif font-medium text-[clamp(38px,4.4vw,60px)] leading-[1.02] mb-12">Infos pratiques</h2>
+        <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="pt-6 border-t-2 border-ink min-w-0">
+            <h3 className={label}>Adresse</h3>
+            <address className="not-italic font-serif text-[26px] leading-[1.2]">
+              {RESTAURANT.address.street}
+              <br />
+              {RESTAURANT.address.postalCode} {RESTAURANT.address.city}
+            </address>
+            <a
+              href={RESTAURANT.links.maps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center min-h-[44px] mt-2 font-bold text-[14px] hover:text-brick"
+            >
+              Itinéraire →
+            </a>
           </div>
 
-          {/* Map column */}
-          <div>
-            <div className="w-full aspect-[4/3] border border-cream-dark overflow-hidden">
+          <div className="pt-6 border-t-2 border-ink min-w-0">
+            <h3 className={label}>Horaires</h3>
+            <dl className="flex flex-col gap-3">
+              <div>
+                <dt className="font-bold">Déjeuner</dt>
+                <dd className="text-muted">
+                  {RESTAURANT.hours.lunch.days}, {RESTAURANT.hours.lunch.time}
+                </dd>
+              </div>
+              <div>
+                <dt className="font-bold">Dîner</dt>
+                <dd className="text-muted">
+                  {RESTAURANT.hours.dinner.days}, {RESTAURANT.hours.dinner.time}
+                </dd>
+              </div>
+            </dl>
+            <p className="mt-3 text-[14px] text-muted">Fermé {RESTAURANT.hours.closed.toLowerCase()}</p>
+          </div>
+
+          <div className="pt-6 border-t-2 border-ink min-w-0">
+            <h3 className={label}>Contact</h3>
+            <ul className="flex flex-col gap-1">
+              <li>
+                <a
+                  href={`tel:${RESTAURANT.telephone}`}
+                  className="inline-flex items-center min-h-[44px] font-serif text-[26px] hover:text-brick"
+                >
+                  {RESTAURANT.telephoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${RESTAURANT.email}`}
+                  className="inline-flex items-center min-h-[44px] break-all hover:text-brick"
+                >
+                  {RESTAURANT.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={RESTAURANT.links.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center min-h-[44px] hover:text-brick"
+                >
+                  @noya.chateaudun sur Instagram →
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="pt-6 border-t-2 border-ink min-w-0">
+            <h3 className={label}>Accès</h3>
+            <p className="font-bold">Métro</p>
+            <ul className="text-muted">
+              {RESTAURANT.access.metro.map((m) => (
+                <li key={m}>{m}</li>
+              ))}
+            </ul>
+            <p className="mt-3 font-bold">Bus</p>
+            <p className="text-muted">Lignes {RESTAURANT.access.bus.join(", ")}</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ CARTE + À PROXIMITÉ ============ */}
+      <section className="bg-cream">
+        <div className={`${wrap} py-24 md:py-[104px] grid gap-x-[clamp(40px,6vw,96px)] gap-y-14 lg:grid-cols-2 items-start`}>
+          <div className="min-w-0">
+            <div className="w-full aspect-[4/3] overflow-hidden rounded-[20px] border border-line bg-paper">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.2!2d2.3368!3d48.8766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDUyJzM1LjgiTiAywrAyMCcxNy4xIkU!5e0!3m2!1sfr!2sfr!4v1"
                 width="100%"
@@ -208,17 +231,54 @@ export default function ContactPage() {
                 title="Noya Châteaudun — 8 rue de Châteaudun, 75009 Paris"
               />
             </div>
-            <div className="mt-4 text-center">
-              <a
-                href={RESTAURANT.links.maps}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-burgundy text-cream text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-burgundy-light transition-colors"
-              >
-                Ouvrir dans Google Maps
-              </a>
-            </div>
+            <a
+              href={RESTAURANT.links.maps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${pill} mt-6 bg-ink text-warm-white hover:bg-brick`}
+            >
+              Ouvrir dans Google Maps
+            </a>
           </div>
+          <div className="min-w-0">
+            <p className={`${kicker} text-brick mb-3.5`}>Quartier des théâtres</p>
+            <h2 className="font-serif font-medium text-[clamp(38px,4.4vw,58px)] leading-[1.04] mb-10">À proximité</h2>
+            <ul className="flex flex-col gap-5">
+              {NEARBY.map((place) => (
+                <li key={place.name} className="flex items-baseline gap-3.5">
+                  <span className="font-serif text-[24px] md:text-[28px]">{place.name}</span>
+                  <Leader />
+                  <span className="text-muted whitespace-nowrap">{place.time}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ LIVRAISON ============ */}
+      <section className={`${wrap} py-24 md:py-[104px]`}>
+        <div className="bg-zellige text-warm-white rounded-[28px] p-[clamp(32px,5vw,64px)] flex flex-wrap items-center justify-between gap-x-12 gap-y-8">
+          <div className="flex-[1_1_360px] min-w-0">
+            <p className={`${kicker} text-[#BFD5CB] mb-3`}>À la maison</p>
+            <h2 className="font-serif italic font-medium text-[clamp(34px,3.8vw,52px)] leading-[1.05]">
+              Livraison &amp; Click &amp; Collect
+            </h2>
+          </div>
+          <ul className="flex flex-wrap gap-3">
+            {DELIVERY.map((d) => (
+              <li key={d.label}>
+                <a
+                  href={d.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${pill} border border-warm-white/70 text-warm-white hover:bg-warm-white hover:text-zellige`}
+                >
+                  {d.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

@@ -8,7 +8,6 @@ import {
   formatDate,
 } from "@/data/blog";
 import { RESTAURANT } from "@/data/restaurant";
-import Reveal from "@/components/Reveal";
 import BlogIllustration from "@/components/BlogIllustration";
 import ReserveButton from "@/components/ReserveButton";
 import ShareButton from "./ShareButton";
@@ -50,6 +49,18 @@ export async function generateMetadata({
   };
 }
 
+const wrap = "max-w-[1320px] mx-auto px-5 md:px-14";
+const kicker = "text-[12px] font-bold uppercase tracking-[0.28em]";
+const pill =
+  "inline-flex items-center justify-center min-h-[52px] px-[30px] rounded-full text-[13px] font-bold uppercase tracking-[0.14em] transition-colors";
+const linkCls =
+  "text-brick underline decoration-brick/40 underline-offset-[3px] hover:decoration-brick transition-colors";
+
+/*
+ * Rendu markdown maison (sous-ensemble utilisé par src/data/blog.ts) :
+ * ## / ###, paragraphes, **gras**, *italique*, [liens](url), listes "- "
+ * et "1. ", tableaux "|", citations "> ", séparateurs "---".
+ */
 function renderMarkdown(content: string) {
   const lines = content.split("\n");
   const elements: React.ReactNode[] = [];
@@ -70,7 +81,7 @@ function renderMarkdown(content: string) {
       }
       if (match[1]) {
         parts.push(
-          <strong key={match.index} className="font-semibold text-dark">
+          <strong key={match.index} className="font-semibold text-ink">
             {match[1]}
           </strong>
         );
@@ -86,7 +97,7 @@ function renderMarkdown(content: string) {
           <Link
             key={match.index}
             href={match[4]}
-            className="text-burgundy underline underline-offset-2 hover:text-burgundy/70 transition-colors"
+            className={linkCls}
             {...(isExternal
               ? { target: "_blank", rel: "noopener noreferrer" }
               : {})}
@@ -111,7 +122,7 @@ function renderMarkdown(content: string) {
         tableRows = [];
       }
       // Skip separator rows
-      if (!/^\|[\s-|]+\|$/.test(line)) {
+      if (!/^\|[\s-|:]+\|$/.test(line)) {
         const cells = line
           .split("|")
           .filter((c) => c.trim() !== "")
@@ -123,25 +134,34 @@ function renderMarkdown(content: string) {
       if (i >= lines.length || !lines[i].startsWith("|")) {
         inTable = false;
         elements.push(
-          <div key={`table-${i}`} className="overflow-x-auto my-6">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="border-b border-[#E5DFD5]">
+          <div
+            key={`table-${i}`}
+            className="my-10 overflow-x-auto rounded-[20px] border border-line bg-paper"
+          >
+            <table className="w-full border-collapse text-left text-[16px]">
+              <thead className="bg-cream">
+                <tr>
                   {tableRows[0]?.map((cell, ci) => (
                     <th
                       key={ci}
-                      className="text-left py-2 pr-4 font-semibold text-dark"
+                      scope="col"
+                      className="px-5 py-3.5 text-[12px] font-bold uppercase tracking-[0.16em] text-ink"
                     >
-                      {cell}
+                      {processInline(cell)}
                     </th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {tableRows.slice(1).map((row, ri) => (
-                  <tr key={ri} className="border-b border-[#E5DFD5]/50">
+                  <tr key={ri} className="border-t border-line">
                     {row.map((cell, ci) => (
-                      <td key={ci} className="py-2 pr-4 text-dark/70">
+                      <td
+                        key={ci}
+                        className={`px-5 py-3.5 align-top leading-[1.55] ${
+                          ci === 0 ? "font-semibold text-ink" : "text-muted"
+                        }`}
+                      >
                         {processInline(cell)}
                       </td>
                     ))}
@@ -160,7 +180,7 @@ function renderMarkdown(content: string) {
       elements.push(
         <h3
           key={i}
-          className="font-serif text-lg text-dark mt-8 mb-3 leading-snug"
+          className="mt-12 mb-3 font-serif font-semibold text-[clamp(24px,2.4vw,28px)] leading-[1.15] text-ink"
         >
           {processInline(line.slice(4))}
         </h3>
@@ -172,12 +192,36 @@ function renderMarkdown(content: string) {
       elements.push(
         <h2
           key={i}
-          className="font-serif text-[clamp(20px,3vw,26px)] text-dark mt-12 mb-4 leading-snug"
+          className="mt-16 mb-5 font-serif font-medium text-[clamp(32px,3.4vw,42px)] leading-[1.06] text-ink first:mt-0"
         >
           {processInline(line.slice(3))}
         </h2>
       );
       i++;
+      continue;
+    }
+
+    // Blockquote
+    if (line.startsWith("> ") || line === ">") {
+      const quote: string[] = [];
+      while (i < lines.length && (lines[i].startsWith("> ") || lines[i] === ">")) {
+        quote.push(lines[i].replace(/^>\s?/, ""));
+        i++;
+      }
+      elements.push(
+        <blockquote
+          key={`bq-${i}`}
+          className="my-10 border-l-[3px] border-terracotta pl-6 md:pl-8 font-serif italic text-[clamp(24px,2.4vw,30px)] leading-[1.35] text-ink"
+        >
+          {quote
+            .filter((q) => q.trim() !== "")
+            .map((q, qi) => (
+              <p key={qi} className={qi > 0 ? "mt-3" : undefined}>
+                {processInline(q)}
+              </p>
+            ))}
+        </blockquote>
+      );
       continue;
     }
 
@@ -189,19 +233,42 @@ function renderMarkdown(content: string) {
         i++;
       }
       elements.push(
-        <ul key={`ul-${i}`} className="my-4 space-y-2">
+        <ul key={`ul-${i}`} className="my-7 flex flex-col gap-3.5">
           {items.map((item, j) => (
-            <li
-              key={j}
-              className="flex gap-2 text-dark/70 leading-relaxed"
-            >
-              <span className="text-burgundy/40 mt-1.5 flex-shrink-0">
-                &#x2022;
-              </span>
-              <span>{processInline(item)}</span>
+            <li key={j} className="relative pl-7 leading-[1.7]">
+              <span
+                aria-hidden="true"
+                className="absolute left-0.5 top-[0.72em] w-[7px] h-[7px] rotate-45 bg-brick"
+              />
+              {processInline(item)}
             </li>
           ))}
         </ul>
+      );
+      continue;
+    }
+
+    // Ordered list
+    if (/^\d+\.\s/.test(line)) {
+      const items: string[] = [];
+      while (i < lines.length && /^\d+\.\s/.test(lines[i])) {
+        items.push(lines[i].replace(/^\d+\.\s+/, ""));
+        i++;
+      }
+      elements.push(
+        <ol key={`ol-${i}`} className="my-8 flex flex-col gap-5">
+          {items.map((item, j) => (
+            <li key={j} className="flex gap-5 leading-[1.7]">
+              <span
+                aria-hidden="true"
+                className="flex-none w-8 font-serif text-[32px] leading-[0.9] text-brick tabular-nums"
+              >
+                {j + 1}
+              </span>
+              <span className="min-w-0">{processInline(item)}</span>
+            </li>
+          ))}
+        </ol>
       );
       continue;
     }
@@ -215,7 +282,7 @@ function renderMarkdown(content: string) {
     // Horizontal rule (---)
     if (/^-{3,}$/.test(line.trim())) {
       elements.push(
-        <hr key={i} className="my-10 border-t border-[#E5DFD5]" />
+        <hr key={i} className="my-14 mx-auto w-24 border-0 border-t-2 border-terracotta" />
       );
       i++;
       continue;
@@ -223,7 +290,7 @@ function renderMarkdown(content: string) {
 
     // Paragraph
     elements.push(
-      <p key={i} className="text-dark/70 leading-relaxed mb-4">
+      <p key={i} className="mb-6 leading-[1.75]">
         {processInline(line)}
       </p>
     );
@@ -317,6 +384,8 @@ export default async function BlogArticlePage({
         }
       : null;
 
+  const updated = article.updatedAt && article.updatedAt !== article.publishedAt;
+
   return (
     <>
       <script
@@ -340,168 +409,199 @@ export default async function BlogArticlePage({
         />
       )}
 
-      <article className="pb-16 md:pb-24">
-        {/* Hero illustration */}
-        <div className="group mb-10">
-          <BlogIllustration
-            slug={article.slug}
-            title={article.title}
-            category={article.category}
-            size="hero"
-          />
-        </div>
-
-        {/* Breadcrumbs */}
-        <div className="max-w-3xl mx-auto px-5 mb-6">
-          <nav
-            aria-label="Fil d'Ariane"
-            className="flex items-center gap-2 text-[12px] text-dark/55"
-          >
-            <Link href="/" className="hover:text-dark transition-colors">
-              Accueil
-            </Link>
-            <span>/</span>
-            <Link href="/blog" className="hover:text-dark transition-colors">
-              Blog
-            </Link>
-            <span>/</span>
-            <span className="text-dark/60 truncate max-w-[200px]">
-              {article.title}
-            </span>
+      <article>
+        {/* ============ EN-TÊTE ============ */}
+        <header className={`${wrap} pt-6 md:pt-10 pb-20 md:pb-24`}>
+          <nav aria-label="Fil d'Ariane" className="mb-10 text-[13px] text-muted">
+            <ol className="flex flex-wrap items-center gap-2">
+              <li>
+                <Link href="/" className="hover:text-brick">Accueil</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li>
+                <Link href="/blog" className="hover:text-brick">Blog</Link>
+              </li>
+              <li aria-hidden="true">/</li>
+              <li className="min-w-0 max-w-full sm:max-w-[42ch] truncate text-ink" aria-current="page">
+                {article.title}
+              </li>
+            </ol>
           </nav>
-        </div>
 
-        {/* Meta info */}
-        <header className="max-w-3xl mx-auto px-5 mb-12">
-          <Reveal>
-            <div className="flex items-center gap-4 text-sm text-dark/55">
-              <time dateTime={article.publishedAt}>
-                {formatDate(article.publishedAt)}
-              </time>
-              <span className="w-1 h-1 rounded-full bg-dark/20" />
-              <span>{readingTime} min de lecture</span>
+          <div className="flex flex-wrap items-center gap-x-[clamp(32px,6vw,88px)] gap-y-12">
+            <div className="flex-[1_1_520px] min-w-0">
+              <p className={`${kicker} text-brick mb-6`}>{article.category}</p>
+              <h1 className="font-serif font-medium text-[clamp(40px,5.2vw,76px)] leading-[1] tracking-[-0.01em] text-balance">
+                {article.title}
+              </h1>
+              <p className="mt-7 max-w-[34em] text-[18px] leading-[1.65] text-muted">
+                {article.excerpt}
+              </p>
+              <p className="mt-9 pt-6 border-t border-line flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px] text-muted">
+                <span>
+                  Publié le{" "}
+                  <time dateTime={article.publishedAt} className="text-ink font-medium">
+                    {formatDate(article.publishedAt)}
+                  </time>
+                </span>
+                {updated && (
+                  <span>
+                    Mis à jour le{" "}
+                    <time dateTime={article.updatedAt} className="text-ink font-medium">
+                      {formatDate(article.updatedAt)}
+                    </time>
+                  </span>
+                )}
+                <span>
+                  <strong className="text-ink font-medium">{readingTime} min</strong> de lecture
+                </span>
+              </p>
             </div>
-          </Reveal>
+            <div className="flex-[1_1_340px] min-w-0 max-w-[460px] mx-auto md:mx-0">
+              <div className="relative w-full aspect-[4/5] overflow-hidden rounded-t-full rounded-b-[20px]">
+                <BlogIllustration slug={article.slug} category={article.category} />
+              </div>
+            </div>
+          </div>
         </header>
 
-        {/* Content */}
-        <div className="max-w-3xl mx-auto px-5">
-          <Reveal>
-            <div className="prose-noya">{renderMarkdown(article.content)}</div>
-          </Reveal>
+        <div aria-hidden="true" className="zellige-band" />
+
+        {/* ============ CORPS ============ */}
+        <div className={`${wrap} pt-20 md:pt-[96px]`}>
+          <div className="mx-auto max-w-[68ch] text-[17px] md:text-[18px] text-ink">
+            {renderMarkdown(article.content)}
+          </div>
         </div>
 
-        {/* FAQ (rendered when article.faq is provided) */}
+        {/* ============ FAQ ============ */}
         {article.faq && article.faq.length > 0 && (
-          <div className="max-w-3xl mx-auto px-5 mt-16">
-            <Reveal>
-              <h2 className="font-serif text-[clamp(22px,3.5vw,30px)] text-dark mb-6 leading-snug">
+          <section aria-labelledby="faq-titre" className={`${wrap} mt-20`}>
+            <div className="mx-auto max-w-[68ch]">
+              <p className={`${kicker} text-brick mb-3.5`}>FAQ</p>
+              <h2
+                id="faq-titre"
+                className="font-serif font-medium text-[clamp(32px,3.4vw,42px)] leading-[1.06] mb-8"
+              >
                 Questions fréquentes
               </h2>
-              <div className="space-y-3">
+              <div className="flex flex-col gap-3">
                 {article.faq.map((item, idx) => (
                   <details
                     key={idx}
-                    className="group border border-[#E5DFD5] rounded-lg bg-white"
+                    className="group rounded-[20px] border border-line bg-paper open:border-[#D4C3AE]"
                   >
-                    <summary className="cursor-pointer list-none flex items-center justify-between px-6 py-4 hover:bg-cream/50 transition-colors">
-                      <span className="font-serif text-[15px] text-dark pr-4">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-5 rounded-[20px] px-6 py-5 md:px-7 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brick [&::-webkit-details-marker]:hidden">
+                      <span className="font-serif font-semibold text-[21px] md:text-[23px] leading-[1.2]">
                         {item.q}
                       </span>
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="text-burgundy/50 flex-shrink-0 transition-transform duration-300 group-open:rotate-180"
+                      <span
+                        aria-hidden="true"
+                        className="relative flex-none w-9 h-9 rounded-full border border-line bg-warm-white text-brick transition-transform duration-300 group-open:rotate-45 motion-reduce:transition-none"
                       >
-                        <path d="M6 9l6 6 6-6" />
-                      </svg>
+                        <span className="absolute left-1/2 top-1/2 w-3.5 h-[2px] -translate-x-1/2 -translate-y-1/2 bg-current" />
+                        <span className="absolute left-1/2 top-1/2 w-[2px] h-3.5 -translate-x-1/2 -translate-y-1/2 bg-current" />
+                      </span>
                     </summary>
-                    <p className="px-6 pb-5 text-sm text-dark/60 leading-relaxed">
+                    <p className="px-6 md:px-7 pb-6 -mt-1 text-[16px] leading-[1.7] text-muted">
                       {item.a}
                     </p>
                   </details>
                 ))}
               </div>
-            </Reveal>
-          </div>
+            </div>
+          </section>
         )}
 
-        {/* Share + CTA */}
-        <div className="max-w-3xl mx-auto px-5 mt-16">
-          {/* Share */}
-          <div className="flex items-center gap-3 pb-8 border-b border-[#E5DFD5]">
-            <span className="text-sm text-dark/55">Partager :</span>
+        {/* ============ PARTAGE ============ */}
+        <div className={`${wrap} mt-16`}>
+          <div className="mx-auto max-w-[68ch] flex flex-wrap items-center justify-between gap-4 py-6 border-y border-line">
+            <span className={`${kicker} !tracking-[0.22em] text-muted`}>Partager cet article</span>
             <ShareButton slug={article.slug} title={article.title} />
-          </div>
-
-          {/* CTA */}
-          <Reveal>
-            <div className="my-12 bg-gradient-to-br from-burgundy/5 to-cream rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="font-serif text-2xl text-dark mb-3">
-                Venez goûter chez Noya
-              </h2>
-              <p className="text-dark/60 mb-6 max-w-md mx-auto">
-                Bistrot levantin moderne au 8 rue de Châteaudun, Paris 9e.
-                Déjeuner, dîner et traiteur.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <ReserveButton
-                  source="blog-article"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
-                >
-                  Réserver une table
-                </ReserveButton>
-                <Link
-                  href="/menu"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-burgundy/20 text-burgundy rounded-lg text-sm font-medium hover:bg-burgundy/5 transition-colors"
-                >
-                  Voir la carte
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Prev / Next */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-            {prev ? (
-              <Link
-                href={`/blog/${prev.slug}`}
-                className="group p-5 rounded-xl border border-[#E5DFD5] hover:shadow-md transition-shadow"
-              >
-                <span className="text-[11px] uppercase tracking-[0.15em] text-dark/50 mb-2 block">
-                  ← Article précédent
-                </span>
-                <span className="font-serif text-sm text-dark group-hover:text-burgundy transition-colors leading-snug line-clamp-2">
-                  {prev.title}
-                </span>
-              </Link>
-            ) : (
-              <div />
-            )}
-            {next ? (
-              <Link
-                href={`/blog/${next.slug}`}
-                className="group p-5 rounded-xl border border-[#E5DFD5] hover:shadow-md transition-shadow text-right"
-              >
-                <span className="text-[11px] uppercase tracking-[0.15em] text-dark/50 mb-2 block">
-                  Article suivant →
-                </span>
-                <span className="font-serif text-sm text-dark group-hover:text-burgundy transition-colors leading-snug line-clamp-2">
-                  {next.title}
-                </span>
-              </Link>
-            ) : (
-              <div />
-            )}
           </div>
         </div>
       </article>
+
+      {/* ============ APPEL ============ */}
+      <section aria-labelledby="venez-gouter" className={`${wrap} py-20 md:py-[96px]`}>
+        <div className="bg-zellige text-warm-white rounded-[28px] overflow-hidden">
+          <div className="p-[clamp(32px,5vw,64px)] flex flex-wrap items-center justify-between gap-x-12 gap-y-8">
+            <div className="flex-[1_1_420px] min-w-0">
+              <p className={`${kicker} text-[#BFD5CB] mb-3`}>À deux pas de l’Opéra</p>
+              <h2
+                id="venez-gouter"
+                className="font-serif font-medium text-[clamp(36px,4vw,54px)] leading-[1.04]"
+              >
+                Venez goûter <em className="italic">chez Noya.</em>
+              </h2>
+              <p className="mt-4 max-w-[30em] text-[17px] text-[#CFE0D8]">
+                Bistrot levantin moderne au 8 rue de Châteaudun, Paris 9e.
+                Déjeuner, dîner et traiteur.
+              </p>
+              <p className="mt-5 flex flex-wrap gap-x-6 gap-y-1 text-[14px] text-[#BFD5CB]">
+                <span>{RESTAURANT.hours.lunch.days}</span>
+                <span>Midi {RESTAURANT.hours.lunch.time}</span>
+                <span>Soir {RESTAURANT.hours.dinner.time}</span>
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <ReserveButton
+                source="blog-article"
+                className={`${pill} bg-warm-white text-ink hover:bg-terracotta`}
+              >
+                Réserver une table
+              </ReserveButton>
+              <Link
+                href="/menu"
+                className={`${pill} border border-warm-white/70 text-warm-white hover:bg-warm-white hover:text-ink`}
+              >
+                Voir la carte
+              </Link>
+            </div>
+          </div>
+          <div aria-hidden="true" className="h-3.5 bg-[repeating-linear-gradient(90deg,#24180F_0_22px,#2E5A4E_22px_44px)] opacity-40" />
+        </div>
+      </section>
+
+      {/* ============ PRÉCÉDENT / SUIVANT ============ */}
+      <nav aria-label="Autres articles" className={`${wrap} pb-24 md:pb-[104px]`}>
+        <div className="grid gap-5 md:grid-cols-2">
+          {prev ? (
+            <Link
+              href={`/blog/${prev.slug}`}
+              rel="prev"
+              className="group flex flex-col gap-3 rounded-3xl border border-line bg-paper p-7 md:p-8 hover:border-ink transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brick"
+            >
+              <span className={`${kicker} !tracking-[0.22em] text-brick`}>← Article précédent</span>
+              <span className="font-serif font-semibold text-[24px] md:text-[26px] leading-[1.15] group-hover:text-brick transition-colors">
+                {prev.title}
+              </span>
+            </Link>
+          ) : (
+            <div className="hidden md:block" />
+          )}
+          {next ? (
+            <Link
+              href={`/blog/${next.slug}`}
+              rel="next"
+              className="group flex flex-col gap-3 rounded-3xl border border-line bg-paper p-7 md:p-8 md:text-right md:items-end hover:border-ink transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brick"
+            >
+              <span className={`${kicker} !tracking-[0.22em] text-brick`}>Article suivant →</span>
+              <span className="font-serif font-semibold text-[24px] md:text-[26px] leading-[1.15] group-hover:text-brick transition-colors">
+                {next.title}
+              </span>
+            </Link>
+          ) : (
+            <div className="hidden md:block" />
+          )}
+        </div>
+        <Link
+          href="/blog"
+          className="inline-block mt-8 font-bold text-[14px] hover:text-brick"
+        >
+          ← Tous les articles du blog
+        </Link>
+      </nav>
     </>
   );
 }

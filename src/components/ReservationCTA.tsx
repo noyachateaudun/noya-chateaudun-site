@@ -2,19 +2,21 @@ import ReserveButton from "./ReserveButton";
 
 export default function ReservationCTA({ source }: { source?: string }) {
   return (
-    <section className="bg-gradient-to-br from-burgundy to-burgundy-dark text-cream py-16 px-5 text-center">
-      <h2 className="font-serif text-3xl md:text-4xl font-normal mb-3">
-        Réservez votre table
-      </h2>
-      <p className="font-accent text-lg text-cream/80 italic mb-8 max-w-md mx-auto">
-        Nous avons hâte de vous accueillir chez Noya, au cœur du 9e arrondissement.
-      </p>
-      <ReserveButton
-        source={source}
-        className="inline-block px-8 py-3.5 border-[1.5px] border-cream text-cream text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-cream hover:text-burgundy transition-all"
-      >
-        Réserver une table
-      </ReserveButton>
+    <section className="bg-brick text-paper">
+      <div className="max-w-[1320px] mx-auto px-5 md:px-14 py-20 flex flex-wrap items-center justify-between gap-x-12 gap-y-8">
+        <div className="flex-[1_1_420px] min-w-0">
+          <h2 className="font-serif font-medium text-[clamp(36px,4vw,54px)] leading-[1.04]">Réservez votre table.</h2>
+          <p className="mt-4 max-w-[30em] text-[#F6E4DB]">
+            Du mardi au samedi, midi et soir, au 8 rue de Châteaudun. À cinq minutes à pied de l’Opéra.
+          </p>
+        </div>
+        <ReserveButton
+          source={source}
+          className="inline-flex items-center justify-center min-h-[52px] px-[30px] rounded-full bg-paper text-ink text-[13px] font-bold uppercase tracking-[0.14em] hover:bg-terracotta transition-colors"
+        >
+          Réserver une table
+        </ReserveButton>
+      </div>
     </section>
   );
 }

@@ -102,7 +102,7 @@ export default function TheForkWidget() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setUrl(null)}
-                className="block text-center text-[11px] text-dark/55 hover:text-burgundy py-2.5 border-t border-[#E5DFD5] bg-cream transition-colors"
+                className="block text-center text-[11px] text-dark/55 hover:text-burgundy py-2.5 border-t border-line bg-cream transition-colors"
               >
                 Problème d&apos;affichage&nbsp;? Ouvrir la réservation dans un nouvel onglet →
               </a>

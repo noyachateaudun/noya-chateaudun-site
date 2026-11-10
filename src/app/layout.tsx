@@ -81,11 +81,11 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-touch-icon.png",
     other: [
-      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#722F37" },
+      { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#B82F25" },
     ],
   },
   other: {
-    "msapplication-TileColor": "#722F37",
+    "msapplication-TileColor": "#B82F25",
   },
   manifest: "/site.webmanifest",
   verification: {

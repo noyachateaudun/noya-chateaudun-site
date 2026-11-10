@@ -227,33 +227,33 @@ Des couches de pâte filo croustillantes, fourrées de pistaches ou de noix, imb
 
 ## Comment profiter au maximum d'un repas levantin
 
-Le secret d'un bon repas dans un restaurant levantin, c'est de **commander en mezzé** : plusieurs petits plats à partager plutôt qu'un seul plat principal. Commencez par 3-4 entrées froides (houmous, baba ghanoush, labneh, taboulé), ajoutez 2-3 plats chauds (falafel, shakshuka, chou-fleur), et partagez tout au centre de la table. C'est comme ça qu'on mange au Levant, et c'est comme ça qu'on profite le mieux de chaque saveur.
+Le secret d'un bon repas dans un restaurant levantin, c'est de **commander à partager** : plusieurs petits plats à partager plutôt qu'un seul plat principal. Commencez par 3-4 entrées froides (houmous, baba ghanoush, labneh, taboulé), ajoutez 2-3 plats chauds (falafel, shakshuka, chou-fleur), et partagez tout au centre de la table. C'est comme ça qu'on mange au Levant, et c'est comme ça qu'on profite le mieux de chaque saveur.
 
-[Consultez notre carte complète](/menu) pour composer votre mezzé chez Noya, au 8 rue de Châteaudun, Paris 9e. Et si vous hésitez entre la carte du midi et celle du soir, sachez que la carte du soir propose des plats plus élaborés, avec notamment une [sélection de vins méditerranéens](/blog/vins-israeliens-libanais-mediterranee) parfaits pour accompagner votre repas. Pour vos événements, découvrez aussi nos [formules traiteur](/traiteur).`,
+[Consultez notre carte complète](/menu) pour composer votre table de salatim chez Noya, au 8 rue de Châteaudun, Paris 9e. Et si vous hésitez entre la carte du midi et celle du soir, sachez que la carte du soir propose des plats plus élaborés, avec notamment une [sélection de vins méditerranéens](/blog/vins-israeliens-libanais-mediterranee) parfaits pour accompagner votre repas. Pour vos événements, découvrez aussi nos [formules traiteur](/traiteur).`,
   },
   {
     slug: "organiser-buffet-levantin-evenement",
     title: "Comment organiser un buffet levantin pour vos événements",
-    metaTitle: "Buffet levantin : comment organiser un mezzé pour vos événements",
-    metaDescription: "Conseils pour organiser un buffet levantin réussi : composition du mezzé, quantités, options végétariennes. Traiteur levantin à Paris.",
-    excerpt: "Mezzé, couleurs, convivialité : le format levantin est idéal pour vos événements. Guide complet pour un buffet réussi.",
+    metaTitle: "Buffet levantin : comment organiser un buffet de salatim pour vos événements",
+    metaDescription: "Conseils pour organiser un buffet levantin réussi : composition des salatim, quantités, options végétariennes. Traiteur levantin à Paris.",
+    excerpt: "Salatim, couleurs, convivialité : le format levantin est idéal pour vos événements. Guide complet pour un buffet réussi.",
     category: "Événements",
     keyword: "buffet levantin",
-    keywords: ["buffet levantin", "traiteur levantin Paris", "buffet méditerranéen événement", "mezze événement"],
+    keywords: ["buffet levantin", "traiteur levantin Paris", "buffet méditerranéen événement", "salatim événement"],
     publishedAt: "2026-04-07",
     updatedAt: "2026-04-07",
-    imageAlt: "Buffet levantin coloré avec mezzé, pita et plats à partager pour événement",
-    content: `## Pourquoi le format mezzé est idéal pour vos événements
+    imageAlt: "Buffet levantin coloré avec salatim, pita et plats à partager pour événement",
+    content: `## Pourquoi le format à partager est idéal pour vos événements
 
 Organiser un buffet pour un événement professionnel, un anniversaire ou un mariage, c'est toujours le même casse-tête : trouver un format qui plaise à tout le monde, qui soit beau visuellement, et qui gère les contraintes alimentaires sans multiplier les menus séparés. Le **buffet levantin** résout tout ça d'un coup.
 
-Le format mezzé — de nombreux petits plats à partager — est naturellement convivial. Pas de file d'attente devant un plat unique, pas de portions individuelles tristes dans leur barquette. Les invités circulent, picorent, découvrent, reviennent. C'est un format vivant, coloré, généreux.
+Le format salatim — de nombreux petits plats à partager — est naturellement convivial. Pas de file d'attente devant un plat unique, pas de portions individuelles tristes dans leur barquette. Les invités circulent, picorent, découvrent, reviennent. C'est un format vivant, coloré, généreux.
 
 Et surtout, la cuisine levantine est naturellement inclusive : une grande partie des plats sont végétariens, vegan, sans gluten ou halal par tradition, pas par adaptation forcée. [Découvrez la richesse de la cuisine levantine](/blog/cuisine-levantine-origines-plats-traditions).
 
 ## Comment composer un buffet levantin réussi
 
-### Les entrées froides — la base du mezzé
+### Les entrées froides — la base des salatim
 
 C'est le cœur du buffet. Prévoyez 4 à 6 variétés :
 
@@ -263,7 +263,7 @@ C'est le cœur du buffet. Prévoyez 4 à 6 variétés :
 - **Taboulé levantin** (persil, tomate, menthe, boulgour)
 - **Salade fattoush** (légumes croquants, pain pita grillé, sumac)
 
-Chaque mezzé froid est servi avec des pains pita fraîchement cuits, coupés en triangles, et éventuellement des crudités (concombre, radis, carottes) pour tremper.
+Chaque salatim est servi avec des pains pita fraîchement cuits, coupés en triangles, et éventuellement des crudités (concombre, radis, carottes) pour tremper.
 
 ### Les entrées chaudes — le wow factor
 
@@ -294,16 +294,16 @@ Pour un **buffet méditerranéen événement**, comptez :
 
 | Type de plat | Quantité par personne |
 |---|---|
-| Mezzé froids (total) | 250-300 g |
+| Salatim (total) | 250-300 g |
 | Pita / pain | 2-3 pièces |
 | Plats chauds (total) | 200-250 g |
 | Desserts | 100-150 g |
 
-Pour un cocktail dînatoire (debout, 2-3 heures), réduisez de 30%. Pour un repas assis avec mezzé au centre, augmentez de 20%.
+Pour un cocktail dînatoire (debout, 2-3 heures), réduisez de 30%. Pour un repas assis avec les salatim au centre, augmentez de 20%.
 
 ## Les avantages logistiques du format levantin
 
-**Pas de chaîne du chaud complexe.** La majorité des mezzé froids se servent à température ambiante. Seuls les falafels, le chou-fleur et les plats principaux nécessitent un maintien au chaud.
+**Pas de chaîne du chaud complexe.** La majorité des salatim se servent à température ambiante. Seuls les falafels, le chou-fleur et les plats principaux nécessitent un maintien au chaud.
 
 **Préparation en avance.** Le houmous, le baba ghanoush, le taboulé, les börek — tout peut être préparé la veille. Seule la friture des falafels se fait au dernier moment.
 
@@ -311,14 +311,13 @@ Pour un cocktail dînatoire (debout, 2-3 heures), réduisez de 30%. Pour un repa
 
 **Régimes alimentaires couverts.** Sans aucune modification, un buffet levantin propose naturellement des options :
 - **Vegan** : houmous, baba ghanoush, falafel, taboulé, chou-fleur
-- **Sans gluten** : tous les mezzé (en remplaçant la pita par des crudités)
-- **Halal** : toute la carte, par tradition
+- **Sans gluten** : tous les salatim (en remplaçant la pita par des crudités)
 
 ## Noya, traiteur levantin à Paris
 
-Chez [Noya](/traiteur), nous proposons des formules traiteur sur mesure pour vos événements : cocktails d'entreprise, anniversaires, mariages, lancements de produit. Nos mezzé sont préparés le jour même avec des ingrédients frais, et nous nous adaptons à vos contraintes de lieu, de nombre et de budget.
+Chez [Noya](/traiteur), nos salatim, pièces salées et mini pitas sont préparés le jour même, comme au restaurant. Quatre formules par personne : **Apéro** à 19 €, **Cocktail déjeunatoire** à 28 €, **Cocktail dînatoire** à 36 € et **Buffet Festin** à 42 €, dès 15 ou 20 personnes. Vous pouvez aussi composer votre table à la carte.
 
-Du buffet de 15 personnes au cocktail de 200 invités, nous composons avec vous un menu levantin qui surprend et régale. [Contactez-nous pour un devis personnalisé](/traiteur) ou appelez-nous directement.`,
+Livraison dans Paris (offerte dès 500 €), service sur place sur devis, remises dès 800 € de commande. Voir les formules pour les [entreprises](/traiteur/entreprise), les [anniversaires](/traiteur/anniversaire) et les [mariages](/traiteur/mariage), ou [demandez un devis](/traiteur#devis).`,
   },
   {
     slug: "shakshuka-histoire-recette",
@@ -704,7 +703,7 @@ Quelques marqueurs à observer en arrivant :
 
 ## Où goûter la cuisine levantine à Paris
 
-Paris vit depuis quelques années un vrai moment levantin. Plusieurs adresses portent haut cette cuisine, chacune avec sa personnalité. Chez **Noya**, au 8 rue de Châteaudun dans le 9e arrondissement, on assume une cuisine levantine qui pioche autant dans la tradition libanaise que dans la fusion israélienne moderne. Houmous fait main chaque matin, pitas chauds en continu, shakshuka servie à toute heure, et l'esprit du mezze à chaque table — entre Opéra et Grands Boulevards, à deux pas des bureaux et des théâtres.
+Paris vit depuis quelques années un vrai moment levantin. Plusieurs adresses portent haut cette cuisine, chacune avec sa personnalité. Chez **Noya**, au 8 rue de Châteaudun dans le 9e arrondissement, on assume une cuisine levantine qui pioche autant dans la tradition libanaise que dans la fusion israélienne moderne. Houmous fait main chaque matin, pitas chauds en continu, shakshuka servie à toute heure, et l'esprit du partage à chaque table — entre Opéra et Grands Boulevards, à deux pas des bureaux et des théâtres.
 
 Que vous veniez **déjeuner entre collègues**, **dîner aux chandelles**, ou commander en [click & collect](/blog/click-collect-commander-emporter-noya) un plateau pour le bureau, on vous accueille avec l'idée simple qui guide la cuisine levantine depuis trois mille ans : la vraie hospitalité passe par l'assiette.
 

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Breadcrumbs from "@/components/Breadcrumbs";
-import Reveal from "@/components/Reveal";
-import Divider from "@/components/Divider";
+import Link from "next/link";
 import ReservationCTA from "@/components/ReservationCTA";
+import ReserveButton from "@/components/ReserveButton";
 import { RESTAURANT } from "@/data/restaurant";
 import { getBreadcrumbSchema } from "@/lib/schema";
 import GalerieGrid from "./GalerieGrid";
@@ -28,20 +27,27 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://www.eatnoya.com/galerie" },
 };
 
+// Les libellés ne sont pas affichés sur les photos (choix du restaurant) :
+// ils servent de repère interne. Les textes alternatifs restent lus.
 const PHOTOS = [
-  { id: 1, src: "/images/galerie/IMG_9116.jpg", cat: "plats", label: "Pita Of signature", alt: "Pita Of signature, poulet mariné et aubergine, restaurant Noya Paris" },
-  { id: 2, src: "/images/galerie/IMG_9117.jpg", cat: "plats", label: "Assiette Falafel", alt: "Assiette falafel avec houmous et tahina, cuisine levantine Noya" },
-  { id: 3, src: "/images/galerie/IMG_9118.jpg", cat: "plats", label: "Houmous Bilameh", alt: "Houmous Bilameh au poulet grillé, spécialité levantine Noya Paris 9e" },
-  { id: 4, src: "/images/galerie/IMG_9119.jpg", cat: "plats", label: "The Shakshuka", alt: "Shakshuka aux poivrons et tomates, plat levantin fait maison chez Noya" },
-  { id: 5, src: "/images/galerie/IMG_9120.jpg", cat: "plats", label: "Assortiment de plats", alt: "Assortiment de plats levantins, houmous, pita et salades fraîches, Noya Paris 9e" },
-  { id: 6, src: "/images/galerie/IMG_9352.jpg", cat: "plats", label: "Salatim & mezze", alt: "Salatim et mezze levantins à partager, entrées du restaurant Noya Paris" },
-  { id: 7, src: "/images/galerie/IMG_9353.jpg", cat: "plats", label: "Pita garnie", alt: "Pita généreusement garnie, street food levantine chez Noya Châteaudun" },
-  { id: 8, src: "/images/galerie/IMG_9354.jpg", cat: "interieur", label: "Ambiance du restaurant", alt: "Ambiance chaleureuse du restaurant Noya, 8 rue de Châteaudun, Paris 9e" },
-  { id: 9, src: "/images/galerie/IMG_9355.jpg", cat: "interieur", label: "Terrasse & décoration", alt: "Terrasse et décoration levantine du restaurant Noya Paris 9e" },
-  { id: 10, src: "/images/galerie/IMG_9356.jpg", cat: "plats", label: "Assiette composée", alt: "Assiette composée levantine avec falafels et légumes grillés, Noya Paris" },
-  { id: 11, src: "/images/galerie/IMG_9357.jpg", cat: "equipe", label: "En cuisine", alt: "L'équipe Noya en cuisine, préparation des plats levantins frais chaque jour" },
-  { id: 12, src: "/images/galerie/IMG_9358.jpg", cat: "plats", label: "Dessert levantin", alt: "Dessert levantin fait maison, malabi ou knafeh, restaurant Noya Paris 9e" },
+  { id: 1, src: "/images/galerie/IMG_9116.jpg", cat: "equipe", label: "En cuisine", alt: "En cuisine chez Noya, dressage d'une assiette" },
+  { id: 2, src: "/images/galerie/IMG_9117.jpg", cat: "interieur", label: "La devanture", alt: "La devanture de Noya rue de Châteaudun, auvent terracotta" },
+  { id: 3, src: "/images/galerie/IMG_9118.jpg", cat: "interieur", label: "Décoration de la salle", alt: "Étagère de la salle, vases verts et céramiques" },
+  { id: 4, src: "/images/galerie/IMG_9119.jpg", cat: "plats", label: "Shakshuka", alt: "Une main trempe la pita dans la shakshuka, mur de zellige en fond" },
+  { id: 5, src: "/images/galerie/IMG_9120.jpg", cat: "interieur", label: "La salle et le zellige", alt: "Plats servis devant le mur de zellige, suspensions allumées" },
+  { id: 6, src: "/images/galerie/IMG_9352.jpg", cat: "plats", label: "Pita Pizel", alt: "Pita Pizel au poulet pané croustillant" },
+  { id: 7, src: "/images/galerie/IMG_9353.jpg", cat: "plats", label: "Falafels", alt: "Falafels maison et sauce tahina" },
+  { id: 8, src: "/images/galerie/IMG_9354.jpg", cat: "plats", label: "Houmous et challah", alt: "Houmous maison et challah grillée" },
+  { id: 9, src: "/images/galerie/IMG_9355.jpg", cat: "plats", label: "Salade composée", alt: "Salade composée, pois chiches et œuf poché" },
+  { id: 10, src: "/images/galerie/IMG_9356.jpg", cat: "plats", label: "Assiette composée", alt: "Assiette composée : falafels, aubergine rôtie, pommes de terre, houmous" },
+  { id: 11, src: "/images/galerie/IMG_9357.jpg", cat: "plats", label: "Shakshuka Noya", alt: "Shakshuka Noya dans sa poêle en fonte" },
+  { id: 12, src: "/images/galerie/IMG_9358.jpg", cat: "plats", label: "Houmous", alt: "Houmous maison, pois chiches et persil" },
 ];
+
+const wrap = "max-w-[1320px] mx-auto px-5 md:px-14";
+const kicker = "text-[12px] font-bold uppercase tracking-[0.28em]";
+const pill =
+  "inline-flex items-center justify-center min-h-[52px] px-[30px] rounded-full text-[13px] font-bold uppercase tracking-[0.14em] transition-colors";
 
 export default function GaleriePage() {
   const breadcrumbSchema = getBreadcrumbSchema([
@@ -56,65 +62,66 @@ export default function GaleriePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* Hero */}
-      <section className="pt-16 pb-12 px-5 text-center bg-gradient-to-b from-cream to-warm-white relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none opacity-50"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
-          }}
-        />
-        <div className="max-w-3xl mx-auto relative z-10">
-          <Breadcrumbs items={[{ label: "Galerie" }]} />
-          <Reveal>
-            <p className="text-[10px] font-bold uppercase tracking-[0.35em] text-gold mb-3 mt-8">
-              Noya en images
-            </p>
-            <h1 className="font-serif text-[clamp(38px,7vw,60px)] text-burgundy font-normal">
-              Galerie
+      {/* En-tête */}
+      <section className={`${wrap} pt-6 md:pt-10 pb-16 md:pb-20`}>
+        <nav aria-label="Fil d'Ariane" className="mb-10 flex flex-wrap items-center gap-2 text-[13px] text-muted">
+          <Link href="/" className="hover:text-brick">Accueil</Link>
+          <span aria-hidden="true">/</span>
+          <span className="text-ink">Galerie</span>
+        </nav>
+        <div className="flex flex-wrap justify-between items-end gap-x-[clamp(32px,6vw,88px)] gap-y-8">
+          <div className="flex-[1_1_460px] min-w-0">
+            <p className={`${kicker} text-brick mb-6`}>Noya en images</p>
+            <h1 className="font-serif font-medium text-[clamp(44px,5.6vw,84px)] leading-[0.98] tracking-[-0.01em]">
+              La salle, les plats,
+              <br />
+              <em className="italic text-brick">l’équipe.</em>
             </h1>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <Divider />
-            <p className="font-accent text-[clamp(17px,2.2vw,21px)] text-taupe max-w-lg mx-auto leading-[1.85] font-light">
-              La salle, les plats, l&apos;équipe. Découvrez l&apos;univers Noya à travers notre galerie de photos prises au cœur du 9e arrondissement de Paris.
+          </div>
+          <div className="flex-[1_1_360px] min-w-0 max-w-[32em]">
+            <p className="text-[18px] leading-[1.65] text-muted">
+              Découvrez l’univers Noya à travers notre galerie de photos prises au cœur du 9ᵉ arrondissement de Paris.
             </p>
-          </Reveal>
+            <div className="mt-7 flex flex-wrap gap-3">
+              <ReserveButton source="galerie" className={`${pill} bg-brick text-paper hover:bg-burgundy-dark`}>
+                Réserver une table
+              </ReserveButton>
+              <Link href="/menu" className={`${pill} border border-ink text-ink hover:bg-ink hover:text-paper`}>
+                Voir la carte
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Gallery grid with filters */}
+      <div aria-hidden="true" className="zellige-band" />
+
+      {/* Mosaïque avec filtres */}
       <GalerieGrid photos={PHOTOS} />
 
-      {/* Instagram CTA */}
-      <section className="py-20 px-5 bg-cream text-center relative overflow-hidden">
-        <div
-          className="absolute inset-0 pointer-events-none opacity-50"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E")`,
-          }}
-        />
-        <Reveal>
-          <div className="relative z-10">
-            <Divider />
-            <p className="font-accent text-[clamp(17px,2.2vw,21px)] text-taupe italic mb-6">
-              Retrouvez notre univers au quotidien
-            </p>
-            <a
-              href={RESTAURANT.links.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 px-7 py-3 border-[1.5px] border-burgundy/30 text-burgundy text-[11px] font-normal tracking-[0.2em] uppercase hover:bg-burgundy hover:text-cream hover:border-burgundy hover:scale-[1.02] transition-all duration-400"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="5" />
-                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
-              </svg>
-              @noya.chateaudun
-            </a>
+      {/* Instagram */}
+      <section className="bg-cream">
+        <div className={`${wrap} py-20 md:py-24 flex flex-wrap items-center justify-between gap-x-12 gap-y-8`}>
+          <div className="flex-[1_1_420px] min-w-0">
+            <p className={`${kicker} text-brick mb-3.5`}>Instagram</p>
+            <h2 className="font-serif font-medium text-[clamp(36px,4vw,54px)] leading-[1.04]">
+              Retrouvez notre univers au quotidien.
+            </h2>
           </div>
-        </Reveal>
+          <a
+            href={RESTAURANT.links.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${pill} gap-2.5 normal-case tracking-[0.04em] text-[15px] bg-ink text-warm-white hover:bg-brick`}
+          >
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="5" />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
+            @noya.chateaudun
+          </a>
+        </div>
       </section>
 
       <ReservationCTA source="galerie" />

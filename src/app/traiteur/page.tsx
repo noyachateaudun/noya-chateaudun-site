@@ -3,6 +3,7 @@ import path from "path";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { getBreadcrumbSchema, getCateringSchema } from "@/lib/schema";
+import { FORMULES, REMISES } from "@/data/traiteur";
 import TraiteurForm from "./TraiteurForm";
 
 const TITLE = "Carte Traiteur — salatim, cocktails et buffets levantins";
@@ -45,53 +46,7 @@ const hasPdf = fs.existsSync(
   path.join(process.cwd(), "public", "carte-traiteur-noya.pdf")
 );
 
-type Formule = {
-  name: string;
-  price: string;
-  meta: string;
-  items: string[];
-  dark?: boolean;
-};
-
-const FORMULES: Formule[] = [
-  {
-    name: "Apéro",
-    price: "19 €",
-    meta: "8 pièces · dès 15 personnes",
-    items: ["3 salatim et pitas", "3 pièces salées", "1 mini pita", "1 mini dessert"],
-  },
-  {
-    name: "Cocktail déjeunatoire",
-    price: "28 €",
-    meta: "12 pièces · dès 15 personnes",
-    items: ["4 salatim et pitas", "4 pièces salées", "2 mini pitas", "2 mini desserts"],
-  },
-  {
-    name: "Cocktail dînatoire",
-    price: "36 €",
-    meta: "16 pièces · dès 20 personnes",
-    items: ["5 salatim et pitas", "6 pièces salées", "3 mini pitas", "2 mini desserts"],
-  },
-  {
-    name: "Buffet Festin",
-    price: "42 €",
-    meta: "Buffet complet · dès 20 personnes",
-    items: [
-      "6 salatim et pitas",
-      "2 plats chauds : shakshuka Noya, poulet mariné",
-      "Pommes de terre au thym",
-      "2 mini desserts",
-    ],
-    dark: true,
-  },
-];
-
-const REMISES = [
-  { value: "−5 %", label: "dès 800 € de commande" },
-  { value: "−10 %", label: "dès 1 500 € de commande" },
-  { value: "Sur devis", label: "dès 3 000 € de commande", italic: true },
-  { value: "−10 %", label: "pour les entreprises qui commandent au moins une fois par mois" },
-];
+// Formules et remises : source unique partagée avec les sous-pages.
 
 type Item = { name: string; price: string; desc?: string; vegan?: boolean };
 type Category = { title: string; note: string; items: Item[] };

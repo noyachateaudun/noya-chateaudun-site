@@ -3,31 +3,35 @@ import { RESTAURANT } from "@/data/restaurant";
 import NoyaLogo from "./NoyaLogo";
 import ReserveButton from "./ReserveButton";
 
+const NAV = [
+  { href: "/menu", label: "La carte" },
+  { href: "/a-propos", label: "Notre histoire" },
+  { href: "/galerie", label: "Galerie" },
+  { href: "/traiteur", label: "Traiteur" },
+  { href: "/blog", label: "Journal" },
+  { href: "/contact", label: "Nous trouver" },
+];
+
+const heading = "text-[12px] font-bold uppercase tracking-[0.22em] text-terracotta mb-4";
+const link = "hover:text-warm-white transition-colors";
+
 export default function Footer() {
   return (
-    <footer className="bg-dark text-cream/70 pt-16 pb-8">
-      <div className="max-w-6xl mx-auto px-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Brand */}
+    <footer className="bg-ink text-[#D9CBBB]">
+      <div aria-hidden="true" className="zellige-band" />
+      <div className="max-w-[1320px] mx-auto px-5 md:px-14 pt-16 pb-10 grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <Link href="/" aria-label="Noya — Restaurant Levantin Paris 9e">
-            <NoyaLogo
-              color="#F5F0E8"
-              className="h-[22px] md:h-[26px] w-auto opacity-90"
-            />
+          <Link href="/" aria-label="Noya, accueil" className="inline-block">
+            <NoyaLogo color="#F6EFE5" className="h-[32px] w-auto" />
           </Link>
-          <p className="mt-3 text-sm leading-relaxed">
-            {RESTAURANT.address.street}
-            <br />
-            {RESTAURANT.address.postalCode} {RESTAURANT.address.city}
-          </p>
+          <p className="mt-5 max-w-[22em] text-[15px]">Bistrot levantin moderne. Cuisine faite maison chaque jour, à deux pas de l’Opéra.</p>
           <a
             href={RESTAURANT.links.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-3 text-sm text-cream/70 hover:text-gold transition-colors"
-            aria-label="Suivez Noya sur Instagram"
+            className={`inline-flex items-center gap-2 mt-5 text-[14px] ${link}`}
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
               <rect x="2" y="2" width="20" height="20" rx="5" />
               <circle cx="12" cy="12" r="5" />
               <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
@@ -36,107 +40,57 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* Navigation */}
-        <div>
-          <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-light mb-4">Navigation</h3>
-          <ul className="space-y-2">
-            {[
-              { href: "/", label: "Accueil" },
-              { href: "/menu", label: "La Carte" },
-              { href: "/galerie", label: "Galerie" },
-              { href: "/a-propos", label: "Notre Histoire" },
-              { href: "/traiteur", label: "Traiteur" },
-              { href: "/contact", label: "Nous Trouver" },
-              { href: "/blog", label: "Blog" },
-            ].map((link) => (
-              <li key={link.href}>
-                <Link href={link.href} className="text-sm hover:text-cream transition-colors">
-                  {link.label}
-                </Link>
+        <nav aria-label="Pied de page">
+          <p className={heading}>Le site</p>
+          <ul className="space-y-2.5 text-[15px]">
+            {NAV.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className={link}>{l.label}</Link>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        {/* Commander & Réserver */}
         <div>
-          <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-light mb-4">Commander & Réserver</h3>
-          <ul className="space-y-2">
+          <p className={heading}>Réserver, commander</p>
+          <ul className="space-y-2.5 text-[15px]">
             <li>
-              <ReserveButton source="footer" className="text-sm hover:text-cream transition-colors text-left">
-                Réserver une table
-              </ReserveButton>
+              <ReserveButton source="footer" className={link}>Réserver une table</ReserveButton>
             </li>
-            <li>
-              <a href={RESTAURANT.links.emporter} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
-                Click & Collect
-              </a>
-            </li>
-            <li>
-              <a href={RESTAURANT.links.deliveroo} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
-                Deliveroo
-              </a>
-            </li>
-            <li>
-              <a href={RESTAURANT.links.uberEats} target="_blank" rel="noopener noreferrer" className="text-sm hover:text-cream transition-colors">
-                Uber Eats
-              </a>
-            </li>
-            <li>
-              <Link href="/traiteur" className="text-sm hover:text-cream transition-colors">
-                Traiteur
-              </Link>
-            </li>
+            <li><a href={RESTAURANT.links.emporter} target="_blank" rel="noopener noreferrer" className={link}>Click &amp; collect</a></li>
+            <li><a href={RESTAURANT.links.deliveroo} target="_blank" rel="noopener noreferrer" className={link}>Deliveroo</a></li>
+            <li><a href={RESTAURANT.links.uberEats} target="_blank" rel="noopener noreferrer" className={link}>Uber Eats</a></li>
+            <li><Link href="/traiteur" className={link}>Devis traiteur</Link></li>
           </ul>
-          <p className="mt-4 text-xs text-cream/40">
-            <span className="text-gold/60">&#x2605;</span> 5/5 Google &middot; 140 avis &middot; 9,6/10 TheFork
-          </p>
+          <p className="mt-5 text-[13px]">★ 5/5 Google · 140 avis · 9,6/10 TheFork</p>
         </div>
 
-        {/* Horaires */}
         <div>
-          <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-gold-light mb-4">Horaires</h3>
-          <p className="text-sm leading-relaxed">
-            <strong className="text-cream/90">Déjeuner</strong>
+          <p className={heading}>Nous trouver</p>
+          <p className="text-[15px] leading-relaxed">
+            {RESTAURANT.address.street}
             <br />
+            {RESTAURANT.address.postalCode} {RESTAURANT.address.city}
+          </p>
+          <p className="mt-4 text-[15px] leading-relaxed">
             {RESTAURANT.hours.lunch.days}
             <br />
-            {RESTAURANT.hours.lunch.time}
-          </p>
-          <p className="text-sm leading-relaxed mt-3">
-            <strong className="text-cream/90">Dîner</strong>
+            Midi {RESTAURANT.hours.lunch.time}
             <br />
-            {RESTAURANT.hours.dinner.days}
+            Soir {RESTAURANT.hours.dinner.time}
+          </p>
+          <p className="mt-2 text-[13px]">Fermé {RESTAURANT.hours.closed.toLowerCase()}</p>
+          <p className="mt-4 text-[15px]">
+            <a href={`tel:${RESTAURANT.telephone}`} className={`font-bold text-warm-white ${link}`}>{RESTAURANT.telephoneDisplay}</a>
             <br />
-            {RESTAURANT.hours.dinner.time}
+            <a href={`mailto:${RESTAURANT.email}`} className={link}>{RESTAURANT.email}</a>
           </p>
-          <p className="text-sm mt-3 text-cream/40">
-            Fermé {RESTAURANT.hours.closed}
-          </p>
-          <a
-            href={`tel:${RESTAURANT.telephone}`}
-            className="inline-block mt-4 text-sm text-gold hover:text-gold-light transition-colors"
-          >
-            {RESTAURANT.telephoneDisplay}
-          </a>
-          <br />
-          <a
-            href={`mailto:${RESTAURANT.email}`}
-            className="inline-block mt-1 text-sm text-cream/70 hover:text-gold transition-colors"
-          >
-            {RESTAURANT.email}
-          </a>
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="max-w-6xl mx-auto px-5 mt-12 pt-6 border-t border-cream/10 flex flex-col sm:flex-row justify-between items-center gap-3">
-        <p className="text-xs text-cream/50">
-          &copy; {new Date().getFullYear()} {RESTAURANT.name}. Tous droits réservés.
-        </p>
-        <Link href="/mentions-legales" className="text-xs text-cream/50 hover:text-cream/60 transition-colors">
-          Mentions légales
-        </Link>
+      <div className="max-w-[1320px] mx-auto px-5 md:px-14 py-6 border-t border-warm-white/10 flex flex-wrap justify-between gap-3 text-[13px]">
+        <p>&copy; {new Date().getFullYear()} {RESTAURANT.name}</p>
+        <Link href="/mentions-legales" className={link}>Mentions légales</Link>
       </div>
     </footer>
   );
