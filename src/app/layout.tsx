@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import TheForkWidget from "@/components/TheForkWidget";
 import { getRestaurantSchema } from "@/lib/schema";
 
 const playfair = Playfair_Display({
@@ -128,6 +129,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingButtons />
+        <TheForkWidget />
 
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-0NJYLX2PMB"
