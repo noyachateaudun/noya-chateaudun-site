@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Playfair_Display, DM_Sans, Cormorant_Garamond } from "next/font/google";
+import { DM_Sans, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -9,21 +9,17 @@ import FloatingButtons from "@/components/FloatingButtons";
 import TheForkWidget from "@/components/TheForkWidget";
 import { getRestaurantSchema } from "@/lib/schema";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
 const dmSans = DM_Sans({
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   variable: "--font-body",
   display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
   variable: "--font-accent",
   display: "swap",
 });
@@ -116,7 +112,7 @@ export default function RootLayout({
   const restaurantSchema = getRestaurantSchema();
 
   return (
-    <html lang="fr" className={`${playfair.variable} ${dmSans.variable} ${cormorant.variable}`}>
+    <html lang="fr" className={`${dmSans.variable} ${cormorant.variable}`}>
       <head>
         <script
           type="application/ld+json"

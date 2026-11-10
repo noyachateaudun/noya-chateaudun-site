@@ -1,229 +1,348 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
+
+const ENDPOINT = "https://formsubmit.co/ajax/noyachateaudun@gmail.com";
+
+const FORMULES = [
+  "Apéro",
+  "Cocktail déjeunatoire",
+  "Cocktail dînatoire",
+  "Buffet Festin",
+  "À la carte",
+  "Je ne sais pas encore",
+];
+
+type Fields = {
+  nom: string;
+  entreprise: string;
+  email: string;
+  telephone: string;
+  date: string;
+  personnes: string;
+  formule: string;
+  mode: string;
+  adresse: string;
+  allergies: string;
+  message: string;
+};
+
+const INITIAL: Fields = {
+  nom: "",
+  entreprise: "",
+  email: "",
+  telephone: "",
+  date: "",
+  personnes: "",
+  formule: FORMULES[0],
+  mode: "Livraison",
+  adresse: "",
+  allergies: "",
+  message: "",
+};
+
+type Status = "idle" | "sending" | "sent" | "error";
+
+const LABEL = "text-[13px] font-bold";
+const INPUT =
+  "min-h-[48px] w-full px-3.5 border border-[#CDBDA9] rounded-xl bg-white text-ink font-body text-base outline-none focus:border-brick focus:ring-2 focus:ring-brick/20";
+const FIELD = "flex flex-col gap-1.5 min-w-0";
 
 export default function TraiteurForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [fields, setFields] = useState<Fields>(INITIAL);
+  const [honey, setHoney] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const nom = data.get("nom") as string;
-    const email = data.get("email") as string;
-    const tel = data.get("tel") as string;
-    const type = data.get("type") as string;
-    const date = data.get("date") as string;
-    const guests = data.get("guests") as string;
-    const formule = data.get("formule") as string;
-    const message = data.get("message") as string;
-
-    const subject = encodeURIComponent(
-      `Demande traiteur ${type || "Événement"} — ${formule || "Non précisé"} — ${nom}`
-    );
-    const body = encodeURIComponent(
-      `Bonjour,\n\nJe souhaite faire appel à vos services traiteur.\n\n` +
-        `Nom : ${nom}\nEmail : ${email}\nTéléphone : ${tel || "Non renseigné"}\n` +
-        `Type d'événement : ${type || "Non précisé"}\nDate souhaitée : ${date || "Non précisée"}\n` +
-        `Nombre d'invités : ${guests || "Non précisé"}\nFormule : ${formule || "Non précisé"}\n\n` +
-        `Message :\n${message}\n\nCordialement,\n${nom}`
-    );
-    window.open(
-      `mailto:noyachateaudun@gmail.com?subject=${subject}&body=${body}`,
-      "_blank"
-    );
-    setSubmitted(true);
+  function update(
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) {
+    const { name, value } = e.target;
+    setFields((prev) => ({ ...prev, [name]: value }));
   }
 
-  const inputClass =
-    "w-full px-4 py-3 text-sm border border-[#E5DFD5] rounded-lg bg-white text-dark outline-none focus:border-burgundy focus:ring-1 focus:ring-burgundy/20 transition-all";
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (status === "sending") return;
+    // Champ piège anti-spam : un humain ne le voit pas, un robot le remplit.
+    if (honey) return;
+
+    setStatus("sending");
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...fields,
+          _subject: `Demande de devis traiteur — ${fields.nom}`,
+          _template: "table",
+          _honey: "",
+        }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus("sent");
+      setFields(INITIAL);
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  if (status === "sent") {
+    return (
+      <div className="min-h-[420px] flex flex-col items-start justify-center gap-4">
+        <svg
+          aria-hidden="true"
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#2E5A4E"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M7.5 12.5l3 3 6-6.5" />
+        </svg>
+        <p role="status" className="font-serif text-[32px] md:text-[40px] leading-[1.1]">
+          Merci, nous revenons vers vous très vite.
+        </p>
+        <button
+          type="button"
+          onClick={() => setStatus("idle")}
+          className="mt-2 min-h-[44px] px-5 rounded-full border border-ink bg-transparent text-sm font-bold hover:border-brick hover:text-brick transition-colors"
+        >
+          Faire une autre demande
+        </button>
+      </div>
+    );
+  }
+
+  const sending = status === "sending";
 
   return (
-    <div id="devis" className="bg-white rounded-2xl p-8 md:p-10 border border-[#E5DFD5] shadow-sm">
-      <div className="text-center mb-8">
-        <h2 className="font-serif text-2xl text-dark mb-2">
-          Demander un devis gratuit
-        </h2>
-        <p className="font-accent text-base text-dark/50 italic">
-          Décrivez votre événement, nous reviendrons vers vous sous 24h.
-        </p>
+    <form
+      onSubmit={handleSubmit}
+      className="relative grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-[18px]"
+    >
+      <div className={FIELD}>
+        <label htmlFor="f-nom" className={LABEL}>
+          Nom
+        </label>
+        <input
+          id="f-nom"
+          name="nom"
+          type="text"
+          autoComplete="name"
+          required
+          value={fields.nom}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={FIELD}>
+        <label htmlFor="f-ent" className={LABEL}>
+          Entreprise <span className="font-normal text-[#6B5A4E]">(facultatif)</span>
+        </label>
+        <input
+          id="f-ent"
+          name="entreprise"
+          type="text"
+          autoComplete="organization"
+          value={fields.entreprise}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={FIELD}>
+        <label htmlFor="f-mail" className={LABEL}>
+          Email
+        </label>
+        <input
+          id="f-mail"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          value={fields.email}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={FIELD}>
+        <label htmlFor="f-tel" className={LABEL}>
+          Téléphone
+        </label>
+        <input
+          id="f-tel"
+          name="telephone"
+          type="tel"
+          autoComplete="tel"
+          required
+          value={fields.telephone}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={FIELD}>
+        <label htmlFor="f-date" className={LABEL}>
+          Date de l’événement
+        </label>
+        <input
+          id="f-date"
+          name="date"
+          type="date"
+          required
+          value={fields.date}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={FIELD}>
+        <label htmlFor="f-pers" className={LABEL}>
+          Nombre de personnes
+        </label>
+        <input
+          id="f-pers"
+          name="personnes"
+          type="number"
+          min={1}
+          inputMode="numeric"
+          required
+          value={fields.personnes}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={FIELD}>
+        <label htmlFor="f-formule" className={LABEL}>
+          Formule souhaitée
+        </label>
+        <select
+          id="f-formule"
+          name="formule"
+          value={fields.formule}
+          onChange={update}
+          className={`${INPUT} px-3`}
+        >
+          {FORMULES.map((f) => (
+            <option key={f} value={f}>
+              {f}
+            </option>
+          ))}
+        </select>
+      </div>
+      <fieldset className="m-0 p-0 border-0 flex flex-col gap-1.5 min-w-0">
+        <legend className={`p-0 mb-1.5 ${LABEL}`}>Livraison ou retrait</legend>
+        <div className="flex flex-wrap gap-2.5">
+          {[
+            { id: "f-livr", value: "Livraison", label: "Livraison" },
+            { id: "f-retr", value: "Retrait au restaurant", label: "Retrait au restaurant" },
+          ].map((opt) => (
+            <label
+              key={opt.id}
+              htmlFor={opt.id}
+              className="inline-flex items-center gap-2 min-h-[48px] px-4 border border-[#CDBDA9] rounded-xl bg-white cursor-pointer has-[:checked]:border-brick"
+            >
+              <input
+                id={opt.id}
+                type="radio"
+                name="mode"
+                value={opt.value}
+                checked={fields.mode === opt.value}
+                onChange={update}
+                className="accent-brick w-[18px] h-[18px]"
+              />
+              {opt.label}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <div className={`${FIELD} md:col-span-2`}>
+        <label htmlFor="f-adr" className={LABEL}>
+          Adresse de livraison
+        </label>
+        <input
+          id="f-adr"
+          name="adresse"
+          type="text"
+          autoComplete="street-address"
+          value={fields.adresse}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={`${FIELD} md:col-span-2`}>
+        <label htmlFor="f-allerg" className={LABEL}>
+          Allergies et régimes
+        </label>
+        <input
+          id="f-allerg"
+          name="allergies"
+          type="text"
+          placeholder="Vegan, sans gluten, allergies…"
+          value={fields.allergies}
+          onChange={update}
+          className={INPUT}
+        />
+      </div>
+      <div className={`${FIELD} md:col-span-2`}>
+        <label htmlFor="f-msg" className={LABEL}>
+          Message
+        </label>
+        <textarea
+          id="f-msg"
+          name="message"
+          rows={4}
+          value={fields.message}
+          onChange={update}
+          className={`${INPUT} py-3 resize-y`}
+        />
       </div>
 
-      {submitted ? (
-        <div className="text-center py-8">
-          <div className="inline-block px-8 py-6 bg-sage/10 border border-sage/30 rounded-xl">
-            <p className="text-sm text-sage font-bold mb-1">
-              Demande envoyée avec succès
-            </p>
-            <p className="text-xs text-dark/50">
-              Vérifiez que l&apos;email a bien été envoyé depuis votre
-              messagerie.
-            </p>
-          </div>
-        </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div>
-              <label
-                htmlFor="nom"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-              >
-                Nom & Prénom *
-              </label>
-              <input
-                id="nom"
-                name="nom"
-                required
-                placeholder="Jean Dupont"
-                className={inputClass}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-              >
-                Email *
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="votre@email.com"
-                className={inputClass}
-              />
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div>
-              <label
-                htmlFor="tel"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-              >
-                Téléphone
-              </label>
-              <input
-                id="tel"
-                name="tel"
-                type="tel"
-                placeholder="06 12 34 56 78"
-                className={inputClass}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="type"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-              >
-                Type d&apos;événement
-              </label>
-              <select
-                id="type"
-                name="type"
-                className={`${inputClass} cursor-pointer`}
-              >
-                <option value="">Sélectionnez...</option>
-                <option value="Cocktail / Afterwork">
-                  Cocktail / Afterwork
-                </option>
-                <option value="Anniversaire / Fête privée">
-                  Anniversaire / Fête privée
-                </option>
-                <option value="Séminaire / Entreprise">
-                  Séminaire / Entreprise
-                </option>
-                <option value="Mariage">Mariage</option>
-                <option value="Autre">Autre</option>
-              </select>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div>
-              <label
-                htmlFor="date"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-              >
-                Date souhaitée
-              </label>
-              <input
-                id="date"
-                name="date"
-                type="date"
-                className={inputClass}
-              />
-            </div>
-            <div>
-              <label
-                htmlFor="guests"
-                className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-              >
-                Nombre de personnes
-              </label>
-              <select
-                id="guests"
-                name="guests"
-                className={`${inputClass} cursor-pointer`}
-              >
-                <option value="">Sélectionnez...</option>
-                <option value="15-25">15 – 25 personnes</option>
-                <option value="25-40">25 – 40 personnes</option>
-                <option value="40-60">40 – 60 personnes</option>
-                <option value="60-100">60 – 100 personnes</option>
-                <option value="100+">100+ personnes</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label
-              htmlFor="formule"
-              className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-            >
-              Formule intéressée
-            </label>
-            <select
-              id="formule"
-              name="formule"
-              className={`${inputClass} cursor-pointer`}
-            >
-              <option value="">Sélectionnez...</option>
-              <option value="Mezze">Formule Mezze</option>
-              <option value="Festin">Formule Festin</option>
-              <option value="Sur mesure">Formule Sur Mesure</option>
-              <option value="Je ne sais pas encore">
-                Je ne sais pas encore
-              </option>
-            </select>
-          </div>
-          <div>
-            <label
-              htmlFor="message"
-              className="block text-[11px] font-bold uppercase tracking-wider text-dark/55 mb-1.5"
-            >
-              Message / Précisions
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              placeholder="Décrivez votre événement, vos envies, le lieu, vos préférences alimentaires..."
-              className={`${inputClass} resize-y`}
-            />
-          </div>
-          <div className="text-center pt-2">
-            <button
-              type="submit"
-              className="px-10 py-3.5 bg-burgundy text-cream rounded-lg text-sm font-medium hover:bg-burgundy/90 transition-colors"
-            >
-              Envoyer ma demande
-            </button>
-            <p className="text-xs text-dark/55 italic mt-3">
-              Un e-mail pré-rempli s&apos;ouvrira dans votre messagerie.
-            </p>
-          </div>
-        </form>
+      {/* Champ piège anti-spam, invisible pour les humains */}
+      <div aria-hidden="true" className="absolute -left-[9999px] w-px h-px overflow-hidden">
+        <label htmlFor="f-honey">Ne pas remplir</label>
+        <input
+          id="f-honey"
+          name="_honey"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honey}
+          onChange={(e) => setHoney(e.target.value)}
+        />
+      </div>
+
+      {status === "error" && (
+        <p role="alert" className="md:col-span-2 text-sm text-brick">
+          Désolés, votre demande n’a pas pu être envoyée. Vous pouvez nous
+          appeler au{" "}
+          <a href="tel:+33611610206" className="font-bold underline">
+            06 11 61 02 06
+          </a>{" "}
+          ou nous écrire à{" "}
+          <a href="mailto:noyachateaudun@gmail.com" className="font-bold underline">
+            noyachateaudun@gmail.com
+          </a>
+          .
+        </p>
       )}
-    </div>
+
+      <div className="md:col-span-2 flex flex-wrap items-center gap-x-5 gap-y-3 mt-1.5">
+        <button
+          type="submit"
+          disabled={sending}
+          className="min-h-[52px] px-8 rounded-full bg-ink text-warm-white text-[13px] font-bold tracking-[0.14em] uppercase cursor-pointer hover:bg-zellige transition-colors disabled:opacity-60 disabled:cursor-wait"
+        >
+          {sending ? "Envoi…" : "Envoyer ma demande"}
+        </button>
+        <span className="text-[13px] text-[#6B5A4E]">
+          Envoyé à noyachateaudun@gmail.com
+        </span>
+      </div>
+    </form>
   );
 }

@@ -11,14 +11,20 @@ html {
 }
 
 body {
-  font-family: "DM Sans", sans-serif;
-  color: #2C2421;
-  background: #FBF7F1;
+  font-family: var(--font-body), "DM Sans", system-ui, sans-serif;
+  color: #24180F;
+  background: #F6EFE5;
 }
 
 ::selection {
-  background: #7B1E2B;
-  color: #F5EDE3;
+  background: #B82F25;
+  color: #FBF7F0;
+}
+
+/* Bande de rayures zellige (motif du mur de la salle) */
+.zellige-band {
+  height: 18px;
+  background: repeating-linear-gradient(90deg, #2E5A4E 0 22px, #F3ECE1 22px 44px);
 }
 
 /* sr-only utility for screen readers */

@@ -10,7 +10,7 @@ export default function AnnouncementBar() {
   if (!visible) return null;
 
   return (
-    <div className="sticky top-0 z-[60] bg-[#722F37] text-cream overflow-hidden h-10">
+    <div className="sticky top-0 z-[60] bg-ink text-paper overflow-hidden h-10">
       {/* CSS-only rotating messages */}
       <div className="announcement-track flex h-full">
         {/* Message 1 — lien réservation Zenchef (intercepté par le SDK → modale) */}
@@ -18,7 +18,7 @@ export default function AnnouncementBar() {
           href="https://widget.thefork.com/f74d6eb4-b27b-40b9-b3b9-acda8854080f?utm_source=website&utm_medium=sticky&utm_campaign=reservation"
           target="_blank"
           rel="noopener noreferrer"
-          className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"
+          className="announcement-slide flex shrink-0 items-center justify-center px-10 sm:px-12 text-[11px] sm:text-[12px] md:text-[13px] whitespace-nowrap font-medium hover:text-white transition-colors text-center"
         >
           <span className="mr-1.5">★</span>
           5/5 sur Google · 140 avis · Réserver une table →
@@ -28,14 +28,14 @@ export default function AnnouncementBar() {
           href={RESTAURANT.links.emporter}
           target="_blank"
           rel="noopener noreferrer"
-          className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"
+          className="announcement-slide flex shrink-0 items-center justify-center px-10 sm:px-12 text-[11px] sm:text-[12px] md:text-[13px] whitespace-nowrap font-medium hover:text-white transition-colors text-center"
         >
           Click &amp; Collect · Commandez en ligne →
         </a>
         {/* Message 3 */}
         <Link
           href="/traiteur"
-          className="announcement-slide flex items-center justify-center min-w-full px-12 text-[12px] md:text-[13px] font-medium hover:text-white transition-colors text-center"
+          className="announcement-slide flex shrink-0 items-center justify-center px-10 sm:px-12 text-[11px] sm:text-[12px] md:text-[13px] whitespace-nowrap font-medium hover:text-white transition-colors text-center"
         >
           Traiteur levantin · Devis gratuit en 24h →
         </Link>
